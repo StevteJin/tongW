@@ -1,0 +1,36 @@
+.mjbox {
+  background-image: url(../../assets/tongwei/mjbg.png);
+  background-size: 100% 100%;
+  width: 400px;
+  height: 400px;
+  position: relative;
+  .close {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+  }
+  .title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 75px;
+    margin-top: 27px;
+  }
+  .content {
+    margin-left: 75px;
+    margin-top: 10px;
+    div {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .left {
+      color: #c7daed;
+    }
+    .right {
+      color: #fff;
+    }
+  }
+}
