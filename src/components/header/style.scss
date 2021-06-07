@@ -1,0 +1,81 @@
+.header {
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9) 22%,
+    rgba(0, 0, 0, 0.6) 45%,
+    rgba(0, 0, 0, 0) 86%
+  );
+  transform: scaleY(-1);
+  position: relative;
+  left: 0px;
+  top: 0px;
+  .header_bg {
+    width: 100%;
+    height: 90px;
+    transform: scaleY(-1);
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    background-image: url("../../assets/tongwei/top.png");
+    background-size: 100% 100%;
+    .headerTitle {
+      color: #fff;
+      letter-spacing: 8px;
+      text-align: center;
+      margin-top: 55px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .header_time_user {
+      color: #70a0db;
+      float: right;
+      margin-right: 60px;
+      margin-top: -70px;
+    }
+  }
+  .check_box {
+    width: 40%;
+    // height: 80px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: -20px;
+    ul {
+      transform: scaleY(-1);
+      overflow: hidden;
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      li {
+        // float: left;
+        display: inline-block;
+        width: 20%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        span {
+          color: #b8c6d5;
+        }
+        .check_content {
+          background-color: rgba(13, 23, 44, 0.3);
+          display: inline-block;
+          width: 110px;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+      .icon {
+        width: 20px;
+      }
+    }
+  }
+}

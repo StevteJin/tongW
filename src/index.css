@@ -1,0 +1,21 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(161,161,161);
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 组件进场速度 */
+.animate_speed {
+  animation-delay: -0.2s;
+}
+#streamingVideo {
+  height: 100%;
+}
