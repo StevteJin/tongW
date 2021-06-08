@@ -1,0 +1,60 @@
+.today_box {
+  width: 300px;
+  height: 310px;
+  background-image: url("../../assets/tongwei/num.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+  box-sizing: border-box;
+  .top_box {
+    width: 260px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 30px;
+    background-image: url(../../assets/tongwei/num_t.png);
+    background-size: 100% 100%;
+    overflow: hidden;
+    .top_close {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      display: block;
+      float: left;
+    }
+    .top_title {
+      color: #ffffff;
+      letter-spacing: 0;
+      text-shadow: 0 4px 8px rgba(26, 122, 255, 0.5);
+      display: block;
+      float: left;
+      line-height: 30px;
+      margin-left: 20px;
+    }
+  }
+  .fang_box {
+    .fang {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .fang_img {
+        flex: 0.3;
+        img {
+          width: 50px;
+          height: 50px;
+          margin-left: 30px;
+        }
+      }
+      .fang_name {
+        color: #fff;
+        flex: 0.3;
+        line-height: 50px;
+      }
+      .fang_title {
+        color: #4dd3ff;
+        flex: 0.4;
+        font-size: 22px;
+        line-height: 50px;
+      }
+    }
+  }
+}
