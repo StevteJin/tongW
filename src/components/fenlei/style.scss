@@ -1,0 +1,52 @@
+.fen_box {
+  width: 300px;
+  height: 170px;
+  background-image: url("../../assets/tongwei/fen.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+  .fen_t {
+    background-image: url(../../assets/tongwei/fen_title.png);
+    background-size: 100% 100%;
+    width: 260px;
+    height: 30px;
+    margin-left: 20px;
+    span {
+      display: block;
+      float: left;
+    }
+    .fen_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .fen_title {
+      color: #fff;
+      margin-left: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+  .fen_c {
+    overflow: hidden;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    .fen_cbox {
+      background-image: url(../../assets/tongwei/fen_num.png);
+      background-size: 100% 100%;
+      width: 80px;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      .value {
+        color: #fff;
+        text-align: center;
+      }
+      .name {
+        color: #c8dbee;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}

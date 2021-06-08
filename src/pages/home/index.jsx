@@ -9,6 +9,8 @@ import Entranceguard from "../../components/entranceGuard";
 import Todaynum from "../../components/todaynum";
 //访客非法闯入
 import Feifa from "../../components/feifa";
+//今日人员分类统计
+import Fenlei from "../../components/fenlei";
 
 function Home() {
   useEffect(() => {}, []);
@@ -16,9 +18,14 @@ function Home() {
     <div className="home">
       <Header />
       {/* <Alertnav /> */}
-      {/* <Entranceguard />
-      <Todaynum /> */}
-      <Feifa />
+      {/* 通威大道门禁 */}
+      {/* <Entranceguard /> */}
+      {/* 今日数据统计 */}
+      {/* <Todaynum /> */}
+      {/* 访客非法闯入 */}
+      {/* <Feifa /> */}
+      {/* 今日人员分类统计 */}
+      <Fenlei />
       <Footer />
     </div>
   );
