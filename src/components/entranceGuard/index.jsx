@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from "swiper/core";
 import "swiper/swiper.scss";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 
+SwiperCore.use([Autoplay]);
 function Entranceguard() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
@@ -22,12 +24,12 @@ function Entranceguard() {
     },
     {
       pic: "tou",
-      name: "张丽丽",
+      name: "刘小丽",
       time: "19:09:32",
     },
     {
       pic: "tou",
-      name: "张丽丽",
+      name: "李大丽",
       time: "19:09:32",
     },
   ];
@@ -52,33 +54,48 @@ function Entranceguard() {
         <span className="num_bot">{num}</span>
       </div>
       <div className="pic_con">
-        <Swiper
-          spaceBetween={100}
-          slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          {peopleContent.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <div className="picbox">
-                  <img
-                    className="pic_icon"
-                    src={
-                      require("../../assets/tongwei/" + item.pic + ".png")
-                        .default
-                    }
-                    alt=""
-                  />
-                  <div className="pic_content">
-                    <div className="pic_name">{item.name}</div>
-                    <div className="pic_time">{item.time}</div>
+        <div className="pic_width">
+          {/* 参数说明
+           *spaceBetween 间隙*
+           *slidesPerView张数*
+           */}
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            loop={true} // 循环模式选项
+            observer={true} //修改swiper自己或子元素时，自动初始化swiper
+            observeParents={true} //修改swiper的父元素时，自动初始化swiper
+            autoplay={
+              {
+                delay: 500,
+                disableOnInteraction: false,
+              } //解决滑动后不能轮播的问题
+            }
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {peopleContent.map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="picbox">
+                    <img
+                      className="pic_icon"
+                      src={
+                        require("../../assets/tongwei/" + item.pic + ".png")
+                          .default
+                      }
+                      alt=""
+                    />
+                    <div className="pic_content">
+                      <div className="pic_name">{item.name}</div>
+                      <div className="pic_time">{item.time}</div>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       </div>
     </div>
   );
