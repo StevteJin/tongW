@@ -11,6 +11,8 @@ import Todaynum from "../../components/todaynum";
 import Feifa from "../../components/feifa";
 //今日人员分类统计
 import Fenlei from "../../components/fenlei";
+//今日入园人数统计
+import Ruyuan from "../../components/ruyuan";
 
 function Home() {
   useEffect(() => {}, []);
@@ -25,7 +27,9 @@ function Home() {
       {/* 访客非法闯入 */}
       {/* <Feifa /> */}
       {/* 今日人员分类统计 */}
-      <Fenlei />
+      {/* <Fenlei /> */}
+      {/* 今日入园人数统计 */}
+      <Ruyuan />
       <Footer />
     </div>
   );

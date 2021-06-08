@@ -21,7 +21,7 @@ function Fenlei() {
     <div className="fen_box">
       <div className="fen_t">
         <span className="fen_close"></span>
-        <span className="fen_title">今日人员分类统计</span>
+        <span className="fen_title">{title}</span>
       </div>
       <div className="fen_c">
         {fenleiData.map((item, index) => {
