@@ -7,6 +7,8 @@ import Alertnav from "../../components/alertnav";
 import Entranceguard from "../../components/entranceGuard";
 //今日数量统计
 import Todaynum from "../../components/todaynum";
+//访客非法闯入
+import Feifa from "../../components/feifa";
 
 function Home() {
   useEffect(() => {}, []);
@@ -16,6 +18,7 @@ function Home() {
       {/* <Alertnav /> */}
       {/* <Entranceguard />
       <Todaynum /> */}
+      <Feifa />
       <Footer />
     </div>
   );
