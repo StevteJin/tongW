@@ -3,7 +3,7 @@ import "./style.scss";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Alertnav from "../../components/alertnav";
-//通威大道门禁
+//通威大道门禁抓拍
 import Entranceguard from "../../components/entranceGuard";
 //今日数量统计
 import Todaynum from "../../components/todaynum";
@@ -19,6 +19,8 @@ import Snap from "../../components/snap";
 import Mj from "../../components/mj";
 //车辆超速
 import Chaosu from "../../components/chaosu";
+//通威大道车辆抓拍HB18920NH
+import Carp from "../../components/carp";
 
 function Home() {
   useEffect(() => {}, []);
@@ -41,7 +43,9 @@ function Home() {
       {/* 今日门禁人员统计 */}
       {/* <Mj /> */}
       {/* 车辆超速 */}
-      <Chaosu />
+      {/* <Chaosu /> */}
+      {/* 通威大道车辆抓拍HB18920NH */}
+      <Carp />
     </div>
   );
 }

@@ -1,0 +1,113 @@
+.mjbox {
+  background-image: url(../../assets/tongwei/mjbg.png);
+  background-size: 100% 100%;
+  width: 400px;
+  height: 400px;
+  position: relative;
+  .close {
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+  }
+  .title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 75px;
+    padding-top: 27px;
+  }
+  .content {
+    margin-left: 75px;
+    margin-top: 10px;
+    div {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .left {
+      color: #c7daed;
+    }
+    .right {
+      color: #fff;
+    }
+  }
+  .numbox {
+    background-image: url(../../assets/tongwei/numbg.png);
+    background-size: 100% 100%;
+    width: 330px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 10px;
+    padding-top: 10px;
+    .num_top {
+      color: #fff;
+      text-align: center;
+      margin-left: 31%;
+      transform: translate(-50%);
+    }
+    .num_bot {
+      font-size: 32px;
+      color: #4dd3ff;
+      letter-spacing: 16px;
+      display: inline-block;
+      margin-left: 105px;
+    }
+    .nei_car {
+      margin-left: 36%;
+      font-size: 12px;
+      .n_left {
+        color: #b8c6d5;
+      }
+      .n_right {
+        color: #1bffff;
+      }
+    }
+  }
+  .pic_con {
+    overflow: hidden;
+    width: 330px;
+    margin-left: 50px;
+    margin-top: 30px;
+    .pic_width {
+      width: 480px;
+      .picbox {
+        width: 160px;
+        margin-left: -100px;
+        background: rgba(0, 90, 216, 0.16);
+        background-image: radial-gradient(
+          29% -92%,
+          rgba(0, 124, 255, 0.67) 92%,
+          rgba(0, 65, 186, 0) 100%
+        );
+        background-image: radial-gradient(
+          49% 117%,
+          rgba(14, 89, 255, 0.5) 95%,
+          rgba(1, 144, 255, 0) 100%
+        );
+        border: 1px solid #57beff;
+        overflow: hidden;
+        .pic_icon {
+          width: 60px;
+          float: left;
+          margin-top: 5px;
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          border: 1px solid #57beff;
+        }
+        .pic_content {
+          float: left;
+          .pic_name {
+            color: #fff;
+            margin-top: 10px;
+          }
+          .pic_time {
+            color: #b8c6d5;
+          }
+        }
+      }
+    }
+  }
+}
