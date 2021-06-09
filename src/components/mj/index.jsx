@@ -21,7 +21,7 @@ function Mj() {
   const mjData2 = [
     {
       name: "门岗1",
-      value: "1,490",
+      value: "1490",
       classCall: "call1",
     },
     {
@@ -44,6 +44,7 @@ function Mj() {
   let initChart = () => {
     let element = document.getElementById("main");
     let myChart = echarts.init(element);
+    //环形图参数
     let option = {
       tooltip: {
         trigger: "item",
@@ -52,9 +53,83 @@ function Mj() {
         top: "5%",
         left: "center",
       },
+      color: [
+        {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            {
+              offset: 0.12,
+              color: "#ffd148", // 0% 处的颜色
+            },
+            {
+              offset: 0.88,
+              color: "#ffa334", // 100% 处的颜色
+            },
+          ],
+          global: false, // 缺省为 false
+        },
+        {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            {
+              offset: 0.23,
+              color: "#6ccaff", // 0% 处的颜色
+            },
+            {
+              offset: 0.91,
+              color: "#1184ff", // 100% 处的颜色
+            },
+          ],
+          global: false, // 缺省为 false
+        },
+        {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            {
+              offset: 0.29,
+              color: "#21ffde", // 0% 处的颜色
+            },
+            {
+              offset: 0.85,
+              color: "#05fbaf", // 100% 处的颜色
+            },
+          ],
+          global: false, // 缺省为 false
+        },
+        {
+          type: "linear",
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [
+            {
+              offset: 0.29,
+              color: "#ae65ff", // 0% 处的颜色
+            },
+            {
+              offset: 0.85,
+              color: "#830fff", // 100% 处的颜色
+            },
+          ],
+          global: false, // 缺省为 false
+        },
+      ],
       series: [
         {
-          name: "访问来源",
+          name: "今日门禁人员统计",
           type: "pie",
           radius: ["50%", "70%"],
           avoidLabelOverlap: false,
@@ -108,6 +183,10 @@ function Mj() {
         <div className="bg_box">
           {/* 饼图在这里 */}
           <div id={"main"} className="tu" style={{ height: 130 }}></div>
+          <div className="bread_title">
+            <div className="bread_t">3039</div>
+            <div className="bread_b">门岗刷脸</div>
+          </div>
         </div>
         <div className="bg_right">
           {mjData2.map((item, index) => {

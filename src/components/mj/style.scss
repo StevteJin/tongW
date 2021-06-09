@@ -65,8 +65,23 @@
       overflow: hidden;
       margin-left: 20px;
       float: left;
+      position: relative;
       .tu {
         margin-top: -5px;
+      }
+      .bread_title {
+        position: absolute;
+        top: 40px;
+        left: 38px;
+        text-align: center;
+        .bread_t {
+          color: #fff;
+          font-size: 14px;
+        }
+        .bread_b {
+          color: #fff;
+          font-size: 12px;
+        }
       }
     }
     .bg_right {
