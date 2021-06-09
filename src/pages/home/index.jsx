@@ -30,7 +30,7 @@ import Zl from "../../components/zl";
 // 底部页脚三个统计图
 import Tj from "../../components/tj";
 //今日人员违纪次数统计
-
+import Wjtimes from "../../components/wjtimes";
 
 
 
@@ -67,7 +67,7 @@ function Home() {
       {/* 底部页脚三个统计图 */}
       {/* <Tj /> */}
       {/* 今日人员违纪次数统计 */}
-      
+      <Wjtimes />
       {/* 页脚 */}
       <Footer />
     </div>

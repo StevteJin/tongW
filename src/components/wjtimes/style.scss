@@ -1,0 +1,79 @@
+.wjtimes_box {
+  width: 300px;
+  height: 230px;
+  background-image: url("../../assets/tongwei/wjtimes_bg.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+
+  .wjtimes_t {
+    background-image: url("../../assets/tongwei/fen_title.png");
+    background-size: 100% 100%;
+    width: 260px;
+    height: 30px;
+    margin-left: 20px;
+
+    span {
+      display: block;
+      float: left;
+    }
+
+    .wjtimes_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .wjtimes_title {
+      color: #fff;
+      margin-left: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+
+  .wjtimes_con {
+    .bot_title {
+      background-image: url(../../assets/tongwei/wjtimes_title.png);
+      width: 260px;
+      margin-left: 20px;
+      display: flex;
+      margin-top: 10px;
+      color: #fff;
+      height:26px;
+      line-height:26px;
+      span {
+        flex: 1;
+        padding-left: 10px;
+      }
+    }
+
+    .bot_con {
+      display: flex;
+      width: 260px;
+      margin-left: 20px;
+      font-size: 14px;
+      height:26px;
+      line-height:26px;
+      span {
+        flex: 1;
+        padding-left: 10px;
+      }
+
+      .con_l {
+        color: #C7DAED;
+      }
+
+      .con_c {
+        color: #C7DAED;
+      }
+
+      .con_r {
+        color: #fff;
+      }
+    }
+
+    .bot_con:nth-of-type(odd) {
+      background-color:rgba(0,31,69,0.24);
+    }
+  }
+}
