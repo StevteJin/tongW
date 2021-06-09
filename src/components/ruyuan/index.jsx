@@ -25,7 +25,11 @@ function Ruyuan() {
         <span className="ru_title">{title}</span>
       </div>
       <div className="ru_y">
-        <img className="ru_tou" src={require("../../assets/tongwei/rutou.png").default} alt="" />
+        <img
+          className="ru_tou"
+          src={require("../../assets/tongwei/rutou.png").default}
+          alt=""
+        />
         <div className="ru_con">
           <div className="ru_num">入园区总人数</div>
           <div className="ru_num_bg_box">
@@ -36,12 +40,18 @@ function Ruyuan() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="ru_person">
         {ruData.map((item, index) => {
           return (
-            <div key={index}>
-              <div>{item.name}</div>
-              <div>{item.value}</div>
+            <div key={index} className="per_box">
+              <div className="per_left">
+                <div className="per_name">{item.name}</div>
+                <div className="per_value">{item.value}</div>
+              </div>
+              <img className="line"
+                src={require("../../assets/tongwei/ru_line.png").default}
+                alt=""
+              />
             </div>
           );
         })}

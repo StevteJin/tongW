@@ -37,6 +37,62 @@
     }
     .ru_con {
       float: left;
+      .ru_num {
+        background-image: url(../../assets/tongwei/ru_num.png);
+        color: #fff;
+        width: 100px;
+        height: 24px;
+        line-height: 24px;
+        background-size: 100% 100%;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .ru_num_bg_box {
+        .ru_num_bg {
+          background-image: url(../../assets/tongwei/ru_num_bg.png);
+          background-size: 100% 100%;
+          width: 20px;
+          height: 40px;
+          display: inline-block;
+          margin-right: 6.5px;
+          color: #4dd3ff;
+          text-align: center;
+          line-height: 40px;
+          font-size: 30px;
+        }
+        .ru_num_bg:last-child {
+          margin-right: 0px;
+        }
+      }
     }
+  }
+  .ru_person {
+    display: flex;
+    margin-left:10px;
+    .per_box {
+      flex: 1;
+      padding-left: 10px;
+      box-sizing: border-box;
+      .per_left {
+        float: left;
+        .per_name {
+          color: #c7daed;
+        }
+        .per_value {
+          color: #fff;
+        }
+      }
+
+      .line {
+        width: 1px;
+        height: 40px;
+        float: left;
+        margin-left: 10px;
+      }
+    }
+  }
+  .per_box:last-child .line {
+    display: none;
   }
 }
