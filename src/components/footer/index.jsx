@@ -3,7 +3,8 @@ import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 
 function Footer() {
-  const top_count = useMappedState((state) => state.top_navigation_count);
+  const dispatch = useDispatch();
+  const bot_real_index = useMappedState((state) => state.bot_index);
 
   const footerName = [
     {
@@ -19,14 +20,26 @@ function Footer() {
       value: "智慧管理",
     },
   ];
-  useEffect(() => {}, [top_count]);
-
+  const handle_top = (item, index) => {
+    console.log("点的哪个",index, item.value);
+    dispatch({ type: "handleTop", bot_index: index });
+  };
+  useEffect(() => {}, [bot_real_index]);
+ 
   return (
     <div className="footer_box">
       <div className="footer">
         <ul>
           {footerName.map((item, index) => {
-            return <li key={index}>{item.value}</li>;
+            return (
+              <li
+                className={bot_real_index == index ? "active_LI" : null}
+                key={index}
+                onClick={() => handle_top(item, index)}
+              >
+                {item.value}
+              </li>
+            );
           })}
         </ul>
       </div>
