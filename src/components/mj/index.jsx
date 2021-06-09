@@ -21,18 +21,22 @@ function Mj() {
     {
       name: "门岗1",
       value: "1,490",
+      classCall: "call1",
     },
     {
       name: "门岗2",
       value: "843",
+      classCall: "call2",
     },
     {
       name: "门岗3",
       value: "387",
+      classCall: "call3",
     },
     {
       name: "门岗4",
       value: "319",
+      classCall: "call4",
     },
   ];
 
@@ -54,7 +58,22 @@ function Mj() {
           );
         })}
       </div>
-      <div>{/* 饼图 */}</div>
+      <div className="bread_box">
+        <div className="bg_box"></div>
+        <div className="bg_right">
+          {mjData2.map((item, index) => {
+            return (
+              <div key={index} className="bg_r_box">
+                <div className="bg_top">
+                  <div className={item.classCall}></div>
+                  <span className="huan_name">{item.name}</span>
+                </div>
+                <div className="bg_bot">{item.value}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

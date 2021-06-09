@@ -1,6 +1,6 @@
 .mj_box {
   width: 300px;
-  height: 320px;
+  height: 280px;
   background-image: url("../../assets/tongwei/mj_bg.png");
   background-size: 100% 100%;
   padding-top: 20px;
@@ -29,6 +29,8 @@
   .mj_p {
     margin-left: 10px;
     margin-top: 20px;
+    padding-bottom: 2px;
+    overflow: hidden;
     .mj_pbox {
       background-image: url(../../assets/tongwei/mj_num.png);
       background-size: 100% 100%;
@@ -48,6 +50,75 @@
         font-size: 24px;
         box-sizing: border-box;
         padding-left: 10px;
+      }
+    }
+  }
+  .bread_box {
+    margin-top: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    .bg_box {
+      background-image: url(../../assets/tongwei/mj_b.png);
+      background-size: 100% 100%;
+      width: 124px;
+      height: 124px;
+      overflow: hidden;
+      margin-left: 20px;
+      float: left;
+    }
+    .bg_right {
+      float: left;
+      margin-left: 10px;
+      width: 140px;
+      margin-top: 5px;
+      .bg_r_box {
+        float: left;
+        margin-right: 10px;
+        .bg_top {
+          overflow: hidden;
+          div {
+            width: 10px;
+            height: 10px;
+            background-image: linear-gradient(-16deg, #ffd148 12%, #ffa334 88%);
+            border-radius: 50%;
+            float: left;
+            margin-top: 6px;
+            margin-right: 10px;
+          }
+          div:after {
+            content: "";
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: rgb(42, 58, 81);
+            position: relative;
+            top: 3px;
+            left: 3px;
+          }
+          .call1 {
+            background-image: linear-gradient(-16deg, #ffd148 12%, #ffa334 88%);
+          }
+          .call2 {
+            background-image: linear-gradient(115deg, #6ccaff 23%, #1184ff 91%);
+          }
+          .call3 {
+            background-image: linear-gradient(191deg, #21ffde 29%, #05fbaf 85%);
+          }
+          .call4 {
+            background-image: linear-gradient(191deg, #ae65ff 29%, #830fff 85%);
+          }
+          .huan_name {
+            float: left;
+            color: #c7daed;
+          }
+        }
+        .bg_bot {
+          color: #fff;
+          font-size: 16px;
+          font-weight: bold;
+          margin-left: 18px;
+        }
       }
     }
   }
