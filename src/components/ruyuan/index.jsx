@@ -24,15 +24,15 @@ function Ruyuan() {
         <span className="ru_close"></span>
         <span className="ru_title">{title}</span>
       </div>
-      <div>
-        <img src={require("../../assets/tongwei/rutou.png").default} alt="" />
-        <div>
-          <div>入园区总人数</div>
-          <div>
-            <span>{num1}</span>
-            <span>{num2}</span>
-            <span>{num3}</span>
-            <span>{num4}</span>
+      <div className="ru_y">
+        <img className="ru_tou" src={require("../../assets/tongwei/rutou.png").default} alt="" />
+        <div className="ru_con">
+          <div className="ru_num">入园区总人数</div>
+          <div className="ru_num_bg_box">
+            <span className="ru_num_bg">{num1}</span>
+            <span className="ru_num_bg">{num2}</span>
+            <span className="ru_num_bg">{num3}</span>
+            <span className="ru_num_bg">{num4}</span>
           </div>
         </div>
       </div>
