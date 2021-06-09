@@ -21,6 +21,8 @@ import Mj from "../../components/mj";
 import Chaosu from "../../components/chaosu";
 //通威大道车辆抓拍HB18920NH
 import Carp from "../../components/carp";
+//今日园区违纪统计
+import Wj from "../../components/wj";
 
 function Home() {
   useEffect(() => {}, []);
@@ -46,8 +48,10 @@ function Home() {
       {/* <Chaosu /> */}
       {/* 通威大道车辆抓拍HB18920NH */}
       {/* <Carp /> */}
+      {/* 今日园区违纪统计 */}
+      <Wj />
       {/* 页脚 */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
