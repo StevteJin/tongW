@@ -15,7 +15,8 @@ import Fenlei from "../../components/fenlei";
 import Ruyuan from "../../components/ruyuan";
 //实时人脸抓拍列表
 import Snap from "../../components/snap";
-
+//今日门禁人员统计
+import Mj from "../../components/mj";
 function Home() {
   useEffect(() => {}, []);
   return (
@@ -33,8 +34,9 @@ function Home() {
       {/* 今日入园人数统计 */}
       {/* <Ruyuan /> */}
       {/* 实时人脸抓拍列表 */}
-      <Snap />
-      <Footer />
+      {/* <Snap /> */}
+      {/* 今日门禁人员统计 */}
+      <Mj />
     </div>
   );
 }
