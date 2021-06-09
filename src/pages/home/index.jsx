@@ -29,6 +29,10 @@ import Xg from "../../components/xg";
 import Zl from "../../components/zl";
 // 底部页脚三个统计图
 import Tj from "../../components/tj";
+//今日人员违纪次数统计
+
+
+
 
 function Home() {
   useEffect(() => {}, []);
@@ -61,7 +65,9 @@ function Home() {
       {/* 今日访客滞留统计 */}
       {/* <Zl /> */}
       {/* 底部页脚三个统计图 */}
-      <Tj />
+      {/* <Tj /> */}
+      {/* 今日人员违纪次数统计 */}
+      
       {/* 页脚 */}
       <Footer />
     </div>
