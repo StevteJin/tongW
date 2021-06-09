@@ -27,6 +27,8 @@ import Wj from "../../components/wj";
 import Xg from "../../components/xg";
 //今日访客滞留统计
 import Zl from "../../components/zl";
+// 底部页脚三个统计图
+import Tj from "../../components/tj";
 
 function Home() {
   useEffect(() => {}, []);
@@ -57,9 +59,11 @@ function Home() {
       {/* 今日园区人员巡更统计 */}
       {/* <Xg /> */}
       {/* 今日访客滞留统计 */}
-      <Zl />
+      {/* <Zl /> */}
+      {/* 底部页脚三个统计图 */}
+      <Tj />
       {/* 页脚 */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

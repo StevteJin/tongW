@@ -1,0 +1,40 @@
+.tj_box {
+  width: 1800px;
+  height: 280px;
+  background-image: url("../../assets/tongwei/tj.png");
+  background-size: 100% 100%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  bottom: 120px;
+  display: flex;
+  .tj_tu {
+    flex: 1;
+    .tj_t {
+      background-image: url(../../assets/tongwei/tj_title.png);
+      background-size: 100% 100%;
+      width: 420px;
+      height: 30px;
+      margin-left: 20px;
+      margin-top: 20px;
+      span {
+        display: block;
+        float: left;
+      }
+      .tj_close {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      .tj_title {
+        color: #fff;
+        margin-left: 20px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+  .tu{
+    // border:1px solid red;
+  }
+}
