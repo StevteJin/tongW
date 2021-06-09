@@ -25,6 +25,8 @@ import Carp from "../../components/carp";
 import Wj from "../../components/wj";
 //今日园区人员巡更统计
 import Xg from "../../components/xg";
+//今日访客滞留统计
+import Zl from "../../components/zl";
 
 function Home() {
   useEffect(() => {}, []);
@@ -53,8 +55,9 @@ function Home() {
       {/* 今日园区违纪统计 */}
       {/* <Wj /> */}
       {/* 今日园区人员巡更统计 */}
-      <Xg />
-
+      {/* <Xg /> */}
+      {/* 今日访客滞留统计 */}
+      <Zl />
       {/* 页脚 */}
       {/* <Footer /> */}
     </div>
