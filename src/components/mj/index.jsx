@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import * as echarts from "echarts";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 
@@ -40,7 +41,52 @@ function Mj() {
     },
   ];
 
-  useEffect(() => {}, [top_count]);
+  let initChart = () => {
+    let element = document.getElementById("main");
+    let myChart = echarts.init(element);
+    let option = {
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        top: "5%",
+        left: "center",
+      },
+      series: [
+        {
+          name: "访问来源",
+          type: "pie",
+          radius: ["50%", "70%"],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: "center",
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: "40",
+              fontWeight: "bold",
+            },
+          },
+          labelLine: {
+            show: false,
+          },
+          data: [
+            { value: 1490 },
+            { value: 843 },
+            { value: 387 },
+            { value: 319 },
+          ],
+        },
+      ],
+    };
+    myChart.setOption(option);
+  };
+
+  useEffect(() => {
+    initChart();
+  }, [top_count]);
 
   return (
     <div className="mj_box">
@@ -59,7 +105,10 @@ function Mj() {
         })}
       </div>
       <div className="bread_box">
-        <div className="bg_box"></div>
+        <div className="bg_box">
+          {/* 饼图在这里 */}
+          <div id={"main"} className="tu" style={{ height: 130 }}></div>
+        </div>
         <div className="bg_right">
           {mjData2.map((item, index) => {
             return (
