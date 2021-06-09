@@ -17,6 +17,9 @@ import Ruyuan from "../../components/ruyuan";
 import Snap from "../../components/snap";
 //今日门禁人员统计
 import Mj from "../../components/mj";
+//车辆超速
+import Chaosu from "../../components/chaosu";
+
 function Home() {
   useEffect(() => {}, []);
   return (
@@ -36,7 +39,9 @@ function Home() {
       {/* 实时人脸抓拍列表 */}
       {/* <Snap /> */}
       {/* 今日门禁人员统计 */}
-      <Mj />
+      {/* <Mj /> */}
+      {/* 车辆超速 */}
+      <Chaosu />
     </div>
   );
 }
