@@ -103,13 +103,13 @@ function Snap() {
                 alt=""
               />
               <div className="bot_right">
-                <div>{item.name}</div>
-                <div>
-                  <img src="" alt="" />
+                <div className="bot_name">{item.name}</div>
+                <div className="bot_time bot_same">
+                  <img src={require("../../assets/tongwei/time.png").default} alt="" />
                   <span>{item.time}</span>
                 </div>
-                <div>
-                  <img src="" alt="" />
+                <div className="bot_where bot_same">
+                  <img src={require("../../assets/tongwei/where.png").default} alt="" />
                   <span>{item.where}</span>
                 </div>
               </div>

@@ -80,9 +80,37 @@
       .bot_tou {
         width: 56px;
         float: left;
+        margin-top: 12px;
+        margin-left: 10px;
       }
       .bot_right {
         float: left;
+        margin-left: 5px;
+        .bot_name {
+          color: #ff6015;
+          border: 1px solid #ff6015;
+          width: 60px;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          margin-top: 12px;
+          font-size: 14px;
+        }
+        .bot_same {
+          color: #c7daed;
+          img {
+            width: 20px;
+            margin-right: 5px;
+          }
+          span {
+            height: 18px;
+            line-height: 18px;
+          }
+        }
+        .bot_time {
+        }
+        .bot_where {
+        }
       }
     }
   }
