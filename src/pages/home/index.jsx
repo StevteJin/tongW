@@ -13,6 +13,8 @@ import Feifa from "../../components/feifa";
 import Fenlei from "../../components/fenlei";
 //今日入园人数统计
 import Ruyuan from "../../components/ruyuan";
+//实时人脸抓拍列表
+import Snap from "../../components/snap";
 
 function Home() {
   useEffect(() => {}, []);
@@ -29,7 +31,9 @@ function Home() {
       {/* 今日人员分类统计 */}
       {/* <Fenlei /> */}
       {/* 今日入园人数统计 */}
-      <Ruyuan />
+      {/* <Ruyuan /> */}
+      {/* 实时人脸抓拍列表 */}
+      <Snap />
       <Footer />
     </div>
   );

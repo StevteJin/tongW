@@ -1,0 +1,89 @@
+.snap_box {
+  width: 300px;
+  height: 700px;
+  background-image: url("../../assets/tongwei/snap_bg.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+  .snap_t {
+    background-image: url("../../assets/tongwei/fen_title.png");
+    background-size: 100% 100%;
+    width: 260px;
+    height: 30px;
+    margin-left: 20px;
+    span {
+      display: block;
+      float: left;
+    }
+    .snap_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .snap_title {
+      color: #fff;
+      margin-left: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+  .snap_con {
+    margin-left: 20px;
+    .snap_top {
+      width: 260px;
+      height: 110px;
+      background-image: url(../../assets/tongwei/snap_r.png);
+      background-size: 100% 100%;
+      margin-top: 10px;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-top: 10px;
+      .t_name {
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .t_con {
+        overflow: hidden;
+        .t_tou {
+          width: 56px;
+          float: left;
+          margin-top: 10px;
+        }
+        .t_right {
+          float: left;
+          margin-top: 3px;
+          div {
+            img {
+              width: 20px;
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+            span {
+              color: #c7daed;
+            }
+          }
+          .t_what {
+          }
+          .t_time {
+          }
+          .t_where {
+          }
+        }
+      }
+    }
+    .snap_bot {
+      width: 260px;
+      height: 80px;
+      background-image: url(../../assets/tongwei/snap_r1.png);
+      background-size: 100% 100%;
+      margin-top: 10px;
+      .bot_tou {
+        width: 56px;
+        float: left;
+      }
+      .bot_right {
+        float: left;
+      }
+    }
+  }
+}
