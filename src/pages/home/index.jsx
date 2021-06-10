@@ -35,7 +35,8 @@ import Wjtimes from "../../components/wjtimes";
 import Bj from "../../components/bj";
 //场景地图
 import Map from "../../components/map";
-
+//今日入园车辆统计
+import Cl from "../../components/cl";
 
 function Home() {
   useEffect(() => {}, []);
@@ -74,9 +75,11 @@ function Home() {
       {/* 实时报警列表 */}
       {/* <Bj /> */}
       {/* 地图 */}
-      <div className="mapstyle">
+      {/* <div className="mapstyle">
         <Map />
-      </div>
+      </div> */}
+      {/* 今日入园车辆统计 */}
+      <Cl />
       {/* 页脚 */}
       <Footer />
     </div>
