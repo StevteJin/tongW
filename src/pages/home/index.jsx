@@ -39,6 +39,8 @@ import Map from "../../components/map";
 import Cl from "../../components/cl";
 //车辆实时报警
 import Bj1 from "../../components/bj1";
+//今日报警类型统计
+import Lx from "../../components/lx";
 
 function Home() {
   useEffect(() => {}, []);
@@ -84,6 +86,8 @@ function Home() {
       {/* <Cl /> */}
       {/* 车辆实时报警 */}
       {/* <Bj1 /> */}
+      {/* 今日报警类型统计 */}
+      {/* <Lx /> */}
       {/* 页脚 */}
       <Footer />
     </div>
