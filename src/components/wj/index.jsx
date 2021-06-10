@@ -188,7 +188,7 @@ function Wj() {
   }, [top_count]);
 
   return (
-    <div className="mj_box">
+    <div className="mj_box9">
       <div className="mj_t">
         <span className="mj_close"></span>
         <span className="mj_title">{title}</span>

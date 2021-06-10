@@ -15,7 +15,7 @@ function Lx() {
   useEffect(() => {}, [top_count]);
 
   return (
-    <div className="fen_box">
+    <div className="fen_box1">
       <div className="fen_t">
         <span className="fen_close"></span>
         <span className="fen_title">{title}</span>

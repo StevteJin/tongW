@@ -140,7 +140,7 @@ function Xg() {
   }, [top_count]);
 
   return (
-    <div className="mj_box">
+    <div className="mj_box10">
       <div className="mj_t">
         <span className="mj_close"></span>
         <span className="mj_title">{title}</span>

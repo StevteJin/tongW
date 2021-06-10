@@ -1,0 +1,25 @@
+.perx {
+  .perx_top {
+      overflow: hidden;
+    .perx_left {
+      float: left;
+      margin-left: 50px;
+      .fl {
+        margin-top: 110px;
+      }
+      .ry {
+        margin-top: 20px;
+      }
+      .mj {
+        margin-top: 20px;
+      }
+    }
+    .perx_right {
+      float: right;
+      margin-right: 50px;
+      margin-top: 110px;
+    }
+  }
+  .perx_bot {
+  }
+}
