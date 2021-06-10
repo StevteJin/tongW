@@ -31,8 +31,8 @@ import Zl from "../../components/zl";
 import Tj from "../../components/tj";
 //今日人员违纪次数统计
 import Wjtimes from "../../components/wjtimes";
-
-
+//实时报警列表
+import Bj from "../../components/bj";
 
 function Home() {
   useEffect(() => {}, []);
@@ -67,7 +67,9 @@ function Home() {
       {/* 底部页脚三个统计图 */}
       {/* <Tj /> */}
       {/* 今日人员违纪次数统计 */}
-      <Wjtimes />
+      {/* <Wjtimes /> */}
+      {/* 实时报警列表 */}
+      <Bj />
       {/* 页脚 */}
       <Footer />
     </div>

@@ -1,0 +1,128 @@
+.bj_box {
+  width: 300px;
+  height: 450px;
+  background-image: url("../../assets/tongwei/snap_bg.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+  .bj_t {
+    background-image: url("../../assets/tongwei/fen_title.png");
+    background-size: 100% 100%;
+    width: 260px;
+    height: 30px;
+    margin-left: 20px;
+    span {
+      display: block;
+      float: left;
+    }
+    .bj_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .bj_title {
+      color: #fff;
+      margin-left: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+  .bj_con {
+    margin-left: 20px;
+    .bj_top {
+      width: 260px;
+      height: 110px;
+      background-image: url(../../assets/tongwei/bj_bg.png);
+      background-size: 100% 100%;
+      box-sizing: border-box;
+      padding-left: 10px;
+      margin-top: 10px;
+      .t_name {
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: right;
+        padding-right: 10px;
+        background-image: url(../../assets/tongwei/bj_title1.png);
+      }
+      .t_mo {
+        background-image: url(../../assets/tongwei/bj_title.png);
+      }
+      .t_con {
+        overflow: hidden;
+        .t_tou {
+          width: 56px;
+          float: left;
+          margin-top: 10px;
+        }
+        .t_right {
+          float: left;
+          margin-top: 3px;
+          div {
+            img {
+              width: 20px;
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+            span {
+              color: #c7daed;
+            }
+          }
+          .t_what {
+            .green {
+              color: #32ffcc;
+            }
+            .red {
+              color: #ffa832;
+            }
+          }
+          .t_time {
+          }
+          .t_where {
+          }
+        }
+      }
+    }
+    .bj_bot {
+      width: 260px;
+      height: 80px;
+      // background-image: url(../../assets/tongwei/bj_r1.png);
+      background-size: 100% 100%;
+      margin-top: 10px;
+      .bot_tou {
+        width: 56px;
+        float: left;
+        margin-top: 12px;
+        margin-left: 10px;
+      }
+      .bot_right {
+        float: left;
+        margin-left: 5px;
+        .bot_name {
+          color: #ff6015;
+          border: 1px solid #ff6015;
+          width: 60px;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          margin-top: 12px;
+          font-size: 14px;
+        }
+        .bot_same {
+          color: #c7daed;
+          img {
+            width: 20px;
+            margin-right: 5px;
+          }
+          span {
+            height: 18px;
+            line-height: 18px;
+          }
+        }
+        .bot_time {
+        }
+        .bot_where {
+        }
+      }
+    }
+  }
+}
