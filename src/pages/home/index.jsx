@@ -33,6 +33,9 @@ import Tj from "../../components/tj";
 import Wjtimes from "../../components/wjtimes";
 //实时报警列表
 import Bj from "../../components/bj";
+//场景地图
+import Map from "../../components/map";
+
 
 function Home() {
   useEffect(() => {}, []);
@@ -69,7 +72,11 @@ function Home() {
       {/* 今日人员违纪次数统计 */}
       {/* <Wjtimes /> */}
       {/* 实时报警列表 */}
-      <Bj />
+      {/* <Bj /> */}
+      {/* 地图 */}
+      <div className="mapstyle">
+        <Map />
+      </div>
       {/* 页脚 */}
       <Footer />
     </div>
