@@ -1,4 +1,12 @@
-import React, { useEffect } from "react";
+import React, {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  lazy,
+  Suspense,
+} from "react";
+import { useMappedState, useDispatch } from "redux-react-hook";
+
 import "./style.scss";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
@@ -43,7 +51,25 @@ import Bj1 from "../../components/bj1";
 import Lx from "../../components/lx";
 
 function Home() {
+  const dispatch = useDispatch();
+  const active_name = useMappedState((state) => state.nav_active);
+  console.log('我是哪一个',active_name)
+  const [ContentPage, setContentPage] = useState("div"); //模块组件容器
+  const closePage = () => {
+    dispatch({ type: "handleTop", bot_index: "" });
+    dispatch({ type: "changeActive", nav_active: "" });
+  };
+  // 切换模块
+  useLayoutEffect(() => {
+    if (active_name !== "") {
+      setContentPage(
+        lazy(() => import(`../../components/module/${active_name}`))
+      );
+    }
+  }, [active_name]);
+
   useEffect(() => {}, []);
+
   return (
     <div className="home">
       <Header />
@@ -79,9 +105,18 @@ function Home() {
       {/* 实时报警列表 */}
       {/* <Bj /> */}
       {/* 地图 */}
-      {/* <div className="mapstyle">
+      <div className="content">
+        {active_name !== "" && (
+          <Suspense fallback={<div>Loading</div>}>
+            <div className="popup">
+              <ContentPage close={closePage} />
+            </div>
+          </Suspense>
+        )}
+      </div>
+      <div className="mapstyle">
         <Map />
-      </div> */}
+      </div>
       {/* 今日入园车辆统计 */}
       {/* <Cl /> */}
       {/* 车辆实时报警 */}

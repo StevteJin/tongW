@@ -1,0 +1,44 @@
+展厅大屏：
+公共功能点列表：
+	doorDevInfo(门禁设备), videoDevInfo(视频设备), entranceDevInfo(出入口设备), faceSnapDevInfo(人脸抓拍机), arDevInfo(设备)
+	bayonetDevInfo(卡口测试), limHignDevInfo(限高点位), noManCarDevInfo(无人叉车), singleSoldierInfo(单兵设备), heatMapInfo(热力图),
+	实时的报警信息---图洋提供接口，海康推送
+	重点区域/危险区域---图洋控制
+type=1, 园区智慧人员管控-园区总览：
+	功能点列表：
+	parkVisitorTotal(今日数据统计-园区访客量), warnBehaviorTotal(今日数据统计-违纪行为), parkStrangerTotal(今日数据统计-园区陌生人), faceCaptureTotal(今日数据统计-人脸抓拍量)
+
+type=2, 园区智慧人员管控-园区感知：
+	功能点列表：
+	personSortCount(人员分类统计), parkEnterCount(今日入园人员统计), doorFaceCount(今日门禁人员统计), faceCaptureList(实时人员抓拍列表), 
+	faceCaptureCount(近24H人脸抓拍统计), parkVisitorCount(近24H园区访客统计), parkTrafficCount(近24H园区人流量统计)
+type=3, 园区智慧人员管控-智慧管理：
+	功能点列表：
+	warnBehaviorCount(今日园区违纪行为统计), personErrorCount(今日人员违纪行为统计), visitorDelayCount(今日访客滞留统计)，
+	abnormalIOCount(今日人员异常出入统计), personPatrolCount(今日园区人员巡更统计), personAlarmCount(今日报警类型统计), personRealTimeAlramCount(实时报警列表)
+
+type=4, 园区智慧物资管控-实时车辆：
+	功能点列表：
+	carEnterCount(今日入园车辆统计), parkingSpaceCount(今日停车位统计), carNearly24Count(近24H入园车辆统计), ioDistribution(今日出入口通行分布), noManCarCount(今日无人叉车统计)
+
+type=5, 园区智慧物资管控-厂务管理：
+	功能点列表：
+	waterUseCount(近24H园区同水量统计), elecUseCount(近24H园区同电量统计), dirtyWaterOutCount(近24H园区污水排放量), 厂务数据还有一些功能点待补充....
+
+type=6, 园区智慧物资管控-园区安防：
+	功能点列表：
+	devManageInfo(今日设备在线情况统计), carAlarmCount(今日报警类型统计), carRealTimeAlramCount(实时报警统计)
+
+type=A, 视频/AR点位弹窗：
+
+type=B, 门禁点位弹窗：
+
+type=C, 出入口点位弹窗：
+
+type=D, 人脸抓拍点位弹窗：
+
+type=E, 卡口测速弹窗：
+
+type值说明：数字时用于控制大屏的切换，字母时用于控制弹窗
+
+门岗：
