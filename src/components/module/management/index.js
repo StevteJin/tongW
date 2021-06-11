@@ -12,6 +12,8 @@ import Xg from "../../xg";
 import Bj from "../../bj";
 //今日报警类型统计(人的)
 import Plx from "../../plx";
+//今日人员异常出入统计
+import Yc from "../../yc";
 
 import "./style.scss";
 export default function Management() {
@@ -27,6 +29,9 @@ export default function Management() {
           </div>
           <div className="zl">
             <Zl />
+          </div>
+          <div className="yc">
+            <Yc />
           </div>
         </div>
         <div className="perx_right">

@@ -51,6 +51,9 @@ import Bj1 from "../../components/bj1";
 import Lx from "../../components/lx";
 //今日报警类型统计(人的)
 import Plx from "../../components/plx";
+//今日人员异常出入统计
+
+
 
 function Home() {
   const dispatch = useDispatch();
