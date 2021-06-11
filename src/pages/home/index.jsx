@@ -49,7 +49,8 @@ import Cl from "../../components/cl";
 import Bj1 from "../../components/bj1";
 //今日报警类型统计(车)
 import Lx from "../../components/lx";
-
+//今日报警类型统计(人的)
+import Plx from "../../components/plx";
 
 function Home() {
   const dispatch = useDispatch();
@@ -122,8 +123,10 @@ function Home() {
       {/* <Cl /> */}
       {/* 车辆实时报警 */}
       {/* <Bj1 /> */}
-      {/* 今日报警类型统计 */}
+      {/* 今日报警类型统计(车的) */}
       {/* <Lx /> */}
+      {/* 今日报警类型统计(人的) */}
+      {/* <Plx /> */}
       {/* 页脚 */}
       <Footer />
     </div>
