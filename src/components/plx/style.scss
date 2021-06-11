@@ -1,7 +1,8 @@
 .fen_box2 {
   width: 300px;
-  height: 120px;
-  background-image: url("../../assets/tongwei/fen.png");
+  height: 550px;
+  margin-top: 10px;
+  background-image: url("../../assets/tongwei/plx_bg.png");
   background-size: 100% 100%;
   padding-top: 20px;
   .fen_t {
@@ -26,5 +27,27 @@
       font-weight: bold;
     }
   }
-  
+  .plx_top {
+    overflow: hidden;
+    width: 260px;
+    margin-left: 20px;
+    margin-top: 10px;
+    .plx_left {
+      float: left;
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+      span {
+        color: #fff;
+      }
+    }
+    .plx_right {
+      float: right;
+    }
+  }
+  .plx_bot {
+    width: 260px;
+    margin-left: 20px;
+  }
 }
