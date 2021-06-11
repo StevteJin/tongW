@@ -18,14 +18,6 @@ function Bj() {
     {
       name: "未戴口罩",
       pic: "tou",
-      what: "未处理",
-      time: "2021-09-09 19:09:32",
-      where: "园区西门1门BH19201",
-      isHere: "yes",
-    },
-    {
-      name: "未戴口罩",
-      pic: "tou",
       what: "已处理",
       time: "2021-09-09 19:09:32",
       where: "园区西门1门BH19201",
@@ -36,7 +28,7 @@ function Bj() {
   useEffect(() => {}, [top_count]);
 
   return (
-    <div className="bj_box">
+    <div className="bj_boxx">
       <div className="bj_t">
         <span className="bj_close"></span>
         <span className="bj_title">{title}</span>

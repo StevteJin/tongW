@@ -10,6 +10,8 @@ import Zl from "../../zl";
 import Xg from "../../xg";
 //实时报警列表
 import Bj from "../../bj";
+//今日报警类型统计(人的)
+import Plx from "../../plx";
 
 import "./style.scss";
 export default function Management() {
@@ -30,6 +32,9 @@ export default function Management() {
         <div className="perx_right">
           <div className="xg">
             <Xg />
+          </div>
+          <div className="plx">
+            <Plx />
           </div>
           <div className="bj">
             <Bj />

@@ -37,7 +37,7 @@ function Xg() {
   ];
 
   let initChart = () => {
-    let element = document.getElementById("main");
+    let element = document.getElementById("mainx");
     let myChart = echarts.init(element);
     //环形图参数
     let option = {
@@ -148,7 +148,7 @@ function Xg() {
       <div className="bread_box">
         <div className="bg_box">
           {/* 饼图在这里 */}
-          <div id={"main"} className="tu" style={{ height: 130 }}></div>
+          <div id={"mainx"} className="tu" style={{ height: 130 }}></div>
           <div className="bread_title">
             <div className="bread_t">55</div>
             <div className="bread_b">任务总数</div>
