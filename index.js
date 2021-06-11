@@ -22,7 +22,8 @@ ReactDOM.render(
   <StoreContext.Provider value={store}>
     <Router>
       <Switch>
-        <Route path="/home" exact component={Home} />
+        {/* 人：person  物资:things */}
+        <Route path="/home/:title" exact component={Home} />
         <Redirect from="/" exact to="/home" />
       </Switch>
     </Router>
