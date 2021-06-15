@@ -39,7 +39,7 @@
     }
   }
   .check_box {
-    width: 780px;
+    width: 860px;
     // height: 80px;
     padding-top: 10px;
     padding-bottom: 15px;
@@ -52,7 +52,7 @@
     ul {
       transform: scaleY(-1);
       overflow: hidden;
-      width: 780px;
+      width: 860px;
       padding-left: 20px;
       padding-right: 20px;
       li {
@@ -62,13 +62,14 @@
         padding-left: 20px;
         box-sizing: border-box;
         margin-bottom: 10px;
+        overflow: hidden;
         span {
           color: #c7daed;
         }
         .check_content {
           background-color: rgba(13, 23, 44, 0.3);
           display: inline-block;
-          width: 120px;
+          width: 160px;
           padding-left: 10px;
           padding-right: 10px;
           padding-top: 5px;
