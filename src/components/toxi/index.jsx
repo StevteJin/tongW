@@ -11,7 +11,6 @@ function Toxi() {
     { name: "出入口1", value: "18", pic: "plx_h" },
     { name: "出入口2", value: "14", pic: "plx_l" },
     { name: "出入口3", value: "11", pic: "plx_l" },
-    { name: "出入口4", value: "11", pic: "plx_l" }
   ];
 
   useEffect(() => {}, [top_count]);

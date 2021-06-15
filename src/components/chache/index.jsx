@@ -6,7 +6,7 @@ import { useDispatch, useMappedState } from "redux-react-hook";
 function Chache() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
-  const title = "今日园区人员巡更统计";
+  const title = "今日无人叉车统计";
   const mjData1 = [
     {
       name: "门禁刷脸总数",
@@ -20,20 +20,20 @@ function Chache() {
 
   const mjData2 = [
     {
-      name: "完成数",
+      name: "正常运行",
       value: "28",
       classCall: "call1",
     },
     {
-      name: "待完成数",
+      name: "正在充电",
       value: "25",
       classCall: "call2",
     },
     {
-      name: "异常数",
+      name: "故障调试",
       value: "2",
       classCall: "call3",
-    }
+    },
   ];
 
   let initChart = () => {
@@ -102,7 +102,7 @@ function Chache() {
             },
           ],
           global: false, // 缺省为 false
-        }
+        },
       ],
       series: [
         {
@@ -124,11 +124,7 @@ function Chache() {
           labelLine: {
             show: false,
           },
-          data: [
-            { value: 28 },
-            { value: 25 },
-            { value: 2 }
-          ],
+          data: [{ value: 28 }, { value: 25 }, { value: 2 }],
         },
       ],
     };
@@ -140,7 +136,7 @@ function Chache() {
   }, [top_count]);
 
   return (
-    <div className="mj_box10">
+    <div className="chache">
       <div className="mj_t">
         <span className="mj_close"></span>
         <span className="mj_title">{title}</span>
@@ -151,7 +147,7 @@ function Chache() {
           <div id={"mainx"} className="tu" style={{ height: 130 }}></div>
           <div className="bread_title">
             <div className="bread_t">55</div>
-            <div className="bread_b">任务总数</div>
+            <div className="bread_b">叉车总数</div>
           </div>
         </div>
         <div className="bg_right">
@@ -162,6 +158,7 @@ function Chache() {
                   <div className={item.classCall}></div>
                   <span className="huan_name">{item.name}</span>
                 </div>
+                <br />
                 <div className="bg_bot">{item.value}</div>
               </div>
             );
