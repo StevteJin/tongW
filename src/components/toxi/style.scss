@@ -1,0 +1,53 @@
+.toxi {
+  width: 300px;
+  height: 240px;
+  margin-top: 10px;
+  background-image: url("../../assets/tongwei/plx_bg.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+  .fen_t {
+    background-image: url(../../assets/tongwei/fen_title.png);
+    background-size: 100% 100%;
+    width: 260px;
+    height: 30px;
+    margin-left: 20px;
+    span {
+      display: block;
+      float: left;
+    }
+    .fen_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .fen_title {
+      color: #fff;
+      margin-left: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+  .plx_top {
+    overflow: hidden;
+    width: 260px;
+    margin-left: 20px;
+    margin-top: 10px;
+    .plx_left {
+      float: left;
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+      span {
+        color: #fff;
+      }
+    }
+    .plx_right {
+      float: right;
+    }
+  }
+  .plx_bot {
+    width: 260px;
+    margin-left: 20px;
+  }
+}

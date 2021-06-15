@@ -1,0 +1,37 @@
+.yc_box {
+  width: 300px;
+  height: 230px;
+  background-image: url("../../assets/tongwei/wjtimes_bg.png");
+  background-size: 100% 100%;
+  padding-top: 20px;
+  margin-top: 10px;
+  .yc_t {
+    background-image: url("../../assets/tongwei/fen_title.png");
+    background-size: 100% 100%;
+    width: 260px;
+    height: 30px;
+    margin-left: 20px;
+
+    span {
+      display: block;
+      float: left;
+    }
+
+    .yc_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .yc_title {
+      color: #fff;
+      margin-left: 20px;
+      line-height: 30px;
+      font-weight: bold;
+    }
+  }
+  .yc_tu {
+    width: 260px;
+    margin-left: 20px;
+  }
+}

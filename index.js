@@ -24,7 +24,7 @@ ReactDOM.render(
       <Switch>
         {/* 人：person  物资:things */}
         <Route path="/home/:title" exact component={Home} />
-        <Redirect from="/" exact to="/home" />
+        <Redirect from="/" exact to="/home/person" />
       </Switch>
     </Router>
   </StoreContext.Provider>,

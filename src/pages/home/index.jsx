@@ -52,13 +52,19 @@ import Lx from "../../components/lx";
 //今日报警类型统计(人的)
 import Plx from "../../components/plx";
 //今日人员异常出入统计
+import Yc from "../../components/yc";
+//今日停车位统计
 
-
+//近24小时入园车辆统计
+import Rucar from "../../components/rucar";
+//今日出入口通行分布
+import ToXi from "../../components/toxi";
+//今日无人叉车统计
 
 function Home() {
   const dispatch = useDispatch();
   const active_name = useMappedState((state) => state.nav_active);
-  console.log('我是哪一个',active_name)
+  console.log("我是哪一个", active_name);
   const [ContentPage, setContentPage] = useState("div"); //模块组件容器
   const closePage = () => {
     dispatch({ type: "handleTop", bot_index: "" });
@@ -130,6 +136,8 @@ function Home() {
       {/* <Lx /> */}
       {/* 今日报警类型统计(人的) */}
       {/* <Plx /> */}
+      {/* 今日人员异常出入统计 */}
+      {/* <Yc /> */}
       {/* 页脚 */}
       <Footer />
     </div>

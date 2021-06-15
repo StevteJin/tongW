@@ -12,7 +12,7 @@ import Xg from "../../xg";
 import Bj from "../../bj";
 //今日报警类型统计(人的)
 import Plx from "../../plx";
-//今日人员异常出入统计
+//今日人员异常出入统计  
 import Yc from "../../yc";
 
 import "./style.scss";

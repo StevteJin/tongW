@@ -40,7 +40,7 @@ function Footer() {
     },
     {
       key: 6,
-      name: "security",
+      name: "sec",
       value: "园区安防",
     },
   ];

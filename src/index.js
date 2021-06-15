@@ -19,7 +19,7 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route path="/home/:title" component={Home} />
-        <Redirect from='/' exact to='/home'/>
+        <Redirect from='/' exact to='/home/person'/>
       </Switch>
     </Router>
   </StoreContext.Provider>,
