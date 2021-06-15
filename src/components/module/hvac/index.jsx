@@ -14,26 +14,10 @@ import Chache from "../../chache";
 import Bowen from "../../bowen"
 
 import "./style.scss";
-export default function Cars() {
+export default function Hvac() {
   return (
     <div>
-      <div className="ru_car_box">
-        <div className="ru">
-          <Cl />
-        </div>
-        <div className="ru">
-          <Bowen />
-        </div>
-        <div className="ru">
-          <Rucar />
-        </div>
-        <div className="ru">
-          <Toxi />
-        </div>
-        <div className="ru">
-          <Chache />
-        </div>
-      </div>
+      厂务管理
     </div>
   );
 }
