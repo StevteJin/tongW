@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Checkbox } from "antd";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
+import { useLocation } from "react-router-dom";
 
 function Header() {
   const [timeNow, setTime] = useState();
   const top_count = useMappedState((state) => state.top_navigation_count);
+  const { pathname } = useLocation(); //存储当前路由地址`
+  console.log("当前路由", pathname);
   const choiceName = [
     {
       key: 1,
@@ -71,7 +74,7 @@ function Header() {
 
   useEffect(() => {
     showtime();
-  }, [top_count]);
+  }, [pathname, top_count]);
 
   function getWeekDate() {
     var now = new Date();
@@ -137,7 +140,9 @@ function Header() {
   return (
     <div className="header">
       <div className="header_bg">
-        <div className="headerTitle">园区智慧人员管控</div>
+        <div className="headerTitle">
+          {pathname == "/home/person" ? "园区智慧人员管控" : "园区智慧物资管控"}
+        </div>
         <div className="header_time_user">
           <div className="time">
             <span>{timeNow}</span>
