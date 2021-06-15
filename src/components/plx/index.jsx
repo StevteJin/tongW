@@ -41,7 +41,27 @@ function Plx() {
                 <div className="plx_right">{item.value}</div>
               </div>
               <div className="plx_bot">
-                <Progress percent={30} showInfo={false} />
+                {item.pic == "plx_h" ? (
+                  <Progress
+                    percent={30}
+                    strokeColor={{
+                      "40%": "#CABC98",
+                      "100%": "#E2CC99",
+                    }}
+                    strokeWidth={4}
+                    showInfo={false}
+                  />
+                ) : (
+                  <Progress
+                    percent={20}
+                    strokeColor={{
+                      "40%": "#73A8FF",
+                      "100%": "#5797FF",
+                    }}
+                    strokeWidth={4}
+                    showInfo={false}
+                  />
+                )}
               </div>
             </div>
           );
