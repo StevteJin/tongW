@@ -7,11 +7,10 @@ function Tj() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
   const title = "统计";
-
+  //近24小时人脸抓拍统计
   let initChart1 = () => {
     let element = document.getElementById("main1");
     let myChart = echarts.init(element);
-    //环形图参数
     let option = {
       tooltip: {
         trigger: "axis",
@@ -26,6 +25,15 @@ function Tj() {
       xAxis: {
         type: "category",
         boundaryGap: false,
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
         data: [
           "00:00",
           "03:00",
@@ -40,6 +48,15 @@ function Tj() {
       },
       yAxis: {
         type: "value",
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
       },
       series: [
         {
@@ -59,17 +76,44 @@ function Tj() {
     myChart.setOption(option);
   };
 
+  //近24H园区访客统计
   let initChart2 = () => {
     let element = document.getElementById("main2");
     let myChart = echarts.init(element);
-    //环形图参数
     let option = {
       xAxis: {
         type: "category",
         data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
       },
       yAxis: {
         type: "value",
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
+      },
+      grid: {
+        top: "10%",
+
+        left: "10%",
+
+        right: "10%",
+
+        bottom: "10%",
       },
       series: [
         {
@@ -81,18 +125,45 @@ function Tj() {
     myChart.setOption(option);
   };
 
+  //近24H园区人流量统计
   let initChart3 = () => {
     let element = document.getElementById("main3");
     let myChart = echarts.init(element);
-    //环形图参数
     let option = {
       xAxis: {
         type: "category",
         boundaryGap: false,
         data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
       },
       yAxis: {
         type: "value",
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
+      },
+      grid: {
+        top: "10%",
+
+        left: "10%",
+
+        right: "10%",
+
+        bottom: "10%",
       },
       series: [
         {
