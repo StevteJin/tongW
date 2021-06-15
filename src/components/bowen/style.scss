@@ -1,13 +1,13 @@
-.mj_box10 {
-  width: 300px;
-  height: 210px;
+.bowen {
+  width: 240px;
+  height: 240px;
   background-image: url("../../assets/tongwei/mj_bg.png");
   background-size: 100% 100%;
   padding-top: 20px;
   .mj_t {
     background-image: url(../../assets/tongwei/fen_title.png);
     background-size: 100% 100%;
-    width: 260px;
+    width: 200px;
     height: 30px;
     margin-left: 20px;
     span {
@@ -58,16 +58,17 @@
     box-sizing: border-box;
     overflow: hidden;
     .bg_box {
-      background-image: url(../../assets/tongwei/mj_b.png);
+      background-image: url(../../assets/tongwei/bowen_bg.png);
       background-size: 100% 100%;
-      width: 124px;
-      height: 124px;
+      width: 120px;
+      height: 120px;
       overflow: hidden;
-      margin-left: 20px;
-      float: left;
+      margin-left: 60px;
       position: relative;
       .tu {
-        margin-top: -5px;
+        background-image: url(../../assets/tongwei/bowen_top.png);
+        background-size: 100% 100%;
+        // margin-top:10px;
       }
       .bread_title {
         position: absolute;
@@ -81,61 +82,21 @@
         .bread_b {
           color: #fff;
           font-size: 12px;
+          margin-top: 30px;
         }
       }
     }
-    .bg_right {
-      float: left;
-      margin-left: 10px;
-      width: 140px;
-      margin-top: 30px;
-      .bg_r_box {
-        float: left;
-        margin-right: 10px;
-        .bg_top {
-          overflow: hidden;
-          float: left;
-          div {
-            width: 10px;
-            height: 10px;
-            background-image: linear-gradient(-16deg, #ffd148 12%, #ffa334 88%);
-            border-radius: 50%;
-            float: left;
-            margin-top: 6px;
-            margin-right: 10px;
-          }
-          div:after {
-            content: "";
-            display: block;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background-color: rgb(42, 58, 81);
-            position: relative;
-            top: 3px;
-            left: 3px;
-          }
-          .call1 {
-            background-image: linear-gradient(0deg, #00faa8 15%, #24ffe4 88%);
-          }
-          .call2 {
-            background-image: linear-gradient(-23deg, #46b8ff 15%, #136eff 68%);
-          }
-          .call3 {
-            background-image: linear-gradient(-16deg, #ffd148 12%, #ffa334 88%);
-          }
-          .huan_name {
-            float: left;
-            color: #c7daed;
-          }
+    .bo_bt {
+      display: flex;
+      text-align: center;
+      .bo {
+        flex: 1;
+        .bo_name {
+          color: #c7daed;
         }
-        .bg_bot {
+        .bo_value {
           color: #fff;
           font-size: 16px;
-          font-weight: bold;
-          margin-left: 18px;
-          float: left;
-          line-height: 22px;
         }
       }
     }

@@ -8,34 +8,16 @@ import { useDispatch, useMappedState } from "redux-react-hook";
 function Bowen() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
-  const title = "今日园区人员巡更统计";
-  const mjData1 = [
+  const title = "今日停车位统计";
+  const bwData = [
     {
-      name: "门禁刷脸总数",
-      value: "4,143",
+      name: "车位总数",
+      value: 567,
     },
     {
-      name: "门禁点刷脸均数",
-      value: 38,
+      name: "剩余车位数",
+      value: 135,
     },
-  ];
-
-  const mjData2 = [
-    {
-      name: "完成数",
-      value: "28",
-      classCall: "call1",
-    },
-    {
-      name: "待完成数",
-      value: "25",
-      classCall: "call2",
-    },
-    {
-      name: "异常数",
-      value: "2",
-      classCall: "call3",
-    }
   ];
 
   let initChart = () => {
@@ -60,8 +42,8 @@ function Bowen() {
         {
           type: "liquidFill",
           name: "", // 系列名称，用于tooltip的显示，legend 的图例筛选
-          radius: "62%", // 水球图的半径
-          center: ["50%", "45%"], // 水球图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标
+          radius: "70%", // 水球图的半径
+          center: ["50%", "50%"], // 水球图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标
           // 水填充图的形状 circle 默认圆形  rect 圆角矩形  triangle 三角形
           // diamond 菱形  pin 水滴状 arrow 箭头状  还可以是svg的path
           shape: "circle",
@@ -74,18 +56,18 @@ function Bowen() {
               opacity: 1, // 边框的透明度   默认为 1
               borderWidth: 1, // 边框的宽度
               shadowBlur: 1, // 边框的阴影范围 一旦设置了内外都有阴影
-              shadowColor: "#8BCBD0", // 边框的阴影颜色,
-              borderColor: "#8BCBD0", // 边框颜色
+              shadowColor: "#0052FA", // 边框的阴影颜色,
+              borderColor: "#0052FA", // 边框颜色
             },
           },
           // 图形样式
           itemStyle: {
-            color: "#FFDA02", // 水球显示的背景颜色
+            color: "#0052FA", // 水球显示的背景颜色
             opacity: 1, // 波浪的透明度
             shadowBlur: 10, // 波浪的阴影范围
           },
           backgroundStyle: {
-            color: "#FFD60E", // 水球未到的背景颜色
+            color: "#006AFD", // 水球未到的背景颜色
             opacity: 0.2,
           },
           // 图形的高亮样式
@@ -113,7 +95,7 @@ function Bowen() {
   }, [top_count]);
 
   return (
-    <div className="mj_box10">
+    <div className="bowen">
       <div className="mj_t">
         <span className="mj_close"></span>
         <span className="mj_title">{title}</span>
@@ -121,21 +103,17 @@ function Bowen() {
       <div className="bread_box">
         <div className="bg_box">
           {/* 饼图在这里 */}
-          <div id={"mainb"} className="tu" style={{ height: 130 }}></div>
+          <div id={"mainb"} className="tu" style={{ height: 120 }}></div>
           <div className="bread_title">
-            <div className="bread_t">55</div>
             <div className="bread_b">任务总数</div>
           </div>
         </div>
-        <div className="bg_right">
-          {mjData2.map((item, index) => {
+        <div className="bo_bt">
+          {bwData.map((item, index) => {
             return (
-              <div key={index} className="bg_r_box">
-                <div className="bg_top">
-                  <div className={item.classCall}></div>
-                  <span className="huan_name">{item.name}</span>
-                </div>
-                <div className="bg_bot">{item.value}</div>
+              <div key={index} className="bo">
+                <div className="bo_name">{item.name}</div>
+                <div className="bo_value">{item.value}</div>
               </div>
             );
           })}
