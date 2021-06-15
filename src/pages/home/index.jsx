@@ -60,6 +60,7 @@ import Rucar from "../../components/rucar";
 //今日出入口通行分布
 import ToXi from "../../components/toxi";
 //今日无人叉车统计
+import Chache from "../../components/chache";
 
 function Home() {
   const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import Rucar from "../../rucar";
 //今日出入口通行分布
 import Toxi from "../../toxi";
 //今日无人叉车统计
-import Chache from "../../Chache";
+import Chache from "../../chache";
 
 import "./style.scss";
 export default function Cars() {
