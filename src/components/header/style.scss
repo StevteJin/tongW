@@ -13,7 +13,7 @@
   position: relative;
   left: 0px;
   top: 0px;
-  z-index:100;
+  z-index: 300;
   .header_bg {
     width: 100%;
     height: 90px;
@@ -39,7 +39,7 @@
     }
   }
   .check_box {
-    width: 40%;
+    width: 780px;
     // height: 80px;
     padding-top: 10px;
     padding-bottom: 15px;
@@ -52,22 +52,23 @@
     ul {
       transform: scaleY(-1);
       overflow: hidden;
-      width: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
+      width: 780px;
+      padding-left: 20px;
+      padding-right: 20px;
       li {
         // float: left;
         display: inline-block;
         width: 20%;
+        padding-left: 20px;
         box-sizing: border-box;
         margin-bottom: 10px;
         span {
-          color: #b8c6d5;
+          color: #c7daed;
         }
         .check_content {
           background-color: rgba(13, 23, 44, 0.3);
           display: inline-block;
-          width: 110px;
+          width: 120px;
           padding-left: 10px;
           padding-right: 10px;
           padding-top: 5px;
@@ -76,7 +77,36 @@
       }
       .icon {
         width: 20px;
+        margin-right: 5px;
       }
     }
   }
+}
+
+//antd修改复选框选中效果
+.ant-checkbox {
+  background-image: url(../../assets/tongwei/nocheck.png);
+  background-size: 100% 100%;
+}
+.ant-checkbox * {
+  border: 0px !important;
+}
+.ant-checkbox-inner {
+  background-color: transparent;
+  border: 0px;
+}
+
+.ant-checkbox-checked {
+  background-image: url(../../assets/tongwei/check.png);
+  background-size: 100% 100%;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: transparent;
+  border: 0px;
+}
+.ant-checkbox-checked::after {
+  border: 0px;
+}
+.ant-checkbox-checked .ant-checkbox-inner::after {
+  border: 0px;
 }
