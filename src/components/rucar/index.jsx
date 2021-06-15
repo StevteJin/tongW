@@ -15,16 +15,27 @@ function Rucar() {
       tooltip: {
         trigger: "axis",
       },
-
       grid: {
-        left: "3%",
-        right: "4%",
-        bottom: "3%",
-        containLabel: true,
+        top: "10%",
+
+        left: "10%",
+
+        right: "10%",
+
+        bottom: "20%",
       },
       xAxis: {
         type: "category",
         boundaryGap: false,
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
         data: [
           "00:00",
           "03:00",
@@ -39,6 +50,15 @@ function Rucar() {
       },
       yAxis: {
         type: "value",
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
       },
       series: [
         {
@@ -63,7 +83,7 @@ function Rucar() {
   }, [top_count]);
 
   return (
-    <div className="yc_box">
+    <div className="rucar">
       <div className="yc_t">
         <span className="yc_close"></span>
         <span className="yc_title">{title}</span>
