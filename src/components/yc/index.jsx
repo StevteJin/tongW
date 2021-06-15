@@ -10,20 +10,30 @@ function Yc() {
   let initCharty = () => {
     let element = document.getElementById("mainy");
     let myChart = echarts.init(element);
-    //环形图参数
     let option = {
       tooltip: {
         trigger: "axis",
       },
-
       grid: {
-        left: "3%",
-        right: "4%",
-        bottom: "3%",
-        containLabel: true,
+        top: "10%",
+
+        left: "0",
+
+        right: "0",
+
+        bottom: "15%",
       },
       xAxis: {
         type: "category",
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
         boundaryGap: false,
         data: [
           "00:00",
@@ -39,6 +49,15 @@ function Yc() {
       },
       yAxis: {
         type: "value",
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        }
       },
       series: [
         {
