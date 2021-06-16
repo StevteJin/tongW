@@ -11,15 +11,30 @@ import Toxi from "../../toxi";
 //今日无人叉车统计
 import Chache from "../../chache";
 //今日停车位统计（波纹图）
-import Bowen from "../../bowen"
+import Bowen from "../../bowen";
 //今日设备在线情况
-import Online from "../../online"
+import Online from "../../online";
+//今日报警类型统计(车)
+import Lx from "../../lx";
+
+//车辆实时报警
+import Bj1 from "../../bj1";
 
 import "./style.scss";
 export default function Sec() {
   return (
     <div>
-      <Online />
+      <div className="sec_left">
+        <Online />
+      </div>
+      <div className="sec_right">
+        <div className="lx">
+          <Lx />
+        </div>
+        <div className="bj1">
+          <Bj1 />
+        </div>
+      </div>
     </div>
   );
 }

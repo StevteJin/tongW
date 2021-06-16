@@ -1,9 +1,11 @@
-.ru_car_box {
-  position: absolute;
-  left: 50px;
-  bottom: 100px;
-  .ru {
-    float: left;
-    margin-right: 10px;
+.sec_left {
+  float: left;
+}
+.sec_right {
+  float: right;
+  margin-top: 110px;
+  margin-right: 50px;
+  .lx{
+    margin-bottom:20px;
   }
 }
