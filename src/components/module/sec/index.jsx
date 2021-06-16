@@ -12,12 +12,14 @@ import Toxi from "../../toxi";
 import Chache from "../../chache";
 //今日停车位统计（波纹图）
 import Bowen from "../../bowen"
+//今日设备在线情况
+import Online from "../../online"
 
 import "./style.scss";
 export default function Sec() {
   return (
     <div>
-      预警信息
+      <Online />
     </div>
   );
 }
