@@ -13,6 +13,12 @@ const constant = {
   //通威
   //登录
   twGetLogin: `${testLastUrl}sys/user/login`,
+  
+  //查询基础配置
+  twGetList: `${testLastUrl}sys/config/list`, 
+
+
+
 
   //登录
   getLogin: `${ApiUrl}/sys/user/list`,

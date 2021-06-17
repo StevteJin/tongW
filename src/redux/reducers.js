@@ -3,6 +3,9 @@ export default function reducer(state, action) {
     case "userData": {
       return { ...state, userData: action.userData };
     }
+    case "configList": {
+      return { ...state, userData: action.configList };
+    }
     case "handleTop": {
       return { ...state, bot_index: action.bot_index };
     }
