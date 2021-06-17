@@ -1,4 +1,8 @@
 import $ from 'jquery';
+
+let testUrl;//李晓飞地图测试接口
+
+
 var ApiUrl;//张源接口
 var ApiUrl2;//李晓飞接口
 var videoS;//相机视频socket
@@ -21,6 +25,12 @@ $.ajax({
         // 返回当前的URL协议,既http协议还是https协议
         // let protocol = document.location.protocol;
         // const interfaceIp = `${protocol}//${projectAddrass}/api`;
+        
+        console.log('测试结果',response)
+        //李测试接口
+        testUrl=response.testUrl;
+
+
         ApiUrl = response.Url;
         ApiUrl2= response.Url2;
         videoS = response.videoSocket;
@@ -32,6 +42,9 @@ $.ajax({
         datamanel = response.datamanel;
     }
 })
+
+//李测试接口
+export let testLastUrl=testUrl
 
 export var api1 = ApiUrl
 export var api2 = ApiUrl2

@@ -3,6 +3,15 @@ import constant from './constent'
 // 引用接口公共方法
 import request from './request'
 
+export function twGetLogin(paramsData) {
+    return request({
+        url: constant.twGetLogin,
+        method: 'post',
+        data: paramsData
+    })
+}
+
+
 export function getLogin(paramsData) {
     return request({
         url: constant.getLogin,
