@@ -5,6 +5,7 @@ import React, {
   lazy,
   Suspense,
 } from "react";
+import $ from 'jquery';
 import { useMappedState, useDispatch } from "redux-react-hook";
 import { useLocation } from "react-router-dom";
 import "./style.scss";
@@ -74,6 +75,11 @@ function Home() {
     dispatch({ type: "handleTop", bot_index: "" });
     dispatch({ type: "changeActive", nav_active: "" });
   };
+
+  const getIPAdress = () => {console.log('我执行了')
+   
+  };
+
   // 切换模块
   useLayoutEffect(() => {
     if (active_name !== "") {
@@ -97,7 +103,9 @@ function Home() {
     }
   }, [active_name]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getIPAdress();
+  }, []);
 
   return (
     <div className="home">
