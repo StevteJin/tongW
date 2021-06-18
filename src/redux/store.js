@@ -7,5 +7,6 @@ export function makeStore() {
     configList:{},
     bot_index: 0, //模块选择的下标
     nav_active: "overview", //导航
+    map3d_light:{}
   });
 }

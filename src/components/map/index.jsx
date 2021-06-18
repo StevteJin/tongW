@@ -3,7 +3,12 @@ import { createMap, Model } from "../../utils/map3d";
 
 import { Common } from "../../utils/mapMethods";
 import { useMappedState, useDispatch } from "redux-react-hook";
-import { getConfig, getLogin } from "../../api/mainApi";
+import {
+  getConfig,
+  getLogin,
+  cameraList_S,
+  labelLists,
+} from "../../api/mainApi";
 import urlData from "../../api/config";
 
 import "./style.scss";
@@ -49,7 +54,7 @@ const Map = (props) => {
 
   const createMapsss = (url) => {
     console.log("数据La", url);
-    var map = createMap.createMap(
+    var map_light = createMap.createMap(
       {
         id: "mapvision3d",
         url: url,
@@ -57,7 +62,45 @@ const Map = (props) => {
         projectId: "5nbmjsdljf785208",
         token: "rt2d645ty3eadaed32268mdta6",
       },
-      () => {}
+      () => {
+        //加载模型
+        dispatch({ type: "mp_light", map3d_light: map_light });
+        //初始化位置
+        setTimeout(() => {
+          Common.initializationPosition(map_light);
+        }, 0);
+
+        setTimeout(() => {
+          cameraList_S().then((res) => {
+            var results = res.data;
+            Common.addModel(0, results, map_light);
+          });
+          //创建文字标注
+          labelLists().then((res) => {
+            if (res.msg === "success") {
+              var res2Data = res.data;
+              res2Data.forEach((element2, index2) => {
+                var labelData = JSON.parse(element2.label_style.model);
+                var labelPosition = JSON.parse(labelData.attr.center);
+                Model.labelLoading(map_light, {
+                  text: element2.label_name,
+                  attr: labelData.attr,
+                  location: {
+                    x: Common.filter(labelPosition.x),
+                    y: Common.filter(labelPosition.y),
+                    z: Common.filter(labelPosition.z),
+                    pitch: Common.filter(labelPosition.pitch),
+                    yaw: Common.filter(labelPosition.yaw),
+                    roll: Common.filter(labelPosition.roll),
+                  },
+                  fontcolor: labelData.fontcolor,
+                  fontsize: labelData.fontsize,
+                });
+              });
+            }
+          });
+        }, 100);
+      }
     );
   };
   return <div id="mapvision3d"></div>;

@@ -12,6 +12,9 @@ export default function reducer(state, action) {
     case "changeActive": {
       return { ...state, nav_active: action.nav_active };
     }
+    case "mp_light": {
+      return { ...state, map3d_light: action.map3d_light };
+    }
     default:
       return state;
   }
