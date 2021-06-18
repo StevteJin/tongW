@@ -8,7 +8,7 @@ function Header() {
   const [timeNow, setTime] = useState();
   const top_count = useMappedState((state) => state.top_navigation_count);
   const { pathname } = useLocation(); //存储当前路由地址`
-  console.log("当前路由", pathname);
+  // console.log("当前路由", pathname);
   const choiceName = [
     {
       key: 1,
@@ -64,12 +64,12 @@ function Header() {
       value: "单兵",
       url: "../../assets/tongwei/individual.png",
     },
-    {
-      key: 10,
-      name: "heatMap",
-      value: "热力图",
-      url: "../../assets/tongwei/heatMap.png",
-    },
+    // {
+    //   key: 10,
+    //   name: "heatMap",
+    //   value: "热力图",
+    //   url: "../../assets/tongwei/heatMap.png",
+    // },
   ];
 
   useEffect(() => {

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import * as echarts from "echarts";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
+import { useLocation } from "react-router-dom";
 
 function Tj() {
   const top_count = useMappedState((state) => state.top_navigation_count);
-
+  const { pathname } = useLocation(); //存储当前路由地址`
   const title = "统计";
   //近24小时人脸抓拍统计
   let initChart1 = () => {
@@ -187,7 +188,11 @@ function Tj() {
       <div className="tj_tu">
         <div className="tj_t">
           <span className="tj_close"></span>
-          <span className="tj_title">近24小时人脸抓拍统计</span>
+          <span className="tj_title">
+            {pathname == "/home/person"
+              ? "近24小时人脸抓拍统计"
+              : "近24小时园区用水量统计"}
+          </span>
         </div>
         <div className="tu tu1">
           <div id={"main1"} style={{ height: 200 }}></div>
@@ -196,7 +201,11 @@ function Tj() {
       <div className="tj_tu">
         <div className="tj_t">
           <span className="tj_close"></span>
-          <span className="tj_title">近24H园区访客统计</span>
+          <span className="tj_title">
+            {pathname == "/home/person"
+              ? "近24H园区访客统计"
+              : "近24H园区用电量统计"}
+          </span>
         </div>
         <div className="tu tu2">
           <div id={"main2"} style={{ height: 200 }}></div>
@@ -205,7 +214,11 @@ function Tj() {
       <div className="tj_tu">
         <div className="tj_t">
           <span className="tj_close"></span>
-          <span className="tj_title">近24H园区人流量统计</span>
+          <span className="tj_title">
+            {pathname == "/home/person"
+              ? "近24H园区人流量统计"
+              : "近24H园区污水排放量统计"}
+          </span>
         </div>
         <div className="tu3">
           <div id={"main3"} style={{ height: 200 }}></div>

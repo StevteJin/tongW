@@ -6,16 +6,16 @@ import {
 } from "./address";
 
 //测试接口
-import { testLastUrl } from "./address";
+// import { testLastUrl } from "./address";
 
 // 接口集合
 const constant = {
   //通威
   //登录
-  twGetLogin: `${testLastUrl}sys/user/login`,
-  
+  // twGetLogin: `${testLastUrl}sys/user/login`,
+
   //查询基础配置
-  twGetList: `${testLastUrl}sys/config/list`, 
+  // twGetList: `${testLastUrl}sys/config/list`, 
 
 
 

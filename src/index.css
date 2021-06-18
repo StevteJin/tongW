@@ -3,7 +3,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  background-color: rgb(161,161,161);
+  background-color: rgb(161, 161, 161);
 }
 ul,
 li {
@@ -17,5 +17,6 @@ li {
   animation-delay: -0.2s;
 }
 #streamingVideo {
+  width: 100%;
   height: 100%;
 }

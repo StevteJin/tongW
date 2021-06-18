@@ -8,7 +8,15 @@ function Footer() {
   const bot_real_index = useMappedState((state) => state.bot_index);
   const real_nav_active = useMappedState((state) => state.nav_active);
   const { pathname } = useLocation(); //存储当前路由地址`
-  console.log("当前路由", pathname);
+  console.log("我是当前路由", pathname, real_nav_active);
+  if (
+    pathname != "/home/person" &&
+    (real_nav_active != "cars" ||
+      real_nav_active != "hvac" ||
+      real_nav_active != "sec")
+  ) {
+    
+  }
   // 导航
   const footerName = [
     {

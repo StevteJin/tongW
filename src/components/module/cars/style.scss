@@ -1,7 +1,8 @@
 .ru_car_box {
   position: absolute;
   left: 50px;
-  bottom: 100px;
+  bottom: 120px;
+  z-index:160;
   .ru {
     float: left;
     margin-right: 10px;

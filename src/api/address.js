@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-let testUrl;//李晓飞地图测试接口
+// let testUrl;//李晓飞地图测试接口
 
 
 var ApiUrl;//张源接口
@@ -28,7 +28,7 @@ $.ajax({
         
         console.log('测试结果',response)
         //李测试接口
-        testUrl=response.testUrl;
+        // testUrl=response.testUrl;
 
 
         ApiUrl = response.Url;
@@ -44,7 +44,7 @@ $.ajax({
 })
 
 //李测试接口
-export let testLastUrl=testUrl
+// export let testLastUrl=testUrl
 
 export var api1 = ApiUrl
 export var api2 = ApiUrl2

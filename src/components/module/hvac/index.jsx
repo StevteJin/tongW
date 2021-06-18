@@ -12,12 +12,16 @@ import Toxi from "../../toxi";
 import Chache from "../../chache";
 //今日停车位统计（波纹图）
 import Bowen from "../../bowen"
+// 底部页脚三个统计图
+import Tj from "../../tj";
 
 import "./style.scss";
 export default function Hvac() {
   return (
     <div>
-      厂务管理
+      <div className="perx_bot">
+        <Tj />
+      </div>
     </div>
   );
 }

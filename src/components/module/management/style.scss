@@ -4,6 +4,8 @@
     .perx_left {
       float: left;
       margin-left: 50px;
+      position: absolute;
+      z-index:160;
       .wj {
         margin-top: 110px;
       }
@@ -18,6 +20,7 @@
       float: right;
       margin-right: 50px;
       margin-top: 110px;
+      
       .xg {
           
       }

@@ -1,11 +1,15 @@
 .sec_left {
-  float: left;
+  position: absolute;
+  z-index: 160;
+  left: 50px;
 }
 .sec_right {
-  float: right;
   margin-top: 110px;
   margin-right: 50px;
-  .lx{
-    margin-bottom:20px;
+  position: absolute;
+  right: 50px;
+  z-index: 160;
+  .lx {
+    margin-bottom: 20px;
   }
 }

@@ -9,6 +9,8 @@
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index:140;
+    // background-color:greenyellow;
   }
   .content {
     position: absolute;
@@ -17,6 +19,5 @@
     overflow: hidden;
     left: 0px;
     top: 0px;
-    z-index: 140;
   }
 }

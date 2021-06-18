@@ -6,7 +6,7 @@ import React, {
   Suspense,
 } from "react";
 import { useMappedState, useDispatch } from "redux-react-hook";
-
+import { useLocation } from "react-router-dom";
 import "./style.scss";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
@@ -65,7 +65,8 @@ import Chache from "../../components/chache";
 function Home() {
   const dispatch = useDispatch();
   const active_name = useMappedState((state) => state.nav_active);
-  console.log("我是哪一个", active_name);
+  const { pathname } = useLocation(); //存储当前路由地址`
+  console.log("我是哪一个", pathname, active_name);
   const [ContentPage, setContentPage] = useState("div"); //模块组件容器
   const closePage = () => {
     dispatch({ type: "handleTop", bot_index: "" });
@@ -77,6 +78,20 @@ function Home() {
       setContentPage(
         lazy(() => import(`../../components/module/${active_name}`))
       );
+      if (
+        pathname != "/home/person" &&
+        (active_name == "overview" ||
+          active_name == "perception" ||
+          active_name == "management")
+      ) {
+        setContentPage(lazy(() => import(`../../components/module/cars`)));
+      }
+      if (
+        pathname == "/home/person" &&
+        (active_name == "cars" || active_name == "hvac" || active_name == "sec")
+      ) {
+        setContentPage(lazy(() => import(`../../components/module/overview`)));
+      }
     }
   }, [active_name]);
 
