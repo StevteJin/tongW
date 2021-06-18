@@ -1,0 +1,47 @@
+.zj_box {
+  width: 300px;
+  height: 280px;
+  background-image: url("../../assets/tongwei/ppp_bg.png");
+  background-size: 100% 100%;
+  .fei_title {
+    overflow: hidden;
+    .t_title {
+      float: left;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 12px;
+      margin-left: 20px;
+    }
+    .t_close {
+      width: 20px;
+      height: 20px;
+      // border: 1px solid blue;
+      float: right;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-top: 12px;
+    }
+  }
+  .fei_content {
+    .fei_tou {
+      width: 260px;
+      height: 140px;
+      border: 1px solid #ff8229;
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+    .fei_right {
+      margin-top: 10px;
+      margin-left:30px;
+      .right_con {
+        img {
+          width: 20px;
+        }
+        span {
+          color: #fff;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

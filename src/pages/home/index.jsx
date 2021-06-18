@@ -61,6 +61,8 @@ import Rucar from "../../components/rucar";
 import ToXi from "../../components/toxi";
 //今日无人叉车统计
 import Chache from "../../components/chache";
+//周界报警
+import Zj from "../../components/zj";
 
 function Home() {
   const dispatch = useDispatch();
@@ -154,6 +156,8 @@ function Home() {
       {/* <Plx /> */}
       {/* 今日人员异常出入统计 */}
       {/* <Yc /> */}
+      {/* 周界报警 */}
+      {/* <Zj /> */}
       {/* 页脚 */}
       <Footer />
     </div>

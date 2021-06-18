@@ -7,7 +7,7 @@ import {
   getConfig,
   getLogin,
   cameraList_S,
-  labelLists,
+  labelLists
 } from "../../api/mainApi";
 import urlData from "../../api/config";
 
@@ -74,6 +74,7 @@ const Map = (props) => {
           cameraList_S().then((res) => {
             var results = res.data;
             Common.addModel(0, results, map_light);
+            Common.add_iconModel(0, results, map_light);
           });
           //创建文字标注
           labelLists().then((res) => {
