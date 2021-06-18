@@ -19,11 +19,16 @@ import Lx from "../../lx";
 
 //车辆实时报警
 import Bj1 from "../../bj1";
+//周界报警
+import Zj from "../../zj";
 
 import "./style.scss";
 export default function Sec() {
   return (
     <div>
+      <div className="z1">
+        <Zj />
+      </div>
       <div className="sec_left">
         <Online />
       </div>

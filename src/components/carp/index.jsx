@@ -37,10 +37,10 @@ function Carp() {
   useEffect(() => {}, [top_count]);
 
   return (
-    <div className="mjbox">
+    <div className="mjboxxx">
       <div className="close"></div>
       <div className="title">{title}</div>
-      <div className="content">
+      <div className="cccontent">
         {menjin.map((item, index) => {
           return (
             <div key={index}>

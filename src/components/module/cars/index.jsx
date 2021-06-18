@@ -13,10 +13,22 @@ import Chache from "../../chache";
 //今日停车位统计（波纹图）
 import Bowen from "../../bowen"
 
+//车辆超速
+import Chaosu from "../../chaosu";
+//通威大道车辆抓拍HB18920NH
+import Carp from "../../carp";
+
+
 import "./style.scss";
 export default function Cars() {
   return (
     <div>
+      <div className="b1">
+        <Chaosu />
+      </div>
+      <div className="b2">
+        <Carp />
+      </div>
       <div className="ru_car_box">
         <div className="ru">
           <Cl />

@@ -39,7 +39,7 @@ function Entranceguard() {
     <div className="mjbox">
       <div className="close"></div>
       <div className="title">{title}</div>
-      <div className="content">
+      <div className="mcontent">
         {menjin.map((item, index) => {
           return (
             <div key={index}>
