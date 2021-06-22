@@ -11,20 +11,9 @@ function Yc() {
     let element = document.getElementById("mainy");
     let myChart = echarts.init(element);
     let option = {
-      tooltip: {
-        trigger: "axis",
-      },
-      grid: {
-        top: "10%",
-
-        left: "0",
-
-        right: "0",
-
-        bottom: "15%",
-      },
       xAxis: {
         type: "category",
+        data: ["张无忌", "令狐冲", "杨过", "张三丰", "独孤求败"],
         splitLine: {
           //网格线
           show: true,
@@ -34,18 +23,16 @@ function Yc() {
             color: ["#fff", "#fff"],
           },
         },
-        boundaryGap: false,
-        data: [
-          "00:00",
-          "03:00",
-          "06:00",
-          "09:00",
-          "12:00",
-          "15:00",
-          "18:00",
-          "21:00",
-          "24:00",
-        ],
+        axisTick: {
+          alignWithLabel: true,
+        },
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: "#fff",
+            fontSize: 10,
+          },
+        }
       },
       yAxis: {
         type: "value",
@@ -57,20 +44,30 @@ function Yc() {
             width: 0.2,
             color: ["#fff", "#fff"],
           },
-        }
+        },
+      },
+      grid: {
+        top: "10%",
+
+        left: "12%",
+
+        right: "4%",
+
+        bottom: "20%",
       },
       series: [
         {
-          name: "公司人数",
-          type: "line",
-          stack: "总量",
-          data: [120, 132, 101, 134, 90, 230, 210],
-        },
-        {
-          name: "非公司人数",
-          type: "line",
-          stack: "总量",
-          data: [220, 182, 191, 234, 290, 330, 310],
+          data: [120, 200, 150, 80, 70],
+          type: "bar",
+          barWidth: 10,
+          showBackground: false,
+          itemStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              { offset: 0, color: "#83bff6" },
+              { offset: 0.5, color: "#188df0" },
+              { offset: 1, color: "#188df0" },
+            ]),
+          },
         },
       ],
     };
