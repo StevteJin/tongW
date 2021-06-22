@@ -2,22 +2,25 @@
   position: absolute;
   left: 50px;
   bottom: 120px;
-  z-index:160;
+  z-index: 160;
   .ru {
     float: left;
     margin-right: 10px;
   }
+  .tttt {
+    margin-left: 110px;
+  }
 }
 
 .b1 {
-  position:absolute;
-  top:220px;
-  right:550px;
+  position: absolute;
+  top: 220px;
+  right: 550px;
   z-index: 170;
 }
 .b2 {
   position: absolute;
-  top:220px;
-  right:50px;
+  top: 220px;
+  right: 50px;
   z-index: 170;
 }

@@ -11,13 +11,14 @@ import Toxi from "../../toxi";
 //今日无人叉车统计
 import Chache from "../../chache";
 //今日停车位统计（波纹图）
-import Bowen from "../../bowen"
+import Bowen from "../../bowen";
 
 //车辆超速
 import Chaosu from "../../chaosu";
 //通威大道车辆抓拍HB18920NH
 import Carp from "../../carp";
 
+import Tj from "../../tj";
 
 import "./style.scss";
 export default function Cars() {
@@ -30,6 +31,9 @@ export default function Cars() {
         <Carp />
       </div>
       <div className="ru_car_box">
+        {/* <div className="tttt">
+          <Tj />
+        </div> */}
         <div className="ru">
           <Cl />
         </div>
