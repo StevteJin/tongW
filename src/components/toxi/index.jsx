@@ -8,9 +8,9 @@ function Toxi() {
 
   const title = "今日出入口通行分布";
   const plxData = [
-    { name: "出入口1", value: "18", pic: "plx_h" },
-    { name: "出入口2", value: "14", pic: "plx_l" },
-    { name: "出入口3", value: "11", pic: "plx_l" },
+    { name: "出入口1", value: "18", pic: "plx_h", ser: "1" },
+    { name: "出入口2", value: "14", pic: "plx_l", ser: "2" },
+    { name: "出入口3", value: "11", pic: "plx_l", ser: "3" },
   ];
 
   useEffect(() => {}, [top_count]);
@@ -27,19 +27,37 @@ function Toxi() {
             <div key={index}>
               <div className="plx_top">
                 <div className="plx_left">
-                  <img
-                    src={
-                      require("../../assets/tongwei/" + item.pic + ".png")
-                        .default
-                    }
-                    alt=""
-                  />
-                  <span>{item.name}</span>
+                <div className={item.pic == "plx_h" ? "ser" : "noser"}>
+                    {item.ser}
+                  </div>
+                  <span className="num">{item.name}</span>
                 </div>
                 <div className="plx_right">{item.value}</div>
               </div>
               <div className="plx_bot">
-                <Progress percent={30} showInfo={false} />
+                {item.pic == "plx_h" ? (
+                  <Progress
+                    percent={30}
+                    strokeColor={{
+                      "40%": "#CABC98",
+                      "100%": "#E2CC99",
+                    }}
+                    trailColor={"rgba(0,0,0,0.32)"}
+                    strokeWidth={4}
+                    showInfo={false}
+                  />
+                ) : (
+                  <Progress
+                    percent={20}
+                    strokeColor={{
+                      "40%": "#73A8FF",
+                      "100%": "#5797FF",
+                    }}
+                    trailColor={"rgba(0,0,0,0.32)"}
+                    strokeWidth={4}
+                    showInfo={false}
+                  />
+                )}
               </div>
             </div>
           );
