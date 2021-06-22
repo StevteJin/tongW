@@ -48,6 +48,7 @@ function Plx() {
                       "40%": "#CABC98",
                       "100%": "#E2CC99",
                     }}
+                    trailColor={"rgba(0,0,0,0.32)"}
                     strokeWidth={4}
                     showInfo={false}
                   />
@@ -58,6 +59,7 @@ function Plx() {
                       "40%": "#73A8FF",
                       "100%": "#5797FF",
                     }}
+                    trailColor={"rgba(0,0,0,0.32)"}
                     strokeWidth={4}
                     showInfo={false}
                   />
