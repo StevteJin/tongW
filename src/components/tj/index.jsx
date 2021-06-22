@@ -35,6 +35,13 @@ function Tj() {
             color: ["#fff", "#fff"],
           },
         },
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: "#fff",
+            fontSize: 10,
+          },
+        },
         data: [
           "00:00",
           "03:00",
@@ -118,6 +125,13 @@ function Tj() {
         axisTick: {
           alignWithLabel: true,
         },
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: "#fff",
+            fontSize: 10,
+          },
+        }
       },
       yAxis: {
         type: "value",
@@ -186,6 +200,13 @@ function Tj() {
             color: ["#fff", "#fff"],
           },
         },
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: "#fff",
+            fontSize: 10,
+          },
+        }
       },
       yAxis: {
         type: "value",
