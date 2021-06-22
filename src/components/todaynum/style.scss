@@ -1,12 +1,12 @@
 .today_box {
-  width: 300px;
+  width: 270px;
   height: 310px;
   background-image: url("../../assets/tongwei/num.png");
   background-size: 100% 100%;
   padding-top: 20px;
   box-sizing: border-box;
   .top_box {
-    width: 260px;
+    width: 230px;
     margin-left: 20px;
     margin-right: 20px;
     height: 30px;
@@ -37,7 +37,7 @@
       margin-top: 10px;
       margin-bottom: 10px;
       .fang_img {
-        flex: 0.3;
+        flex: 0.4;
         img {
           width: 50px;
           height: 50px;
@@ -46,13 +46,17 @@
       }
       .fang_name {
         color: #fff;
-        flex: 0.3;
+        flex: 0.4;
         line-height: 50px;
       }
       .fang_title {
         color: #4dd3ff;
-        flex: 0.4;
-        font-size: 22px;
+        background-image: linear-gradient(#5af7ff, #0092e9);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        flex: 0.3;
+        font-size: 24px;
         line-height: 50px;
       }
     }

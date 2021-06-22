@@ -14,7 +14,7 @@ import Footer from "../../components/footer";
 import Alertnav from "../../components/alertnav";
 //通威大道门禁抓拍
 import Entranceguard from "../../components/entranceGuard";
-//今日数量统计
+//今日数据统计
 import Todaynum from "../../components/todaynum";
 //访客非法闯入
 import Feifa from "../../components/feifa";

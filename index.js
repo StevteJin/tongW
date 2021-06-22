@@ -7,6 +7,7 @@ import {
   Switch,
 } from "react-router-dom";
 import Home from "./pages/home";
+import Login from "./pages/login";
 import { StoreContext } from "redux-react-hook";
 import { makeStore } from "./redux/store";
 import { Spin } from "antd";
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Switch>
         {/* 人：person  物资:things */}
         <Route path="/home/:title" exact component={Home} />
+        <Route path="/login" exact component={Login} />
         <Redirect from="/" exact to="/home/person" />
       </Switch>
     </Router>

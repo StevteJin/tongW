@@ -62,7 +62,7 @@ function Entranceguard() {
           <Swiper
             spaceBetween={50}
             slidesPerView={3}
-            loop={true} // 循环模式选项
+            loop={false} // 循环模式选项
             observer={true} //修改swiper自己或子元素时，自动初始化swiper
             observeParents={true} //修改swiper的父元素时，自动初始化swiper
             autoplay={
