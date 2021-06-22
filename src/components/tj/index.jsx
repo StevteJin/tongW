@@ -59,18 +59,29 @@ function Tj() {
           },
         },
       },
+      grid: {
+        top: "10%",
+
+        left: "5%",
+
+        right: "5%",
+
+        bottom: "10%",
+      },
       series: [
         {
           name: "公司人数",
           type: "line",
           stack: "总量",
-          data: [120, 132, 101, 134, 90, 230, 210],
+          data: [120, 132, 101, 134, 90, 230, 210, 108, 187],
+          color: ["#216CFF"],
         },
         {
           name: "非公司人数",
           type: "line",
           stack: "总量",
-          data: [220, 182, 191, 234, 290, 330, 310],
+          data: [220, 182, 191, 234, 290, 330, 310, 128, 874],
+          color: ["#FFC34B"],
         },
       ],
     };
@@ -84,7 +95,17 @@ function Tj() {
     let option = {
       xAxis: {
         type: "category",
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        data: [
+          "00:00",
+          "03:00",
+          "06:00",
+          "09:00",
+          "12:00",
+          "15:00",
+          "18:00",
+          "21:00",
+          "24:00",
+        ],
         splitLine: {
           //网格线
           show: true,
@@ -93,6 +114,9 @@ function Tj() {
             width: 0.2,
             color: ["#fff", "#fff"],
           },
+        },
+        axisTick: {
+          alignWithLabel: true,
         },
       },
       yAxis: {
@@ -118,8 +142,17 @@ function Tj() {
       },
       series: [
         {
-          data: [120, 200, 150, 80, 70, 110, 130],
+          data: [120, 200, 150, 80, 70, 110, 130, 50, 80],
           type: "bar",
+          barWidth: 10,
+          showBackground: false,
+          itemStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              { offset: 0, color: "#83bff6" },
+              { offset: 0.5, color: "#188df0" },
+              { offset: 1, color: "#188df0" },
+            ]),
+          },
         },
       ],
     };
@@ -133,8 +166,17 @@ function Tj() {
     let option = {
       xAxis: {
         type: "category",
-        boundaryGap: false,
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        data: [
+          "00:00",
+          "03:00",
+          "06:00",
+          "09:00",
+          "12:00",
+          "15:00",
+          "18:00",
+          "21:00",
+          "24:00",
+        ],
         splitLine: {
           //网格线
           show: true,
@@ -168,8 +210,54 @@ function Tj() {
       },
       series: [
         {
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          data: [820, 932, 901, 934, 1290, 1330, 1320, 889, 287],
           type: "line",
+          smooth: true, //圆润
+          symbol: "none", //不要圈
+          itemStyle: {
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "rgb(20,229,235,0.4)", // 0% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "transparent", // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
+            },
+          },
+          lineStyle: {
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 1,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "#14E5EB ", // 0% 处的颜色
+                },
+                {
+                  offset: 0.5,
+                  color: "#14E5EB ", // 0% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "#14E5EB ", // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
+            },
+          },
           areaStyle: {},
         },
       ],
