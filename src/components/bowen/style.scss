@@ -57,7 +57,7 @@
     }
   }
   .bread_box {
-    margin-top: 20px;
+    margin-top: 10px;
     box-sizing: border-box;
     overflow: hidden;
     .bg_box {
@@ -70,8 +70,9 @@
       position: relative;
       .tu {
         background-image: url(../../assets/tongwei/bowen_top.png);
-        background-size: 100% 100%;
-        // margin-top:10px;
+        background-size: 80% 80%;
+        background-repeat: no-repeat;
+        background-position: 10px 18px;
       }
       .bread_title {
         position: absolute;

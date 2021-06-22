@@ -57,18 +57,68 @@ function Bowen() {
               borderWidth: 1, // 边框的宽度
               shadowBlur: 1, // 边框的阴影范围 一旦设置了内外都有阴影
               shadowColor: "#0052FA", // 边框的阴影颜色,
-              borderColor: "#0052FA", // 边框颜色
+              borderColor: "rgb(104,140,182)", // 边框颜色
             },
           },
           // 图形样式
           itemStyle: {
-            color: "#0052FA", // 水球显示的背景颜色
+            color: {
+              type: "linear",
+              x: 0,
+              y: 1,
+              x2: 0,
+              y2: 0,
+              colorStops: [
+                {
+                  offset: 1,
+                  color: ["rgba(4,197,173, 1)"], // 0% 处的颜色
+                },
+                {
+                  offset: 0,
+                  color: ["rgba(17,68,138, 0.6)"], // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
+            }, // 水球显示的背景颜色
             opacity: 1, // 波浪的透明度
             shadowBlur: 10, // 波浪的阴影范围
           },
+          color: {
+            type: "linear",
+            x: 0,
+            y: 1,
+            x2: 0,
+            y2: 0,
+            colorStops: [
+              {
+                offset: 1,
+                color: ["rgba(32, 240, 242, 1)"], // 0% 处的颜色
+              },
+              {
+                offset: 0,
+                color: ["rgba(65, 141, 235, 0.8)"], // 100% 处的颜色
+              },
+            ],
+            global: false, // 缺省为 false
+          },
           backgroundStyle: {
-            color: "#006AFD", // 水球未到的背景颜色
-            opacity: 0.2,
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 0,
+              colorStops: [
+                {
+                  offset: 1,
+                  color: ["rgba(31,69,116, 0.2)"], // 0% 处的颜色
+                },
+                {
+                  offset: 0,
+                  color: ["rgba(39,76,124, 0.8)"], // 100% 处的颜色
+                },
+              ],
+            },
           },
           // 图形的高亮样式
           emphasis: {
