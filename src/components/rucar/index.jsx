@@ -10,32 +10,9 @@ function Rucar() {
   let initCharty = () => {
     let element = document.getElementById("mainy");
     let myChart = echarts.init(element);
-    //环形图参数
     let option = {
-      tooltip: {
-        trigger: "axis",
-      },
-      grid: {
-        top: "10%",
-
-        left: "10%",
-
-        right: "10%",
-
-        bottom: "20%",
-      },
       xAxis: {
         type: "category",
-        boundaryGap: false,
-        splitLine: {
-          //网格线
-          show: true,
-          lineStyle: {
-            type: "dashed", //网格线样式
-            width: 0.2,
-            color: ["#fff", "#fff"],
-          },
-        },
         data: [
           "00:00",
           "03:00",
@@ -47,6 +24,22 @@ function Rucar() {
           "21:00",
           "24:00",
         ],
+        splitLine: {
+          //网格线
+          show: true,
+          lineStyle: {
+            type: "dashed", //网格线样式
+            width: 0.2,
+            color: ["#fff", "#fff"],
+          },
+        },
+        axisLabel: {
+          interval: 0,
+          textStyle: {
+            color: "#fff",
+            fontSize: 10,
+          },
+        }
       },
       yAxis: {
         type: "value",
@@ -60,18 +53,66 @@ function Rucar() {
           },
         },
       },
+      grid: {
+        top: "10%",
+
+        left: "10%",
+
+        right: "4%",
+
+        bottom: "20%",
+      },
       series: [
         {
-          name: "公司人数",
+          data: [820, 932, 901, 934, 1290, 1330, 1320, 889, 287],
           type: "line",
-          stack: "总量",
-          data: [120, 132, 101, 134, 90, 230, 210],
-        },
-        {
-          name: "非公司人数",
-          type: "line",
-          stack: "总量",
-          data: [220, 182, 191, 234, 290, 330, 310],
+          smooth: true, //圆润
+          symbol: "none", //不要圈
+          itemStyle: {
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "rgb(20,229,235,0.4)", // 0% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "transparent", // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
+            },
+          },
+          lineStyle: {
+            color: {
+              type: "linear",
+              x: 0,
+              y: 0,
+              x2: 1,
+              y2: 1,
+              colorStops: [
+                {
+                  offset: 0,
+                  color: "#14E5EB ", // 0% 处的颜色
+                },
+                {
+                  offset: 0.5,
+                  color: "#14E5EB ", // 0% 处的颜色
+                },
+                {
+                  offset: 1,
+                  color: "#14E5EB ", // 100% 处的颜色
+                },
+              ],
+              global: false, // 缺省为 false
+            },
+          },
+          areaStyle: {},
         },
       ],
     };
