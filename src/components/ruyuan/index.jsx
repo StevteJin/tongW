@@ -5,7 +5,7 @@ import { useDispatch, useMappedState } from "redux-react-hook";
 function Ruyuan() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
-  const title = "今日入园人数统计";
+  const title = "今日园区人员情况";
   const num1 = "2";
   const num2 = "5";
   const num3 = "5";

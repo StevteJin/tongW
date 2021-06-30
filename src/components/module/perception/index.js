@@ -17,11 +17,11 @@ export default function Perception() {
     <div className="perx">
       <div className="perx_top">
         <div className="perx_left">
-          <div className="fl">
-            <Fenlei />
-          </div>
           <div className="ry">
             <Ruyuan />
+          </div>
+          <div className="fl">
+            <Fenlei />
           </div>
           <div className="mj">
             <Mj />
