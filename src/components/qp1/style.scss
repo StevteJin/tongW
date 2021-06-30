@@ -1,0 +1,23 @@
+.qp1_box {
+  width: 252px;
+  height: 176px;
+  overflow: hidden;
+  background-image: url(../../assets/tongwei/qp/q2.png);
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  padding-top: 20px;
+  padding-left: 40px;
+  .qp1 {
+    height: 34px;
+    line-height: 34px;
+    text-align: left;
+    .qp1_name {
+      color: #c8dbee;
+    }
+    .qp1_value {
+      color: #ffffff;
+    }
+  }
+}
