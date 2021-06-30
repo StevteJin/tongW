@@ -1,14 +1,34 @@
 .ru_car_box {
+  width: calc(100% - 100px);
   position: absolute;
-  left: 50px;
+  left: 50%;
+  transform: translate(-50%);
   bottom: 120px;
   z-index: 160;
   .ru {
     float: left;
-    margin-right: 10px;
   }
   .tttt {
     margin-left: 110px;
+  }
+  .ru1 {
+    width: 17%;
+    margin-right: 1%;
+  }
+  .ru2 {
+    width: 17%;
+    margin-right: 1%;
+  }
+  .ru3 {
+    width: 28%;
+    margin-right: 1%;
+  }
+  .ru4 {
+    width: 17%;
+    margin-right: 1%;
+  }
+  .ru5 {
+    width: 17%;
   }
 }
 

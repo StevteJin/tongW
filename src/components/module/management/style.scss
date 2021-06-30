@@ -3,9 +3,9 @@
     overflow: hidden;
     .perx_left {
       float: left;
-      margin-left: 50px;
       position: absolute;
-      z-index:160;
+      left: 50px;
+      z-index: 160;
       .wj {
         margin-top: 110px;
       }
@@ -18,11 +18,11 @@
     }
     .perx_right {
       float: right;
-      margin-right: 50px;
       margin-top: 110px;
-      
+      position: absolute;
+      right: 50px;
+      z-index: 160;
       .xg {
-          
       }
       .bj {
         margin-top: 10px;

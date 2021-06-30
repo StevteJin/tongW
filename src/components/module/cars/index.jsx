@@ -34,19 +34,19 @@ export default function Cars() {
         {/* <div className="tttt">
           <Tj />
         </div> */}
-        <div className="ru">
+        <div className="ru ru1">
           <Cl />
         </div>
-        <div className="ru">
+        <div className="ru ru2">
           <Bowen />
         </div>
-        <div className="ru">
+        <div className="ru ru3">
           <Rucar />
         </div>
-        <div className="ru">
+        <div className="ru ru4">
           <Toxi />
         </div>
-        <div className="ru">
+        <div className="ru ru5">
           <Chache />
         </div>
       </div>

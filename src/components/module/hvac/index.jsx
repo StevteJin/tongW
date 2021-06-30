@@ -15,6 +15,9 @@ import Bowen from "../../bowen"
 // 底部页脚三个统计图
 import Tj from "../../tj";
 
+//气泡
+import Qp1 from "../../qp1";
+
 import "./style.scss";
 export default function Hvac() {
   return (
@@ -22,6 +25,7 @@ export default function Hvac() {
       <div className="perx_bot">
         <Tj />
       </div>
+      <Qp1 />
     </div>
   );
 }
