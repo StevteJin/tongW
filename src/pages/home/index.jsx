@@ -5,7 +5,7 @@ import React, {
   lazy,
   Suspense,
 } from "react";
-import $ from 'jquery';
+import $ from "jquery";
 import { useMappedState, useDispatch } from "redux-react-hook";
 import { useLocation } from "react-router-dom";
 import "./style.scss";
@@ -64,6 +64,8 @@ import ToXi from "../../components/toxi";
 import Chache from "../../components/chache";
 //周界报警
 import Zj from "../../components/zj";
+//小工具
+import SmallTools from "../../components/smallTools";
 
 function Home() {
   const dispatch = useDispatch();
@@ -76,8 +78,8 @@ function Home() {
     dispatch({ type: "changeActive", nav_active: "" });
   };
 
-  const getIPAdress = () => {console.log('我执行了')
-   
+  const getIPAdress = () => {
+    console.log("我执行了");
   };
 
   // 切换模块
@@ -166,6 +168,10 @@ function Home() {
       {/* <Yc /> */}
       {/* 周界报警 */}
       {/* <Zj /> */}
+      {/* 小工具 */}
+      <div className="untils_sTools">
+        <SmallTools />
+      </div>
       {/* 页脚 */}
       <Footer />
     </div>

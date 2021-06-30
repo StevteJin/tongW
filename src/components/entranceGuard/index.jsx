@@ -18,18 +18,18 @@ function Entranceguard() {
   const num = "0528";
   const peopleContent = [
     {
-      pic: "tou",
+      pic: "P1",
       name: "张丽丽",
       time: "19:09:32",
     },
     {
-      pic: "tou",
-      name: "刘小丽",
+      pic: "P2",
+      name: "王大壮",
       time: "19:09:32",
     },
     {
-      pic: "tou",
-      name: "李大丽",
+      pic: "P3",
+      name: "李小二",
       time: "19:09:32",
     },
   ];
@@ -62,17 +62,17 @@ function Entranceguard() {
           <Swiper
             spaceBetween={50}
             slidesPerView={3}
-            loop={false} // 循环模式选项
+            loop={true} // 循环模式选项
             observer={true} //修改swiper自己或子元素时，自动初始化swiper
             observeParents={true} //修改swiper的父元素时，自动初始化swiper
             autoplay={
               {
-                delay: 500,
+                delay: 2500,
                 disableOnInteraction: false,
               } //解决滑动后不能轮播的问题
             }
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log("slide change")}
+            // onSwiper={(swiper) => console.log(swiper)}
           >
             {peopleContent.map((item, index) => {
               return (
@@ -81,7 +81,7 @@ function Entranceguard() {
                     <img
                       className="pic_icon"
                       src={
-                        require("../../assets/tongwei/" + item.pic + ".png")
+                        require("../../assets/tongwei/RRR/" + item.pic + ".png")
                           .default
                       }
                       alt=""

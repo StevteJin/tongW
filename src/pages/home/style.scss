@@ -9,7 +9,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    z-index:140;
+    z-index: 140;
     // background-color:greenyellow;
   }
   .content {
@@ -19,5 +19,11 @@
     overflow: hidden;
     left: 0px;
     top: 0px;
+  }
+  .untils_sTools {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    z-index: 300;
   }
 }

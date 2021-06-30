@@ -72,7 +72,7 @@ function Carp() {
             observeParents={true} //修改swiper的父元素时，自动初始化swiper
             autoplay={
               {
-                delay: 500,
+                delay: 2500,
                 disableOnInteraction: false,
               } //解决滑动后不能轮播的问题
             }

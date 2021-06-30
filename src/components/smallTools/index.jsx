@@ -1,0 +1,193 @@
+import React, { useState, useCallback } from "react";
+import { Common } from "../../utils/mapMethods";
+import { useMappedState } from "redux-react-hook";
+import { roamflyList } from "../../api/mainApi";
+import { Event } from "../../utils/map3d";
+import { message } from "antd";
+import "./style.scss";
+const SmallTools = () => {
+  const [isRoam, setRoam] = useState(false);
+  const iconList = [
+    { icon: "fuwei", name: "复位" },
+    { icon: "manyou", name: "飞行漫游" },
+  ];
+  const [roamList, setRoamList] = useState([]);
+  const [count, setCount] = useState();
+  const [count2, setCount2] = useState();
+  const [show, setShow] = useState(false);
+  const mp_light = useMappedState((state) => state.map3d_light);
+  const mp_dark = useMappedState((state) => state.map3d_dark);
+  const [isOver, setOver] = useState(true);
+
+  //获取漫游列表
+  const getRoamList = () => {
+    roamflyList().then((res) => {
+      if (res.msg === "success") {
+        setRoamList(res.data);
+      }
+    });
+  };
+  const handleTool = useCallback(
+    (index) => {
+      switch (index) {
+        case 0:
+          Common.initializationPosition(mp_light);
+          if (!(JSON.stringify(mp_dark) === "{}")) {
+            Common.initializationPosition(mp_dark);
+          }
+          break;
+        case 4:
+          getRoamList();
+          setRoam(true);
+          break;
+        default:
+          console.log(iconList[index].name);
+      }
+      //eslint-disable-next-line
+    },
+    [mp_light, mp_dark]
+  );
+  const roamLine = (type, item, index) => {
+    setOver(false);
+    if (isOver || count2 === index) {
+      let ndatas = item.postions.points;
+      if (type === "stop") {
+        setCount(index);
+        Event.pausePatrolPath(mp_light);
+      } else if (type === "Go_on") {
+        setCount();
+        Event.continuePatrolPath(mp_light);
+      } else if (type === "start") {
+        setCount2(index);
+        let trajectory = [];
+        ndatas.forEach((element) => {
+          trajectory.push({
+            id: item.id,
+            x: element.x,
+            y: element.y,
+            z: element.z,
+            floor: "F1",
+          });
+        });
+        let goTrajectory = {
+          style: "sim_arraw_Cyan",
+          width: 200,
+          speed: 20,
+          geom: trajectory,
+        };
+        Event.createRoute(mp_light, goTrajectory, false);
+        Event.playPatrolPath(mp_light);
+      } else if (type === "end") {
+        if (count === index) {
+          setOver(true);
+        }
+        setCount();
+        Event.clearPatrolPath(mp_light);
+        Common.initializationPosition(mp_light);
+      }
+    } else {
+      if (type === "end" && count === index) {
+        setOver(true);
+      } else {
+        message.warning("请先结束当前漫游路线");
+      }
+    }
+  };
+
+  return (
+    <div id="smallTools">
+      {show ? (
+        <div className="st_iconlist animate_speed animate__animated animate__fadeInRight">
+          <div className="iconTools">
+            <ul>
+              {iconList.map((item, index) => {
+                return (
+                  <li key={index} onClick={() => handleTool(index)}>
+                    <img
+                      className="img_active"
+                      src={
+                        require("../../assets/tongwei/" + item.icon + ".png")
+                          .default
+                      }
+                      alt="icon"
+                    />
+                    <span>{item.name}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          {isRoam ? (
+            <div className="roam animate_speed animate__animated animate__fadeIn">
+              <div className="roamTitle">
+                <h2>漫游</h2>
+                <img
+                  src={require("../../assets/tongwei/cha.png").default}
+                  alt=""
+                  onClick={() => {
+                    setRoam(false);
+                    Event.clearPatrolPath(mp_light);
+                  }}
+                />
+              </div>
+              <ul>
+                {roamList.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <span>{item.roam_name}</span>
+                      <div className="doSomething">
+                        <img
+                          src={
+                            require("../../assets/tongwei/roamStart.png")
+                              .default
+                          }
+                          alt=""
+                          onClick={() => roamLine("start", item, index)}
+                        />
+                        {index === count ? (
+                          <img
+                            src={
+                              require("../../assets/tongwei/roamGo_on.png")
+                                .default
+                            }
+                            alt=""
+                            onClick={() => roamLine("Go_on", item, index)}
+                          />
+                        ) : (
+                          <img
+                            src={
+                              require("../../assets/tongwei/roamStop.png")
+                                .default
+                            }
+                            alt=""
+                            onClick={() => roamLine("stop", item, index)}
+                          />
+                        )}
+                        <img
+                          src={
+                            require("../../assets/tongwei/roamEnd.png").default
+                          }
+                          alt=""
+                          onClick={() => roamLine("end", item, index)}
+                        />
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+      <div className="st_button" onClick={() => setShow(!show)}>
+        <img
+          src={require("../../assets/tongwei/gongju-icon.png").default}
+          alt="icon"
+        />
+        <span>小工具</span>
+      </div>
+    </div>
+  );
+};
+
+export default SmallTools;
