@@ -169,9 +169,9 @@ function Home() {
       {/* 周界报警 */}
       {/* <Zj /> */}
       {/* 小工具 */}
-      <div className="untils_sTools">
+      {/* <div className="untils_sTools">
         <SmallTools />
-      </div>
+      </div> */}
       {/* 页脚 */}
       <Footer />
     </div>

@@ -17,9 +17,9 @@ export default function Overview() {
       <div className="a2">
         <Entranceguard />
       </div>
-      <div className="today_num">
+      {/* <div className="today_num">
         <Todaynum />
-      </div>
+      </div> */}
     </div>
   );
 }

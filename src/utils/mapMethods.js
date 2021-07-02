@@ -79,20 +79,20 @@ export const Common = {
   },
   //往地图递归添加图标
   add_iconModel(index, data, map3d) {
-    let iccon = data[index].model_name;
-    if (data[index].model_name === null) {
-      iccon = "menjin";
-    }
-    // if(data[index].model_name==="menjin" || data[index].model_name==="kakou" || data[index].model_name==="shipin" ||  data[index].model_name==="renlain"){
-    //     iccon=iccon+"_xz"
+    let iccon;
+    // if (data[index].model_name) {
+    //   iccon = data[index].model_name;
     // }
+    // if (data[index].model_name === null) {
+    //   iccon = "menjin";
+    // }
+    console.log('每一项',data)
     //通威图标处理
-    if (data[index].category_name == "摄像机") {
+    if (data[index].category_name === "摄像机") {
       iccon = "shipin";
-    } else if (data[index].category_name == "门禁") {
+    } else if (data[index].category_name === "门禁") {
       iccon = "menjin";
     }
-
     Model.createIcon(
       map3d,
       {
@@ -111,6 +111,7 @@ export const Common = {
         if (++index < data.length) {
           setTimeout(() => {
             Common.add_iconModel(index, data, map3d);
+            console.log("加载了第", index, "个图标");
           });
         } else {
           console.log("图标模型加载完毕");

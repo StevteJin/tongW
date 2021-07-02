@@ -541,7 +541,7 @@ export const Model = {
         view3d.OverLayerUpdateObject(obj);
     },
     // 创建图标
-    createIcon(view3d, style) {
+    createIcon(view3d, style, callback) {
 
 
         // 注意,此功能为异步操作
@@ -556,15 +556,18 @@ export const Model = {
                 pitch: style.location.pitch, // 俯仰角 0——90度
                 yaw: style.location.yaw, // 偏航角 0-360度
                 roll: style.location.roll // 翻滚角
-            }
+            },
+            attr: style.attr
         };
         view3d.OverLayerCreateObject(obj, res => {
             // console.log(res);
             createObj = res;
             var strObj = JSON.stringify(createObj);
             console.log(strObj);
+            callback(res)
         });
     },
+
     createIconTwo(view3d, style, callback) {
         // 注意,此功能为异步操作
         const obj = {

@@ -15,7 +15,7 @@ const constant = {
   // twGetLogin: `${testLastUrl}sys/user/login`,
 
   //查询基础配置
-  // twGetList: `${testLastUrl}sys/config/list`, 
+  // twGetList: `${testLastUrl}sys/config/list`,  
 
 
 

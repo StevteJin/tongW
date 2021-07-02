@@ -46,6 +46,7 @@ const Map = (props) => {
       if (res.msg == "success") {
         dispatch({ type: "configList", configList: res.data });
         setST(res.data);
+        console.log(res.data);
         //展示地图
         createMapsss(res.data.data_server_url);
       }
@@ -73,8 +74,10 @@ const Map = (props) => {
         setTimeout(() => {
           cameraList_S().then((res) => {
             var results = res.data;
+            console.log('222',results)
             Common.addModel(0, results, map_light);
-            Common.add_iconModel(0, results, map_light);
+            //图标
+            // Common.add_iconModel(0, results, map_light);
           });
           //创建文字标注
           labelLists().then((res) => {
