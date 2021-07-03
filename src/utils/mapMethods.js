@@ -95,9 +95,9 @@ export const Common = {
     } else if (data[index].category_name === "叉车") {
       iccon = "chache";
     } else if (data[index].category_name === "车辆道闸") {
-      iccon = "kakou";
+      iccon = "chukou";
     } else if (data[index].category_name === "单兵") {
-      iccon = "individual";
+      iccon = "danbing";
     }
 
     let position = data[index].list_style
