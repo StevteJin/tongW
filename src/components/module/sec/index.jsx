@@ -14,6 +14,8 @@ import Chache from "../../chache";
 import Bowen from "../../bowen";
 //今日设备在线情况
 import Online from "../../online";
+//今日超速车辆统计
+import Cscar from "../../cscar";
 //今日报警类型统计(车)
 import Lx from "../../lx";
 
@@ -30,7 +32,12 @@ export default function Sec() {
         <Zj />
       </div>
       <div className="sec_left">
-        <Online />
+        <div>
+          <Online />
+        </div>
+        <div>
+          <Cscar />
+        </div>
       </div>
       <div className="sec_right">
         <div className="lx">
