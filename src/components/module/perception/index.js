@@ -10,6 +10,8 @@ import Mj from "../../mj";
 import Snap from "../../snap";
 // 底部页脚三个统计图
 import Tj from "../../tj";
+//底部页脚四个统计图
+import Nt4 from "../../nt4";
 
 import "./style.scss";
 export default function Perception() {
@@ -32,7 +34,10 @@ export default function Perception() {
         </div>
       </div>
       <div className="perx_bot">
-        <Tj />
+        {/* 底三 园区感知 */}
+        {/* <Tj /> */}
+        {/* 四 */}
+        <Nt4 />
       </div>
     </div>
   );

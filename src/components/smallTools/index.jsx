@@ -1,15 +1,20 @@
 import React, { useState, useCallback } from "react";
 import { Common } from "../../utils/mapMethods";
 import { useMappedState } from "redux-react-hook";
-import { roamflyList } from "../../api/mainApi";
-import { Event } from "../../utils/map3d";
+import { roamflyList, buildList } from "../../api/mainApi";
+import { Event, Build } from "../../utils/map3d";
 import { message } from "antd";
 import "./style.scss";
+
 const SmallTools = () => {
   const [isRoam, setRoam] = useState(false);
+  const [isScenes, setScenes] = useState(false); //图层是否显示
+  const [isLayer, setLayer] = useState(false); //图层是否显示
+  const [buildingList, setBuild] = useState([]); //所有建筑列表
+  const [showBuild, setShowBuild] = useState(new Set()); //存储当前炸裂状态下的建筑id
   const iconList = [
     { icon: "fuwei", name: "复位" },
-    { icon: "manyou", name: "飞行漫游" },
+    { icon: "manyou", name: "漫游" },
   ];
   const [roamList, setRoamList] = useState([]);
   const [count, setCount] = useState();
@@ -28,18 +33,24 @@ const SmallTools = () => {
     });
   };
   const handleTool = useCallback(
-    (index) => {
+    (index) => {console.log("哪个",index)
       switch (index) {
         case 0:
-          Common.initializationPosition(mp_light);
-          if (!(JSON.stringify(mp_dark) === "{}")) {
-            Common.initializationPosition(mp_dark);
+          // if (!(Object.keys(mp_dark).length === 0)) {
+          //   Common.initializationPosition(mp_dark);
+          // }
+          if (!(Object.keys(mp_light).length === 0)) {
+            Common.initializationPosition(mp_light);
           }
           break;
-        case 4:
+       //漫游
+        case 1:
+          setScenes(false);
+          setLayer(false);
           getRoamList();
           setRoam(true);
           break;
+        
         default:
           console.log(iconList[index].name);
       }
@@ -47,6 +58,7 @@ const SmallTools = () => {
     },
     [mp_light, mp_dark]
   );
+
   const roamLine = (type, item, index) => {
     setOver(false);
     if (isOver || count2 === index) {
@@ -58,6 +70,7 @@ const SmallTools = () => {
         setCount();
         Event.continuePatrolPath(mp_light);
       } else if (type === "start") {
+        setCount();
         setCount2(index);
         let trajectory = [];
         ndatas.forEach((element) => {
@@ -70,34 +83,72 @@ const SmallTools = () => {
           });
         });
         let goTrajectory = {
+          visible: false,
           style: "sim_arraw_Cyan",
           width: 200,
-          speed: 20,
+          speed: 35,
           geom: trajectory,
         };
         Event.createRoute(mp_light, goTrajectory, false);
-        Event.playPatrolPath(mp_light);
+        Event.playPatrolPath(mp_light, (msg) => {
+          if (msg.x === trajectory[trajectory.length - 1].x) {
+            console.log("巡逻结束");
+            setOver(true);
+            setCount();
+            setCount2();
+            Event.clearPatrolPath(mp_light);
+          }
+        });
       } else if (type === "end") {
-        if (count === index) {
+        if (count2 === index) {
           setOver(true);
         }
         setCount();
+        setCount2();
         Event.clearPatrolPath(mp_light);
         Common.initializationPosition(mp_light);
       }
     } else {
-      if (type === "end" && count === index) {
+      if (type === "end" && count2 === index) {
         setOver(true);
       } else {
         message.warning("请先结束当前漫游路线");
       }
     }
   };
+  // 获取所有建筑信息
+  const getBuilding = () => {
+    buildList().then((res) => {
+      setBuild(res.data);
+    });
+  };
+  //关闭漫游列表
+  const closeRoam = () => {
+    setOver(true);
+    setCount();
+    setCount2();
+    Event.clearPatrolPath(mp_light);
+    Common.initializationPosition(mp_light);
+  };
+  // 爆炸分离
+  const SplitBuild = (buildId) => {
+    showBuild.add(buildId);
+    setShowBuild(new Set(showBuild));
+    Build.splitBuild(mp_light, buildId, 5);
+  };
+  // 分离恢复
+  const SplitBuildReset = (buildId) => {
+    showBuild.delete(buildId);
+    setShowBuild(new Set(showBuild));
+    Build.splitBuildReset(mp_light, buildId);
+  };
 
   return (
     <div id="smallTools">
       {show ? (
-        <div className="st_iconlist animate_speed animate__animated animate__fadeInRight">
+        <div
+          className={`${"st_iconlist animate_speed animate__animated"} ${"animate__slideInRight"}`}
+        >
           <div className="iconTools">
             <ul>
               {iconList.map((item, index) => {
@@ -120,20 +171,23 @@ const SmallTools = () => {
           {isRoam ? (
             <div className="roam animate_speed animate__animated animate__fadeIn">
               <div className="roamTitle">
-                <h2>漫游</h2>
+                {/* <h2>漫游</h2> */}
                 <img
                   src={require("../../assets/tongwei/cha.png").default}
                   alt=""
                   onClick={() => {
+                    closeRoam();
                     setRoam(false);
-                    Event.clearPatrolPath(mp_light);
                   }}
                 />
               </div>
               <ul>
                 {roamList.map((item, index) => {
                   return (
-                    <li key={index}>
+                    <li
+                      key={index}
+                      className={count2 === index ? "active" : ""}
+                    >
                       <span>{item.roam_name}</span>
                       <div className="doSomething">
                         <img
@@ -170,6 +224,51 @@ const SmallTools = () => {
                           alt=""
                           onClick={() => roamLine("end", item, index)}
                         />
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : null}
+          {isLayer ? (
+            <div className="roam animate_speed animate__animated animate__fadeIn">
+              <div className="roamTitle">
+                <h2>图层</h2>
+                <img
+                  src={require("../../assets/tongwei/cha.png").default}
+                  alt=""
+                  onClick={() => {
+                    setLayer(false);
+                  }}
+                />
+              </div>
+              <ul>
+                {buildingList.map((item, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className={count2 === index ? "active" : ""}
+                    >
+                      <span>{item.build_name}</span>
+                      <div className="doSomething">
+                        <span
+                          style={{
+                            color: showBuild.has(item.build_id) ? "red" : "",
+                          }}
+                          onClick={() => {
+                            SplitBuild(item.build_id);
+                          }}
+                        >
+                          分离
+                        </span>
+                        <span
+                          onClick={() => {
+                            SplitBuildReset(item.build_id);
+                          }}
+                        >
+                          恢复
+                        </span>
                       </div>
                     </li>
                   );
