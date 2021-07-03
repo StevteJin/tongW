@@ -86,25 +86,35 @@ export const Common = {
     // if (data[index].model_name === null) {
     //   iccon = "menjin";
     // }
-    console.log('每一项',data)
+    console.log("每一项", data);
     //通威图标处理
     if (data[index].category_name === "摄像机") {
       iccon = "shipin";
     } else if (data[index].category_name === "门禁") {
       iccon = "menjin";
+    } else if (data[index].category_name === "叉车") {
+      iccon = "chache";
+    } else if (data[index].category_name === "车辆道闸") {
+      iccon = "kakou";
+    } else if (data[index].category_name === "单兵") {
+      iccon = "individual";
     }
+
+    let position = data[index].list_style
+      ? data[index].list_style
+      : data[index].center;
     Model.createIcon(
       map3d,
       {
         typeStyle: iccon,
         attr: data[index],
         location: {
-          x: Common.filter(data[index].center.x),
-          y: Common.filter(data[index].center.y),
-          z: Common.filter(data[index].center.z),
-          pitch: Common.filter(data[index].center.pitch),
-          yaw: Common.filter(data[index].center.yaw),
-          roll: Common.filter(data[index].center.roll),
+          x: Common.filter(position.x),
+          y: Common.filter(position.y),
+          z: Common.filter(position.z),
+          pitch: Common.filter(position.pitch),
+          yaw: Common.filter(position.yaw),
+          roll: Common.filter(position.roll),
         },
       },
       (msg) => {

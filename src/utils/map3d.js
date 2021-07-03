@@ -19,7 +19,7 @@ export const createMap = {
             view3d.OverLayerRemoveAll();
             createObj = null;
             view3d.OverLayerStopEdit();
-            // view3d.SetNorthControl(true, 0, 0, 0.5);
+            view3d.SetNorthControl(true, 0, 0, 0.5);
             if (callback) {
                 callback();
             }
@@ -136,6 +136,11 @@ export const createMap = {
     //     console.log("111")
     //     Model.showModel(view3d, "FW_V001_JZ0001_WK", false);
     // }
+    //地面显示隐藏
+    showDM(groundVisible,view3d){
+        groundVisible = !groundVisible;
+        view3d.SetGroundVisible(groundVisible);
+    }
 }
 //模型标注类
 export const Model = {
@@ -157,6 +162,14 @@ export const Model = {
             callback(strObj)
         });
     },
+    //模型高亮
+    modelHighlight(view3d,gid){
+        view3d.SetObjectHighlight(gid);
+    },
+    //去除地图高亮
+    clearHighlight(view3d){
+        view3d.ClearHighlight();
+    },
     //关闭编辑
     endEditing(view3d) {
         view3d.OverLayerStopEdit();
@@ -167,7 +180,7 @@ export const Model = {
         view3d.OverLayerRemoveAll(types);
     },
     // 绘制折线
-    drawLine(view3d,callback) {
+    drawLine(view3d, callback) {
         const obj = {
             type: 'linestring',
             color: '#ff0f00',
@@ -359,6 +372,22 @@ export const Model = {
                 roll: 0 // 翻滚角
             }
         };
+        const obj2 = {
+            gid: "BjY_" + gid,
+            type: 'cylinder',
+            radius: 1000.0, // 半径
+            height: 100.0, // 高
+            style: 'SplineOrangeHighlight1', // style 样式优先于color 
+            location: {
+                x: points.x,
+                y: points.y,
+                z: points.z,
+                pitch: 0, // 俯仰角 0——90度
+                yaw: 0, // 偏航角 0-360度
+                roll: 0 // 翻滚角
+            }
+        };
+        view3d.OverLayerCreateObject(obj2)
         view3d.OverLayerCreateObject(obj, res => {
             Model.labelLoading(view3d, {
                 gid: "BjZ_" + gid,
@@ -505,10 +534,17 @@ export const Model = {
                     Personnel: res,
                 }
                 console.log(res);
-            } else if (res.typename === "label" && res.attr && res.attr.buildId) {
-                data = {
-                    switchName: 'buildLable',
-                    Personnel: res.attr.buildId,
+            } else if (res.typename === "label" && res.attr) {
+                if (res.attr.buildId) {
+                    data = {
+                        switchName: 'buildLable',
+                        Personnel: res.attr.buildId,
+                    }
+                } else {
+                    data = {
+                        switchName: 'buildLable_wenzi',
+                        Personnel: res.attr
+                    }
                 }
             } else if (res.typename === "image") {
                 data = {
@@ -516,16 +552,17 @@ export const Model = {
                     Personnel: res,
                 }
                 // console.log(res);
-            } else if (res.gid.split("_")[0] === "MP") {
-                let buildarr = res.gid.split("_");
-                buildarr.shift();
-                let buildId = buildarr.join("_");
-                buildId = buildId.substring(0, buildId.length - 3)
-                data = {
-                    switchName: 'buildLable',
-                    Personnel: buildId,
-                }
-            }
+            } 
+            // else if (res.gid.split("_")[0] === "MP") {
+            //     let buildarr = res.gid.split("_");
+            //     buildarr.shift();
+            //     let buildId = buildarr.join("_");
+            //     buildId = buildId.substring(0, buildId.length - 3)
+            //     data = {
+            //         switchName: 'buildLable',
+            //         Personnel: buildId,
+            //     }
+            // }
             window.parent.postMessage(data, '*');
             // callback(strObj)
         });
@@ -548,7 +585,7 @@ export const Model = {
         const obj = {
             type: 'image', // 10102  或  image
             style: style.typeStyle,
-            scale: 3,
+            scale: 6,
             location: {
                 x: style.location.x,
                 y: style.location.y,
@@ -567,7 +604,6 @@ export const Model = {
             callback(res)
         });
     },
-
     createIconTwo(view3d, style, callback) {
         // 注意,此功能为异步操作
         const obj = {
@@ -665,16 +701,30 @@ export const Build = {
 
     // 楼层显示隐藏
     showFloor(view3d, buildingName, floorName, floor) {
-        let floorNum = Number(floorName.slice(-1));
+        console.log(buildingName, floorName, floor)
+
+        let floorNum = Number(floorName.substring(floorName.length-2))>=10?Number(floorName.substring(floorName.length-2)):Number(floorName.slice(-1))
+        var FLOOR=floorName.substr(0,1);
+    
+        if(FLOOR==="B"){
+            floorNum=-floorNum
+        }
+
         view3d.SetBuildingVisible(buildingName, floorName === "all" ? true : false);
-        floor.forEach((item, index) => {
-            let FNum = Number(item.slice(-1));
+        console.log("数组",floor);
+        floor.forEach(item => {
+            let FNum = Number(item.substring(1));
+            var ItmFloor=item.substr(0,1);
+            if(ItmFloor==="B"){
+                FNum=-FNum
+            }
+            console.log(FNum,floorNum,buildingName,item)
             if (FNum > floorNum) {
                 view3d.SetFloorVisible(buildingName, item, false);
             } else {
                 view3d.SetFloorVisible(buildingName, item, true);
             }
-            if (floor.length - 1 === index) {
+            if (floor.length - 1 === item) {
                 setTimeout(() => {
                     Model.getModel(view3d);
                 }, 1000)
@@ -693,9 +743,15 @@ export const Build = {
             createMap.closeWkWang(view3d)
         })
         //createMap.closeWkWang(view3d)
-
     },
-
+    // 爆炸分离
+    splitBuild(view3d, buildingName, floorHeight) {
+        view3d.SplitBuilding(buildingName, floorHeight);
+    },
+    // 分离恢复
+    splitBuildReset(view3d, buildingName) {
+        view3d.SplitBuildingReset(buildingName);
+    }
 }
 // 功能块
 export const Event = {
@@ -789,14 +845,17 @@ export const Event = {
         view3d.Stop();
     },
     // 点线追查
-    pointTracing(view3d, pointPosition) {
+    pointTracing(view3d, pointPosition, callback) {
         const json = {
             radius: 100, // 半径
             color: '#FF0000',
             location: pointPosition
         };
         Model.creatCircle(view3d, json, msg => {
-            createMap.getMousePosition(view3d)
+            createMap.getMousePosition(view3d);
+            if (callback) {
+                callback(msg);
+            }
         })
     },
     pointLineTracing(view3d, pointPosition) {
