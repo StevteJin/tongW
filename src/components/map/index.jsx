@@ -77,7 +77,7 @@ const Map = (props) => {
             console.log('222',results)
             Common.addModel(0, results, map_light);
             //图标
-            // Common.add_iconModel(0, results, map_light);
+            Common.add_iconModel(0, results, map_light);
           });
           //创建文字标注
           labelLists().then((res) => {
