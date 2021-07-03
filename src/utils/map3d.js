@@ -585,7 +585,7 @@ export const Model = {
         const obj = {
             type: 'image', // 10102  或  image
             style: style.typeStyle,
-            scale: 6,
+            scale: 7,
             location: {
                 x: style.location.x,
                 y: style.location.y,
