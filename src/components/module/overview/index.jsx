@@ -6,11 +6,16 @@ import Todaynum from "../../todaynum";
 import Feifa from "../../feifa";
 //通威大道门禁抓拍
 import Entranceguard from "../../entranceGuard";
+//公告
+import Gonggao from "../../gonggao";
 
 import "./style.scss";
 export default function Overview() {
   return (
     <div>
+      <div className="gonggao">
+        <Gonggao />
+      </div>
       <div className="a1">
         <Feifa />
       </div>
