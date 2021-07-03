@@ -1,0 +1,161 @@
+.nt4_box {
+  width: calc(100% - 100px);
+  height: 280px;
+  background-image: url("../../assets/tongwei/tj.png");
+  background-size: 100% 100%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  bottom: 120px;
+  display: flex;
+  z-index: 160;
+  .nt4_tu {
+    flex: 1;
+    .nt4_t {
+      background-image: url(../../assets/tongwei/tj_title.png);
+      background-size: 100% 100%;
+      height: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      span {
+        display: block;
+        float: left;
+      }
+      .nt4_close {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      .nt4_title {
+        color: #fff;
+        margin-left: 20px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+    }
+    .bread_box {
+      margin-top: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      .bg_box {
+        background-image: url(../../assets/tongwei/wb_bg.png);
+        background-size: 100% 100%;
+        width: 124px;
+        height: 124px;
+        overflow: hidden;
+        margin-left: 20px;
+        float: left;
+        position: relative;
+        .tu {
+          margin-top: -5px;
+        }
+        .bread_title {
+          position: absolute;
+          top: 40px;
+          left: 38px;
+          text-align: center;
+          .bread_t {
+            color: #fff;
+            font-size: 14px;
+          }
+          .bread_b {
+            color: #fff;
+            font-size: 12px;
+          }
+        }
+      }
+      .bg_right {
+        float: left;
+        margin-left: 10px;
+        width: 140px;
+        margin-top: 5px;
+        .bg_r_box {
+          float: left;
+          margin-right: 10px;
+          .bg_top {
+            overflow: hidden;
+            float: left;
+            div {
+              width: 10px;
+              height: 10px;
+              background-image: linear-gradient(
+                -16deg,
+                #ffd148 12%,
+                #ffa334 88%
+              );
+              border-radius: 50%;
+              float: left;
+              margin-top: 6px;
+              margin-right: 10px;
+            }
+            div:after {
+              content: "";
+              display: block;
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: rgb(42, 58, 81);
+              position: relative;
+              top: 3px;
+              left: 3px;
+            }
+            .call1 {
+              background-image: linear-gradient(0deg, #00faa8 15%, #24ffe4 88%);
+            }
+            .call2 {
+              background-image: linear-gradient(
+                -23deg,
+                #46b8ff 15%,
+                #136eff 68%
+              );
+            }
+            .call3 {
+              background-image: linear-gradient(
+                242deg,
+                #ae64ff 0%,
+                #830eff 51%
+              );
+            }
+            .call4 {
+              background-image: linear-gradient(
+                55deg,
+                #ff91b0 21%,
+                #ff4fae 58%
+              );
+            }
+            .call5 {
+              background-image: linear-gradient(
+                -16deg,
+                #ffd148 12%,
+                #ffa334 88%
+              );
+            }
+            .call6 {
+              background-image: linear-gradient(
+                -16deg,
+                rgb(170, 170, 170) 12%,
+                rgb(172, 172, 172) 88%
+              );
+            }
+            .huan_name {
+              float: left;
+              color: #c7daed;
+            }
+          }
+          .bg_bot {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 18px;
+            float: left;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+  .tu {
+    // border:1px solid red;
+  }
+}
