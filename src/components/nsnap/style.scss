@@ -1,10 +1,11 @@
-.snap_box {
+.nsnap_box {
   width: 300px;
-  height: 400px;
+  height: 300px;
+  margin-top:20px;
   background-image: url("../../assets/tongwei/snap_bg.png");
   background-size: 100% 100%;
   padding-top: 20px;
-  .snap_t {
+  .nsnap_t {
     background-image: url("../../assets/tongwei/fen_title.png");
     background-size: 100% 100%;
     width: 260px;
@@ -14,21 +15,21 @@
       display: block;
       float: left;
     }
-    .snap_close {
+    .nsnap_close {
       width: 30px;
       height: 30px;
       cursor: pointer;
     }
-    .snap_title {
+    .nsnap_title {
       color: #fff;
       margin-left: 20px;
       line-height: 30px;
       font-weight: bold;
     }
   }
-  .snap_con {
+  .nsnap_con {
     margin-left: 20px;
-    .snap_top {
+    .nsnap_top {
       width: 260px;
       height: 110px;
       background-image: url(../../assets/tongwei/snap_r.png);
@@ -71,7 +72,7 @@
         }
       }
     }
-    .snap_bot {
+    .nsnap_bot {
       width: 260px;
       height: 80px;
       background-image: url(../../assets/tongwei/snap_r1.png);

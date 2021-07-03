@@ -8,6 +8,8 @@ import Ruyuan from "../../ruyuan";
 import Mj from "../../mj";
 //实时人脸抓拍列表
 import Snap from "../../snap";
+//通道闸机实时抓拍列表
+import Nsnap from "../../nsnap";
 // 底部页脚三个统计图
 import Tj from "../../tj";
 //底部页脚四个统计图
@@ -24,13 +26,18 @@ export default function Perception() {
           </div>
           <div className="fl">
             <Fenlei />
-          </div>
+          </div> 
           <div className="mj">
             <Mj />
           </div>
         </div>
         <div className="perx_right">
-          <Snap />
+          <div>
+            <Snap />
+          </div>
+          <div>
+            <Nsnap />
+          </div>
         </div>
       </div>
       <div className="perx_bot">
