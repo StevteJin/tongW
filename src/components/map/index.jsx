@@ -107,7 +107,7 @@ const Map = (props) => {
       }
     );
   };
-  return <div id="mapvision3d"></div>;
+  return <div id="mapvision3d"  style={{width:"100%",height:"100%"}}></div>;
 };
 
 export default Map;
