@@ -30,7 +30,7 @@ function Wjtimes() {
         </div>
         {timesData.map((item,index)=>{
           return(
-            <div className="bot_con">
+            <div className="bot_con" key={index}>
               <span className="con_l">{item.name}</span>
               <span className="con_c">{item.where}</span>
               <span className="con_r">{item.times}</span>
