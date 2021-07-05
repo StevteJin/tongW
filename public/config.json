@@ -1,6 +1,7 @@
 {
     "Url": "http://192.168.0.245:8890/tongwei5.5",
     "Url2": "http://192.168.0.245:8896/tongweiW5.5",
+    "alertSocket": "ws://10.26.58.180:8081/scp3dvs/ws/uuid",
     "datamanel": "http://172.16.12.32:17009/jwvisual/service/api/jwvisual/v1/",
     "videoSocket": "ws://127.0.0.1:8909",
     "alarmSocket": "ws://192.168.0.245:8091",
