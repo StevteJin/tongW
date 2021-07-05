@@ -1,3 +1,10 @@
+#ScaleBox {
+  --scale: 1;
+}
+.ScaleBox {
+  // transform: scale(var(--scale));
+}
+
 .home {
   background: transparent;
   width: 100%;

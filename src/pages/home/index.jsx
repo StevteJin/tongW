@@ -1,6 +1,7 @@
 import React, {
   useState,
   useEffect,
+  useRef,
   useLayoutEffect,
   lazy,
   Suspense,
@@ -81,6 +82,21 @@ function Home() {
   const getIPAdress = () => {
     console.log("我执行了");
   };
+  const getScale = () => {
+    // 窗口的文档显示区的宽度，高度
+    const width = 5760;
+    const height = 4320;
+    let ww = window.innerWidth / width;
+    let wh = window.innerHeight / height;
+    console.log("宽，高", ww, wh);
+    return ww < wh ? ww : wh;
+  };
+  let scale;
+  const setScale = () => {
+    scale = getScale();
+    console.log("比例", scale);
+    // this.refs.ScaleBox.style.setProperty("--scale", this.scale);
+  };
 
   // 切换模块
   useLayoutEffect(() => {
@@ -107,6 +123,7 @@ function Home() {
 
   useEffect(() => {
     getIPAdress();
+    setScale();
   }, []);
 
   return (
@@ -175,6 +192,8 @@ function Home() {
       {/* 页脚 */}
       <Footer />
     </div>
+    //   <div className="ScaleBox" id="ScaleBox">
+    // </div>
   );
 }
 
