@@ -134,7 +134,7 @@ function Header() {
   };
 
   const onChange = (item, index) => {
-    console.log("我点击了", item, index);
+    console.log("顶部我点击了", item, index);
   };
 
   return (

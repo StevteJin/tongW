@@ -59,9 +59,19 @@ function Footer() {
     dispatch({ type: "handleTop", bot_index: index });
     dispatch({ type: "changeActive", nav_active: item.name });
   };
-
+  const getRandom = (num) => {
+    let random = Math.floor(
+      (Math.random() + Math.floor(Math.random() * 9 + 1)) *
+        Math.pow(10, num - 1)
+    );
+    return random;
+  };
   const alertPlay = () => {
-    const webSocket = new WebSocket(AlSocket);
+    let num = getRandom(10);
+    console.log("随机数", num);
+    let AlSocketUrl = AlSocket + num;
+    console.log("地址", AlSocketUrl);
+    const webSocket = new WebSocket(AlSocketUrl);
 
     webSocket.onopen = function (e) {
       console.log("通威 websocket is open:", "color: red;font-size:13px");
@@ -72,25 +82,28 @@ function Footer() {
       // webSocket.send(JSON.stringify(json));
     };
     webSocket.onmessage = function (e) {
-      console.log("返回的指令", e.data);
+      console.log("返回的指令", e.data, typeof e.data);
       // if(e.data){message.success(datamsg)}
-      let command = e.data.command;
+      let eData = JSON.parse(e.data);
+      console.log("我啊", eData, typeof eData);
+      let command = eData.command;
+      let resId = eData.resId;
       /**
        * 001人员管控
        * 002物资管控
        * 1园区总览
        * 2园区感知
        * 3智慧管理
-       * D人脸抓拍点位 D1取消
+       * D人脸抓拍点位 D1取消弹窗
        * B门禁点位 B1取消
-       * A视频/AR点位 A1取消
+       * A视频/AR点位 A1取消弹窗
        * 4实时车辆
        * 5厂务管理
        * 6园区安防
-       * E卡口测试 E1取消
-       * C出入口点位 C1取消
+       * E卡口测试 E1取消弹窗
+       * C出入口点位 C1取消弹窗
        */
-
+      console.log("6666", command, typeof command);
       switch (command) {
         case "001":
           history.push("/home/person");
