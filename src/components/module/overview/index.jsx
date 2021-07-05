@@ -13,9 +13,9 @@ import "./style.scss";
 export default function Overview() {
   return (
     <div>
-      <div className="gonggao">
+      {/* <div className="gonggao">
         <Gonggao />
-      </div>
+      </div> */}
       <div className="a1">
         <Feifa />
       </div>
