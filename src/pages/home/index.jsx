@@ -82,19 +82,27 @@ function Home() {
   const getIPAdress = () => {
     console.log("我执行了");
   };
+
+  // 1.初始化的时候获得大屏幕的比例
+  // 2.把这个比例设置给css的scale变量
+  // 3.监听浏览器的窗口大小, 将新的比例赋给scale变量
+
+  // getScale函数是在获取较小比例的一条边, 这样较大比例的一条边就可以按照既定的比例缩放了, width和height是设置的默认比例, window.innerWidth和window.innerHeight 是大屏幕的缩放尺寸
+
   const getScale = () => {
-    // 窗口的文档显示区的宽度，高度
-    const width = 5760;
-    const height = 4320;
+    // 窗口的文档显示区的宽度，高度(5760X4320)
+    const width = 1920;
+    const height = 1080;
     let ww = window.innerWidth / width;
     let wh = window.innerHeight / height;
     console.log("宽，高", ww, wh);
     return ww < wh ? ww : wh;
   };
+  
   let scale;
   const setScale = () => {
     scale = getScale();
-    console.log("比例", scale);
+    console.log("用的比例", scale);
     // this.refs.ScaleBox.style.setProperty("--scale", this.scale);
   };
 

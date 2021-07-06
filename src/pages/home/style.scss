@@ -2,35 +2,35 @@
   --scale: 1;
 }
 .ScaleBox {
-  // transform: scale(var(--scale));
-}
+  transform: scale(var(--scale));
 
-.home {
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  .mapstyle {
+  .home {
+    background: transparent;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 140;
-    // background-color:greenyellow;
-  }
-  .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    left: 0px;
-    top: 0px;
-  }
-  .untils_sTools {
-    position: fixed;
-    bottom: 20px;
-    right: 10px;
-    z-index: 300;
+    .mapstyle {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 140;
+      // background-color:greenyellow;
+    }
+    .content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      left: 0px;
+      top: 0px;
+    }
+    .untils_sTools {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      z-index: 300;
+    }
   }
 }
