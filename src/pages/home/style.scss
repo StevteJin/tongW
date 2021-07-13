@@ -1,8 +1,8 @@
 #ScaleBox {
   --scale: 1;
 }
-.ScaleBox {
-  transform: scale(var(--scale));
+// .ScaleBox {
+//   transform: scale(var(--scale));
 
   .home {
     background: transparent;
@@ -33,4 +33,4 @@
       z-index: 300;
     }
   }
-}
+// }
