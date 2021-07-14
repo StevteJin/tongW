@@ -8,7 +8,7 @@ import { useDispatch, useMappedState } from "redux-react-hook";
 SwiperCore.use([Autoplay]);
 function Entranceguard() {
   const top_count = useMappedState((state) => state.top_navigation_count);
-
+  const [timeNow, setTime] = useState();
   const title = "通威大道门禁HB18920NH";
   const menjin = [
     { name: "点位用途", value: "通威大道西街道" },
@@ -20,20 +20,54 @@ function Entranceguard() {
     {
       pic: "P1",
       name: "张丽丽",
-      time: "19:09:32",
+      time: timeNow,//时间需要跟随
     },
     {
       pic: "P2",
       name: "王大壮",
-      time: "19:09:32",
+      time: timeNow,
     },
     {
       pic: "P3",
       name: "李小二",
-      time: "19:09:32",
+      time: timeNow,
     },
   ];
-  useEffect(() => {}, [top_count]);
+
+  const showtime = () => {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    if (month < 10) {
+      month = "0" + month;
+    }
+    if (day < 10) {
+      day = "0" + day;
+    }
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    var time =
+      hours +
+      ":" +
+      minutes +
+      ":" +
+      seconds +
+      " "
+    setTime(time);
+    setTimeout(showtime, 1000);
+  };
+  useEffect(() => {showtime()}, [top_count]);
 
   return (
     <div className="mjbox">
