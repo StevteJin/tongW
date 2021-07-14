@@ -7,12 +7,27 @@ function Feifa() {
 
   const top_count = useMappedState((state) => state.top_navigation_count);
 
-  const title = "访客非法闯入";
+  // const title = "访客非法闯入";//随机改变内容
   const ffData = {
     time: timeNow,//时间需要跟随
     where: "园区西门1门BH19201TO",
     pic: "tou1",
   };
+
+  let titleData=["访客非法闯入","陌生人翻越围墙","访客携带刀具","陌生人携带宠物"];
+  let ran;
+  const [title, setTitle] = useState(localStorage.getItem("title")||"访客非法闯入");
+  let ay;
+  let content = () => {
+    ay=setInterval(function(){
+      let title1=titleData[ran];
+      ran=Math.floor(Math.random()*3);
+      console.log('我是随机数',ran)
+      console.log('我是标题内容',title1);
+      setTitle(title1);
+    localStorage.setItem("title",title1);
+  },5000)};
+
 
   const showtime = () => {
     var date = new Date();
@@ -51,9 +66,13 @@ function Feifa() {
       seconds +
       " "
     setTime(time);
-    setTimeout(showtime, 1000);
+    setTimeout(showtime, 5000);
   };
-  useEffect(() => {showtime();}, [top_count]);
+  useEffect(() => {showtime();content();return componentWillUnmount;}, [top_count]);
+  function componentWillUnmount() {
+    // 组件销毁时你要执行的代码
+    // clearInterval(ay);
+  }
 
   return (
     <div className="fei_box">
