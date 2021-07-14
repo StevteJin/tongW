@@ -17,12 +17,12 @@ function Fenlei() {
 
   const title = "今日人员分类统计";
   const fenleiData = [
-    { name: "排班数", value: "4" },
-    { name: "在岗人数", value: "2,124" },
-    { name: "请假人数", value: "35" },
-    { name: "白班人数", value: "1624" },
-    { name: "夜班人数", value: "219" },
-    { name: "行政人数", value: "268" },
+    { name: "排班数", value: "2" },
+    { name: "在岗人数", value: "762" },
+    { name: "请假人数", value: "16" },
+    { name: "白班人数", value: "577" },
+    { name: "夜班人数", value: "577" },
+    { name: "行政人数", value: "135" },
   ];
 
   useEffect(() => {}, [top_count]);
