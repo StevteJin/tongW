@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createMap, Model } from "../../utils/map3d";
-
+import { useLocation, useHistory } from "react-router-dom";
 import { Common } from "../../utils/mapMethods";
 import { useMappedState, useDispatch } from "redux-react-hook";
 import {
@@ -17,6 +17,7 @@ const Map = (props) => {
   const dispatch = useDispatch();
   const twUserData = useMappedState((state) => state.userData);
   const twConfigList = useMappedState((state) => state.configList);
+  const { pathname } = useLocation(); //存储当前路由地址`
   const [twData, setST] = useState();
 
   useEffect(() => {
@@ -47,8 +48,14 @@ const Map = (props) => {
         dispatch({ type: "configList", configList: res.data });
         setST(res.data);
         console.log(res.data);
+        let pathUrl;
+        if (pathname == "/home/person"){
+            pathUrl=res.data.data_server_url
+        }else{
+            pathUrl="http://10.28.6.32:9904"
+        }
         //展示地图
-        createMapsss(res.data.data_server_url);
+        createMapsss(pathUrl);
       }
     });
   };
