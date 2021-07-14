@@ -38,7 +38,7 @@ export default function Overview() {
       setBool(bool1)
       setBool1(bool2)
       console.log("css1",css1,"css2",css2);
-    },8000)
+    },4000)
 
   myTime2 =setInterval(function(){
       if(s1==false){
@@ -50,7 +50,7 @@ export default function Overview() {
       }
       setShow(s1);
       setShow1(s2);
-    },5000);
+    },2000);
   }
   useEffect(() => {changeCss();return componentWillUnmount;}, []);
   function componentWillUnmount() {
@@ -67,9 +67,12 @@ export default function Overview() {
       {show1==true?<div className={css1==true?"a1":"a1x"}>
         <Feifa />
       </div>:""}
-      {show2==true?<div className={css2==true?"a2":"a2x"}>
+      {/* {show2==true?<div className={css2==true?"a2":"a2x"}>
         <Entranceguard />
-      </div>:""}
+      </div>:""} */}
+      <div className="a2">
+        <Entranceguard />
+      </div>
       {/* <div className="today_num">
         <Todaynum />
       </div> */}

@@ -14,9 +14,9 @@ function Feifa() {
     pic: "tou1",
   };
 
-  let titleData=["访客非法闯入","陌生人翻越围墙","访客携带刀具","陌生人携带宠物"];
+  let titleData=["访客非法闯入","车辆超速","访客非法闯入","车辆超速"];
   let ran;
-  const [title, setTitle] = useState(localStorage.getItem("title")||"访客非法闯入");
+  const [title, setTitle] = useState(localStorage.getItem("title")?localStorage.getItem("title"):"访客非法闯入");
   let ay;
   let content = () => {
     ay=setInterval(function(){
