@@ -11,8 +11,8 @@ function Ruyuan() {
   const num3 = "5";
   const num4 = "2";
   const ruData = [
-    { name: "公司人数", value: "2,289" },
-    { name: "供应商人数", value: "101" },
+    { name: "公司人数", value: "1305" },
+    { name: "供应商人数", value: "1085" },
     { name: "访客人数", value: "162" },
   ];
 
