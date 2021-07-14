@@ -13,14 +13,14 @@ function Snap() {
       pic: "P4",
       what: "生产管理部门",
       time: timeNow,//这个时间需要跟随变动
-      where: "园区西门1门BH19201",
+      where: "西区前台",
       isHere: "yes",
     },
     {
       name: "陌生人",
       pic: "P2",
       time: timeNow,
-      where: "园区西门1门BH19201",
+      where: "行政楼办公室楼梯间",
       isHere: "no",
     },
     {
@@ -28,7 +28,7 @@ function Snap() {
       pic: "P3",
       what: "生产管理部门",
       time: timeNow,
-      where: "园区西门1门BH19201",
+      where: "东区二号辅房",
       isHere: "yes",
     },
   ];
