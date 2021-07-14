@@ -66,12 +66,13 @@ function Footer() {
     );
     return random;
   };
+  let webSocket;
   const alertPlay = () => {
     let num = getRandom(10);
     console.log("随机数", num);
     let AlSocketUrl = AlSocket + num;
     console.log("地址", AlSocketUrl);
-    const webSocket = new WebSocket(AlSocketUrl);
+    webSocket = new WebSocket(AlSocketUrl);
 
     webSocket.onopen = function (e) {
       console.log("通威 websocket is open:", "color: red;font-size:13px");
@@ -158,9 +159,22 @@ function Footer() {
           return;
       }
     };
+    webSocket.onclose = () => {
+      console.log("websocket连接关闭...")
+    };
+    webSocket.onerror = (err) => {
+        console.log(err)
+    }
   };
+  //定义关闭连接的方法
+  const close=()=>{
+    webSocket.close();
+}
   useEffect(() => {
     alertPlay();
+    return ()=>{
+      console.log("卸载")
+      close()}
   }, [pathname, bot_real_index, real_nav_active]);
 
   return (
