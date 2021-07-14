@@ -12,7 +12,7 @@ function Nnsnap() {
       pic: "P4",
       what: "生产管理部门",
       time: timeNow,//时间需要跟随
-      where: "园区西门1门BH19201",
+      where: "东区前台",
       isHere: "yes",
     },
     {
@@ -20,7 +20,7 @@ function Nnsnap() {
       pic: "P3",
       what: "生产管理部门",
       time: timeNow,
-      where: "园区西门1门BH19201",
+      where: "西区4号闸机",
       isHere: "yes",
     }
   ];
