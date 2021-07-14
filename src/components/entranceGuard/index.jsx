@@ -15,7 +15,9 @@ function Entranceguard() {
     { name: "所在位置", value: "信息监察部门" },
     { name: "所属部门", value: "人脸抓拍" },
   ];
-  const num = "0528";
+  const [num, setNum] = useState('0'+localStorage.getItem('numy')||'0128');
+  // const num = "0128";//随机数，递增
+
   const peopleContent = [
     {
       pic: "P1",
@@ -33,6 +35,21 @@ function Entranceguard() {
       time: timeNow,
     },
   ];
+  let t;
+  const changeNum = () => {
+    let numy=localStorage.getItem('numy')||'0128';
+
+    t = setInterval(function(){
+      numy++;
+      console.log('数字执行了',numy);
+        if(numy==500){
+          numy=10;
+        }    
+        localStorage.setItem('numy',numy);
+        setNum('0'+numy);
+    },2000);
+    
+  }
 
   const showtime = () => {
     var date = new Date();
@@ -67,8 +84,11 @@ function Entranceguard() {
     setTime(time);
     setTimeout(showtime, 1000);
   };
-  useEffect(() => {showtime()}, [top_count]);
-
+  useEffect(() => {showtime();changeNum();return componentWillUnmount;}, [top_count]);
+  function componentWillUnmount() {
+    // 组件销毁时你要执行的代码
+    clearInterval(t);
+  }
   return (
     <div className="mjbox">
       <div className="close"></div>
