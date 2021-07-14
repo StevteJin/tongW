@@ -64,7 +64,7 @@ function Rucar() {
       },
       series: [
         {
-          data: [820, 932, 901, 934, 1290, 1330, 1320, 889, 287],
+          data: [5, 10, 12, 155, 100, 60, 148, 52, 17],
           type: "line",
           smooth: true, //圆润
           symbol: "none", //不要圈
