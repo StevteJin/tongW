@@ -192,7 +192,7 @@ function Online() {
             color: "#fff",
           },
           // data: [0.50] // 系列中的数据内容数组
-          data: [Number(53) / 100],
+          data: [96.5 / 100],
         },
       ],
     };

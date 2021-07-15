@@ -7,9 +7,9 @@ function Lx() {
 
   const title = "今日报警类型统计";
   const fenleiData = [
-    { name: "车辆超速", value: "43" },
-    { name: "车辆超高", value: "5" },
-    { name: "车辆违停", value: "37" },
+    { name: "车辆超速", value: "5" },
+    { name: "车辆超高", value: "1" },
+    { name: "车辆违停", value: "7" },
   ];
 
   useEffect(() => {}, [top_count]);

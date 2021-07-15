@@ -270,7 +270,7 @@ function Nt4() {
       },
       series: [
         {
-          data: [500, 20, 20,500, 1000, 20, 600, 20, 500],
+          data: [0, 20, 20,500, 1000, 20, 600, 20, 500],
           type: "line",
           smooth: true, //圆润
           symbol: "none", //不要圈

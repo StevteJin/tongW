@@ -6,15 +6,15 @@ function Cl() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
   const title = "今日入园车辆统计";
-  const num1 = "2";
-  const num2 = "5";
-  const num3 = "5";
+  const num1 = "0";
+  const num2 = "4";
+  const num3 = "3";
   const num4 = "2";
   const clData = [
-    { name: "访客车辆", value: "32", pic: "car1" },
-    { name: "物流车辆", value: "67", pic: "car2" },
-    { name: "参观接待", value: "15", pic: "car3" },
-    { name: "化学品槽车", value: "23", pic: "car4" },
+    { name: "访客车辆", value: "52", pic: "car1" },
+    { name: "物流车辆", value: "5", pic: "car2" },
+    { name: "参观接待", value: "3", pic: "car3" },
+    { name: "化学品槽车", value: "2", pic: "car4" },
   ];
 
   useEffect(() => {}, [top_count]);

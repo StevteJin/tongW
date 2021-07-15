@@ -8,11 +8,11 @@ function Cscar() {
 
   const title = "今日超速车辆统计";
   const plxData = [
-    { name: "张伟（川A86765）", value: "5", pic: "plx_h", ser: "1" },
-    { name: "李东（浙A66765）", value: "4", pic: "plx_l", ser: "2" },
-    { name: "建国（沪C98765）", value: "4", pic: "plx_l", ser: "3" },
-    { name: "吴波（浙B76765）", value: "3", pic: "plx_l", ser: "4" },
-    { name: "金秀（川B99765）", value: "3", pic: "plx_l", ser: "5" },
+    { name: "刘维维（川A31ZZ3）", value: "5", pic: "plx_h", ser: "1" },
+    { name: "周猷（川JHU157）", value: "4", pic: "plx_l", ser: "2" },
+    { name: "李孝勇（川AL942W）", value: "4", pic: "plx_l", ser: "3" },
+    { name: "李靖翔（川A468JQ）", value: "3", pic: "plx_l", ser: "4" },
+    { name: "史玉龙（川A71Y2E）", value: "3", pic: "plx_l", ser: "5" },
   ];
 
   useEffect(() => {}, [top_count]);
@@ -34,7 +34,7 @@ function Cscar() {
                   </div>
                   <span className="num">{item.name}</span>
                 </div>
-                <div className="plx_right">{item.value}</div>
+                {/* <div className="plx_right">{item.value}</div> */}
               </div>
               <div className="plx_bot">
                 {item.pic == "plx_h" ? (

@@ -15,7 +15,7 @@ function Entranceguard() {
     { name: "所在位置", value: "信息监察部门" },
     { name: "所属部门", value: "人脸抓拍" },
   ];
-  const [num, setNum] = useState(localStorage.getItem('numy')?'0'+localStorage.getItem('numy'):'0128');
+  const [num, setNum] = useState(localStorage.getItem('numy')?'0'+localStorage.getItem('numy'):'0812');
   // const num = "0128";//随机数，递增
 
   const peopleContent = [
@@ -37,7 +37,7 @@ function Entranceguard() {
   ];
   let t;
   const changeNum = () => {
-    let numy=localStorage.getItem('numy')||'0128';
+    let numy=localStorage.getItem('numy')||'0812';
 
     t = setInterval(function(){
       numy++;
