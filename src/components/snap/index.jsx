@@ -9,8 +9,8 @@ function Snap() {
   const title = "实时人脸抓拍列表";
   const snapData = [
     {
-      name: "张学李(12452)",
-      pic: "P4",
+      name: "刘维维",
+      pic: "1",
       what: "生产管理部门",
       time: timeNow,//这个时间需要跟随变动
       where: "西区前台",
@@ -18,14 +18,14 @@ function Snap() {
     },
     {
       name: "陌生人",
-      pic: "P2",
+      pic: "2",
       time: timeNow,
       where: "行政楼办公室楼梯间",
       isHere: "no",
     },
     {
-      name: "王学李(12452)",
-      pic: "P3",
+      name: "李孝勇",
+      pic: "3",
       what: "生产管理部门",
       time: timeNow,
       where: "东区二号辅房",
@@ -86,14 +86,15 @@ function Snap() {
             <div key={index} className="snap_top">
               <div className="t_name">{item.name}</div>
               <div className="t_con">
-                <img
-                  className="t_tou"
-                  src={
-                    require("../../assets/tongwei/RRR/" + item.pic + ".png")
-                      .default
-                  }
-                  alt=""
-                />
+                <div className="t_tou">
+                  <img
+                    src={
+                      require("../../assets/tongwei/" + item.pic + ".png")
+                        .default
+                    }
+                    alt=""
+                  />
+                </div>
                 <div className="t_right">
                   <div className="t_what">
                     <img
@@ -121,13 +122,14 @@ function Snap() {
             </div>
           ) : (
             <div key={index} className="snap_bot">
+              <div className="bot_tou">
               <img
-                className="bot_tou"
                 src={
-                  require("../../assets/tongwei/RRR/" + item.pic + ".png").default
+                  require("../../assets/tongwei/" + item.pic + ".png").default
                 }
                 alt=""
               />
+              </div>
               <div className="bot_right">
                 <div className="bot_name">{item.name}</div>
                 <div className="bot_time bot_same">
