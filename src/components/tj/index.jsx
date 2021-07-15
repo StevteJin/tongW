@@ -77,19 +77,14 @@ function Tj() {
       },
       series: [
         {
-          name: "公司人数",
+          name: "用水量",
           type: "line",
+          smooth: true, //圆润
+          symbol: "none", //不要圈
           stack: "总量",
-          data: [120, 132, 101, 134, 90, 230, 210, 108, 187],
+          data: [800, 830, 840, 978, 1000, 987, 876, 850, 800],
           color: ["#216CFF"],
-        },
-        {
-          name: "非公司人数",
-          type: "line",
-          stack: "总量",
-          data: [220, 182, 191, 234, 290, 330, 310, 128, 874],
-          color: ["#FFC34B"],
-        },
+        }
       ],
     };
     myChart.setOption(option);
@@ -156,7 +151,7 @@ function Tj() {
       },
       series: [
         {
-          data: [120, 200, 150, 80, 70, 110, 130, 50, 80],
+          data: [200, 195, 185, 180, 176, 180, 176, 200, 200],
           type: "bar",
           barWidth: 10,
           showBackground: false,
@@ -231,7 +226,7 @@ function Tj() {
       },
       series: [
         {
-          data: [820, 932, 901, 934, 1290, 1330, 1320, 889, 287],
+          data: [600, 678, 757, 750, 800, 754, 643, 600, 765],
           type: "line",
           smooth: true, //圆润
           symbol: "none", //不要圈
