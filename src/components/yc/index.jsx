@@ -13,7 +13,7 @@ function Yc() {
     let option = {
       xAxis: {
         type: "category",
-        data: ["张无忌", "令狐冲", "杨过", "张三丰", "独孤求败"],
+        data: ["西区前台", "东区前台", "办公区1号楼梯间", "办公区2号楼梯间", "周转仓"],
         splitLine: {
           //网格线
           show: true,
@@ -57,7 +57,7 @@ function Yc() {
       },
       series: [
         {
-          data: [120, 200, 150, 80, 70],
+          data: [2,8, 4, 15, 13],
           type: "bar",
           barWidth: 10,
           showBackground: false,
