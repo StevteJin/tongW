@@ -13,7 +13,7 @@ function Bj() {
       pic: "tou",
       what: "未处理",
       time: timeNow,//时间需要跟随
-      where: "园区西门1门BH19201",
+      where: "大门岗",
       isHere: "yes",
     },
     {
@@ -21,7 +21,7 @@ function Bj() {
       pic: "tou",
       what: "已处理",
       time: timeNow,
-      where: "园区西门1门BH19201",
+      where: "大门岗",
       isHere: "yes",
     },
   ];
