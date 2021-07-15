@@ -20,7 +20,7 @@ function Feifa(param) {
   // setTitle(title1);
 
 
-  let titleData=["访客非法闯入","车辆超速","访客非法闯入","车辆超速"];
+  let titleData=["访客非法闯入","访客非法闯入","车辆超速","车辆超速"];
   let ran=Math.floor(Math.random()*3);
   const [title, setTitle] = useState(titleData[ran]);
   

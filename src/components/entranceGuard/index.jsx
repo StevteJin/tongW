@@ -20,18 +20,18 @@ function Entranceguard() {
 
   const peopleContent = [
     {
-      pic: "P1",
-      name: "张丽丽",
+      pic: "1",
+      name: "刘维维",
       time: timeNow,//时间需要跟随
     },
     {
-      pic: "P2",
-      name: "王大壮",
+      pic: "6",
+      name: "赵根锋",
       time: timeNow,
     },
     {
-      pic: "P3",
-      name: "李小二",
+      pic: "3",
+      name: "李孝勇",
       time: timeNow,
     },
   ];
@@ -135,7 +135,7 @@ function Entranceguard() {
                     <img
                       className="pic_icon"
                       src={
-                        require("../../assets/tongwei/RRR/" + item.pic + ".png")
+                        require("../../assets/tongwei/" + item.pic + ".png")
                           .default
                       }
                       alt=""
