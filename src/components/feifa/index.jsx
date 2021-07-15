@@ -2,30 +2,49 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 
-function Feifa() {
+function Feifa(param) {
   const [timeNow, setTime] = useState();
-
+  const [chaoCon,setCon]=useState("P6");
   const top_count = useMappedState((state) => state.top_navigation_count);
 
   // const title = "访客非法闯入";//随机改变内容
   const ffData = {
     time: timeNow,//时间需要跟随
-    where: "园区西门1门BH19201TO",
-    pic: "tou1",
+    where: "园区西门1门",
+    pic: chaoCon,
   };
 
+  // console.log('父传的',param.getTitle)
+  // let title1=param.getTitle;
+  // console.log('标题',title1)
+  // setTitle(title1);
+
+
   let titleData=["访客非法闯入","车辆超速","访客非法闯入","车辆超速"];
-  let ran;
-  const [title, setTitle] = useState(localStorage.getItem("title")?localStorage.getItem("title"):"访客非法闯入");
+  let ran=Math.floor(Math.random()*3);
+  const [title, setTitle] = useState(titleData[ran]);
+  
   let ay;
   let content = () => {
+    if(titleData[ran] == '访客非法闯入'){
+      setCon("P6");
+    }else {
+      setCon("che");
+    }
     ay=setInterval(function(){
+      ran=Math.floor(Math.random()*3)
+      if(ran>3){
+        ran=3
+      }
       let title1=titleData[ran];
-      ran=Math.floor(Math.random()*3);
       console.log('我是随机数',ran)
       console.log('我是标题内容',title1);
       setTitle(title1);
-    localStorage.setItem("title",title1);
+      if(title1 == '访客非法闯入'){
+        setCon("P6");
+      }else {
+        setCon("che");
+      }
   },5000)};
 
 

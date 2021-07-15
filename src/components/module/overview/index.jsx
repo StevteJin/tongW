@@ -22,6 +22,39 @@ export default function Overview() {
   let s2=false;
   let myTime1;
   let myTime2;
+  let changN;
+
+  let titleBool=[true,false,false,false];
+
+  const [tshow1, setTsBool0] = useState(titleBool[0]);
+  const [tshow2, setTsBool1] = useState(titleBool[1]);
+  const [tshow3, setTsBool2] = useState(titleBool[2]);
+  const [tshow4, setTsBool3] = useState(titleBool[3]);
+
+
+
+
+  
+  
+  
+  let changeBool= () =>{
+    changN=setInterval(function(){
+      titleBool=[false,false,false,false];
+      // 取1-4的随机数
+    let snum = Math.floor(Math.random()*4);
+    titleBool[snum]=true;
+    console.log('取到的布尔值',titleBool[snum],titleBool);
+    console.log('新数组',titleBool)
+    setTsBool0(titleBool[0]);
+    setTsBool1(titleBool[1]);
+    setTsBool2(titleBool[2]);
+    setTsBool3(titleBool[3]);
+    console.log('结果',tshow1,tshow2,tshow3,tshow4)
+    },5000)
+    
+  }
+  
+
   let changeCss=()=>{
     // css1=true
     // css2=true
@@ -52,11 +85,16 @@ export default function Overview() {
       setShow1(s2);
     },2000);
   }
-  useEffect(() => {changeCss();return componentWillUnmount;}, []);
+
+  let changeShow =()=>{
+
+  }
+  useEffect(() => {changeBool();return componentWillUnmount;}, []);
   function componentWillUnmount() {
     // 组件销毁时你要执行的代码
-    clearInterval(myTime1);
-    clearInterval(myTime2);
+    // clearInterval(changeN);
+    // clearInterval(myTime1);
+    // clearInterval(myTime2);
   }
   return (
     <div>
@@ -64,8 +102,22 @@ export default function Overview() {
         <Gonggao />
       </div> */}
       {/* 弹窗随机弹出，循环 */}
-      {show1==true?<div className={css1==true?"a1":"a1x"}>
+      {/* {show1==true?<div className={css1==true?"a1":"a1x"}>
         <Feifa />
+      </div>:""} */}
+      {/* 换个思路写 四个位置不同的报警弹框*/}
+      {/* 传值到子 */}
+      {tshow1?<div className="b1">
+        <Feifa getTitle={"访客非法闯入"}/>
+      </div>:""}
+      {tshow2?<div className="b2">
+        <Feifa getTitle={"车辆超速"}/>
+      </div>:""}
+      {tshow3?<div className="b3">
+        <Feifa  getTitle={"访客非法闯入"}/>
+      </div>:""}
+      {tshow4?<div className="b4">
+        <Feifa  getTitle={"车辆超速"}/>
       </div>:""}
       {/* {show2==true?<div className={css2==true?"a2":"a2x"}>
         <Entranceguard />
