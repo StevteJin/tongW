@@ -36,7 +36,7 @@ function Nt4() {
     },
     {
       name: "其他",
-      value: "11",
+      value: "37",
       classCall: "call6",
     },
   ];
@@ -49,9 +49,15 @@ function Nt4() {
       tooltip: {
         trigger: "axis",
       },
-
+      // legend: {
+      //   data: ['公司人数', '非公司人数'],
+      //   textStyle: {
+      //     color: "#fff",
+      //     fontSize: 10,
+      //   },
+      // },
       grid: {
-        left: "3%",
+        left: "8%",
         right: "4%",
         bottom: "3%",
         containLabel: true,
@@ -113,15 +119,15 @@ function Nt4() {
           name: "公司人数",
           type: "line",
           stack: "总量",
-          data: [120, 132, 101, 134, 90, 230, 210, 108, 187],
-          color: ["#216CFF"],
+          data: [400, 15, 17, 380, 800, 18, 400, 18, 370],
+          color: ["#FFC34B"],
         },
         {
           name: "非公司人数",
           type: "line",
           stack: "总量",
-          data: [220, 182, 191, 234, 290, 330, 310, 128, 874],
-          color: ["#FFC34B"],
+          data: [100, 5, 3, 120, 200, 3, 200, 13, 130],
+          color: ["#216CFF"],
         },
       ],
     };
@@ -139,10 +145,10 @@ function Nt4() {
           "00:00",
           "03:00",
           "06:00",
-          "09:00",
-          "12:00",
-          "15:00",
-          "18:00",
+          "10:00",
+          "11:00",
+          "13:30",
+          "15:30",
           "21:00",
           "24:00",
         ],
@@ -189,7 +195,7 @@ function Nt4() {
       },
       series: [
         {
-          data: [120, 200, 150, 80, 70, 110, 130, 50, 80],
+          data: [0, 0, 0, 56, 57, 74, 78, 0, 0],
           type: "bar",
           barWidth: 10,
           showBackground: false,
@@ -264,7 +270,7 @@ function Nt4() {
       },
       series: [
         {
-          data: [820, 932, 901, 934, 1290, 1330, 1320, 889, 287],
+          data: [500, 20, 20,500, 1000, 20, 600, 20, 500],
           type: "line",
           smooth: true, //圆润
           symbol: "none", //不要圈
@@ -468,7 +474,7 @@ function Nt4() {
             { value: 23 },
             { value: 12 },
             { value: 11 },
-            { value: 11 }
+            { value: 37 }
           ],
         },
       ],
@@ -523,8 +529,8 @@ function Nt4() {
               {/* 饼图在这里 */}
               <div id={"main4"} className="tu" style={{ height: 130 }}></div>
               <div className="bread_title">
-                <div className="bread_t">147</div>
-                <div className="bread_b">违纪总数</div>
+                <div className="bread_t">162</div>
+                <div className="bread_b">访客总数</div>
               </div>
             </div>
             <div className="bg_right">
