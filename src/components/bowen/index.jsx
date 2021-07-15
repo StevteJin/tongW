@@ -133,7 +133,7 @@ function Bowen() {
             color: "#fff",
           },
           // data: [0.50] // 系列中的数据内容数组
-          data: [Number(53) / 100],
+          data: [Number(76) / 100],
         },
       ],
     };
@@ -155,7 +155,7 @@ function Bowen() {
           {/* 饼图在这里 */}
           <div id={"mainb"} className="tu" style={{ height: 120 }}></div>
           <div className="bread_title">
-            <div className="bread_b">任务总数</div>
+            <div className="bread_b">车位总数</div>
           </div>
         </div>
         <div className="bo_bt">

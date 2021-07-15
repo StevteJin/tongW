@@ -16,22 +16,22 @@ function Carp() {
     { name: "所在位置", value: "信息监察部门" },
     { name: "所属部门", value: "人脸抓拍" },
   ];
-  const num = "0528";
-  const nei = "456";
+  const num = "0432";
+  const nei = [52,5,3,2];
   const peopleContent = [
     {
-      pic: "che",
-      name: "川A.8NH34",
+      pic: "carcar2",
+      name: "川A.56434",
       time: timeNow,
     },
     {
-      pic: "che",
-      name: "浙A.8NH34",
+      pic: "carcar3",
+      name: "川A.32134",
       time: timeNow,
     },
     {
-      pic: "che",
-      name: "沪A.8NH34",
+      pic: "carcar4",
+      name: "川A.45341",
       time: timeNow,
     },
   ];
@@ -88,9 +88,23 @@ function Carp() {
       <div className="numbox">
         <span className="num_top">今日累计通行车数量</span>
         <span className="num_bot">{num}</span>
+        <div className="nei_car_box">
         <div className="nei_car">
-          <span className="n_left">内部车辆：</span>
-          <span className="n_right">{nei}</span>
+          <span className="n_left">&nbsp;访客车辆：</span>
+          <span className="n_right">{nei[0]}</span>
+        </div>
+        <div className="nei_car">
+          <span className="n_left">&nbsp;物流车辆：</span>
+          <span className="n_right">{nei[1]}</span>
+        </div>
+        <div className="nei_car">
+          <span className="n_left">&nbsp;参观接待：</span>
+          <span className="n_right">{nei[2]}</span>
+        </div>
+        <div className="nei_car">
+          <span className="n_left">化学品槽车：</span>
+          <span className="n_right">{nei[3]}</span>
+        </div>
         </div>
       </div>
       <div className="pic_con">

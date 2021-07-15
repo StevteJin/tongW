@@ -58,9 +58,11 @@
       margin-left: 105px;
       font-weight: 600;
     }
+    .nei_car_box{overflow: hidden;margin-left:20px;}
     .nei_car {
-      margin-left: 36%;
+      // margin-left: 36%;
       font-size: 12px;
+      float: left;
       .n_left {
         color: #b8c6d5;
       }
@@ -90,6 +92,7 @@
         overflow: hidden;
         .pic_icon {
           width: 60px;
+          height:60px;
           float: left;
           margin-top: 5px;
           margin-left: 5px;

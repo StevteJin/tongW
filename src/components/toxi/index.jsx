@@ -8,9 +8,8 @@ function Toxi() {
 
   const title = "今日出入口通行分布";
   const plxData = [
-    { name: "出入口1", value: "18", pic: "plx_h", ser: "1" },
-    { name: "出入口2", value: "14", pic: "plx_l", ser: "2" },
-    { name: "出入口3", value: "11", pic: "plx_l", ser: "3" },
+    { name: "大门岗", value: "385", pic: "plx_h", ser: "1" },
+    { name: "物流门", value: "48", pic: "plx_l", ser: "2" },
   ];
 
   useEffect(() => {}, [top_count]);

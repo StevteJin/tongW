@@ -9,7 +9,7 @@ function Chaosu() {
   const title = "车辆超速";
   const ffData = {
     time: timeNow,//时间需要跟随
-    where: "园区西门1门BH19201TO",
+    where: "升旗广场北面",
     pic: "che",
     who: "川A·12345",
   };

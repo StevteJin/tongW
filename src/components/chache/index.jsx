@@ -21,17 +21,17 @@ function Chache() {
   const mjData2 = [
     {
       name: "正常运行",
-      value: "28",
+      value: "4",
       classCall: "call1",
     },
     {
       name: "正在充电",
-      value: "25",
+      value: "5",
       classCall: "call2",
     },
     {
       name: "故障调试",
-      value: "2",
+      value: "1",
       classCall: "call3",
     },
   ];
@@ -146,7 +146,7 @@ function Chache() {
           {/* 饼图在这里 */}
           <div id={"mainx"} className="tu" style={{ height: 130 }}></div>
           <div className="bread_title">
-            <div className="bread_t">55</div>
+            <div className="bread_t">10</div>
             <div className="bread_b">叉车总数</div>
           </div>
         </div>
