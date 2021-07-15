@@ -15,14 +15,16 @@ function Entranceguard() {
     { name: "所在位置", value: "信息监察部门" },
     { name: "所属部门", value: "人脸抓拍" },
   ];
-  const [num, setNum] = useState(localStorage.getItem('numy')?'0'+localStorage.getItem('numy'):'0812');
+  const [num, setNum] = useState(
+    localStorage.getItem("numy") ? "0" + localStorage.getItem("numy") : "0812"
+  );
   // const num = "0128";//随机数，递增
 
   const peopleContent = [
     {
       pic: "1",
       name: "刘维维",
-      time: timeNow,//时间需要跟随
+      time: timeNow, //时间需要跟随
     },
     {
       pic: "6",
@@ -37,19 +39,18 @@ function Entranceguard() {
   ];
   let t;
   const changeNum = () => {
-    let numy=localStorage.getItem('numy')||'0812';
+    let numy = localStorage.getItem("numy") || "0812";
 
-    t = setInterval(function(){
+    t = setInterval(function () {
       numy++;
-      console.log('数字执行了',numy);
-        if(numy==500){
-          numy=10;
-        }    
-        localStorage.setItem('numy',numy);
-        setNum('0'+numy);
-    },2000);
-    
-  }
+      // console.log('数字执行了',numy);
+      if (Number(numy) > 900) {
+        numy = 812;
+      }
+      localStorage.setItem("numy", numy);
+      setNum("0" + numy);
+    }, 2000);
+  };
 
   const showtime = () => {
     var date = new Date();
@@ -74,17 +75,15 @@ function Entranceguard() {
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
-    var time =
-      hours +
-      ":" +
-      minutes +
-      ":" +
-      seconds +
-      " "
+    var time = hours + ":" + minutes + ":" + seconds + " ";
     setTime(time);
     setTimeout(showtime, 1000);
   };
-  useEffect(() => {showtime();changeNum();return componentWillUnmount;}, [top_count]);
+  useEffect(() => {
+    showtime();
+    changeNum();
+    return componentWillUnmount;
+  }, [top_count]);
   function componentWillUnmount() {
     // 组件销毁时你要执行的代码
     clearInterval(t);

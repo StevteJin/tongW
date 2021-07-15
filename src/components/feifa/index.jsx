@@ -37,8 +37,8 @@ function Feifa(param) {
         ran=3
       }
       let title1=titleData[ran];
-      console.log('我是随机数',ran)
-      console.log('我是标题内容',title1);
+      // console.log('我是随机数',ran)
+      // console.log('我是标题内容',title1);
       setTitle(title1);
       if(title1 == '访客非法闯入'){
         setCon("P6");
