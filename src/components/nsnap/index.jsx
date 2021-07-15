@@ -8,16 +8,16 @@ function Nnsnap() {
   const title = "通道闸机实时抓拍列表";
   const nsnapData = [
     {
-      name: "张学李(12452)",
-      pic: "P4",
+      name: "史玉龙",
+      pic: "5",
       what: "生产管理部门",
       time: timeNow,//时间需要跟随
       where: "东区前台",
       isHere: "yes",
     },
     {
-      name: "王学李(12452)",
-      pic: "P3",
+      name: "赵根锋",
+      pic: "6",
       what: "生产管理部门",
       time: timeNow,
       where: "西区4号闸机",
@@ -79,13 +79,15 @@ function Nnsnap() {
             <div key={index} className="nsnap_top">
               <div className="t_name">{item.name}</div>
               <div className="t_con">
+                <div className="t_tou">
                 <img
-                  className="t_tou"
                   src={
-                    require("../../assets/tongwei/RRR/" + item.pic + ".png").default
+                    require("../../assets/tongwei/" + item.pic + ".png").default
                   }
                   alt=""
                 />
+                </div>
+                
                 <div className="t_right">
                   <div className="t_what">
                     <img
@@ -116,7 +118,7 @@ function Nnsnap() {
               <img
                 className="bot_tou"
                 src={
-                  require("../../assets/tongwei/RRR/" + item.pic + ".png").default
+                  require("../../assets/tongwei/" + item.pic + ".png").default
                 }
                 alt=""
               />
