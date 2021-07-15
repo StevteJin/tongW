@@ -119,6 +119,19 @@ export default function Overview() {
       {tshow4?<div className="b4">
         <Feifa  getTitle={"车辆超速"}/>
       </div>:""}
+
+      {/* <div className="b1">
+        <Feifa getTitle={"访客非法闯入"}/>
+      </div>
+      <div className="b2">
+        <Feifa getTitle={"车辆超速"}/>
+      </div>
+      <div className="b3">
+        <Feifa  getTitle={"访客非法闯入"}/>
+      </div>
+      <div className="b4">
+        <Feifa  getTitle={"车辆超速"}/>
+      </div> */}
       {/* {show2==true?<div className={css2==true?"a2":"a2x"}>
         <Entranceguard />
       </div>:""} */}
