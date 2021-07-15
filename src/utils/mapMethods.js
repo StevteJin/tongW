@@ -1,5 +1,8 @@
 import { createMap, Event, Model } from "./map3d";
 import { locationList } from "../api/mainApi";
+//判断人还是物路由
+let urlPath = window.location.hash.split("#")[1];
+console.log("222地址", window.location.hash.split("#")[1]);
 export const Common = {
   //格式化坐标
   filter(value) {
@@ -20,15 +23,39 @@ export const Common = {
   initializationPosition(map3d) {
     locationList().then((res) => {
       if (res.msg === "success") {
-        var resultsPosition = JSON.parse(res.data[0].position);
-        let positionJson = {
-          x: resultsPosition.x,
-          y: resultsPosition.y,
-          z: resultsPosition.z,
-          pitch: resultsPosition.pitch,
-          yaw: resultsPosition.yaw,
-          roll: resultsPosition.roll,
+        let resultsPosition = JSON.parse(res.data[0].position);
+        let resultsPosition1 = {
+          x: "52351.40234375",
+          y: "-45275.8515625",
+          z: "8076.00537109375",
+          pitch: "24.038965225219727",
+          yaw: "161.0946807861328",
+          roll: "0.0000070114119807840325",
         };
+        console.log("坐标", typeof resultsPosition1);
+        let positionJson;
+        if (urlPath == "/home/person") {
+          console.log("1执行");
+          positionJson = {
+            x: resultsPosition.x,
+            y: resultsPosition.y,
+            z: resultsPosition.z,
+            pitch: resultsPosition.pitch,
+            yaw: resultsPosition.yaw,
+            roll: resultsPosition.roll,
+          };
+        } else {
+          console.log("2执行");
+          positionJson = {
+            x: resultsPosition1.x,
+            y: resultsPosition1.y,
+            z: resultsPosition1.z,
+            pitch: resultsPosition1.pitch,
+            yaw: resultsPosition1.yaw,
+            roll: resultsPosition1.roll,
+          };
+        }
+        console.log('坐标看看是啥',positionJson)
         Common.mapFly(map3d, { center: positionJson });
       }
     });
