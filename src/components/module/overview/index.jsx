@@ -144,23 +144,23 @@ export default function Overview() {
       {/* {show2==true?<div className={css2==true?"a2":"a2x"}>
         <Entranceguard />
       </div>:""} */}
-      {tshow1 || tshow2 ? (
+      {tshow1 ? (
         <div className="a2">
-          <Entranceguard />
+          <Entranceguard getTitle={"C1大门门岗"} />
+        </div>
+      ) : (
+        ""
+      )}
+      {tshow2 ? (
+        <div className="a3">
+          <Entranceguard getTitle={"展厅门口"} />
         </div>
       ) : (
         ""
       )}
       {tshow3 ? (
-        <div className="a3">
-          <Entranceguard />
-        </div>
-      ) : (
-        ""
-      )}
-      {tshow4 ? (
         <div className="a4">
-          <Entranceguard />
+          <Entranceguard getTitle={"物流门入口"} />
         </div>
       ) : (
         ""

@@ -6,19 +6,38 @@ import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 
 SwiperCore.use([Autoplay]);
-function Entranceguard() {
+function Entranceguard(param) {
   const top_count = useMappedState((state) => state.top_navigation_count);
   const [timeNow, setTime] = useState();
-  const title = "通威大道门禁HB18920NH";
+  const [titleShow, setTitle] = useState("C1大门门岗");
+  const [num, setNum] = useState("0812");
+
+  const title = "C1大门门岗";
   const menjin = [
-    { name: "点位用途", value: "通威大道西街道" },
-    { name: "所在位置", value: "信息监察部门" },
-    { name: "所属部门", value: "人脸抓拍" },
+    { name: "点位用途", value: "进入园区" },
+    { name: "所在位置", value: "C1大门门岗入口" },
+    { name: "所属部门", value: "金堂园区" },
   ];
-  const [num, setNum] = useState(
-    localStorage.getItem("numy") ? "0" + localStorage.getItem("numy") : "0812"
-  );
-  // const num = "0128";//随机数，递增
+
+  const title1 = "展厅门口";
+  const menjin1 = [
+    { name: "点位用途", value: "进入展厅" },
+    { name: "所在位置", value: "A1车间-展厅门口" },
+    { name: "所属部门", value: "金堂园区" },
+  ];
+
+  const title2 = "物流门入口";
+  const menjin2 = [
+    { name: "点位用途", value: "进入园区" },
+    { name: "所在位置", value: "C2物流门入口" },
+    { name: "所属部门", value: "金堂园区" },
+  ];
+
+  //812,112,916
+
+  // const [num, setNum] = useState(
+  //   localStorage.getItem("numy") ? "0" + localStorage.getItem("numy") : "0812"
+  // );
 
   const peopleContent = [
     {
@@ -37,19 +56,32 @@ function Entranceguard() {
       time: timeNow,
     },
   ];
+  let getTitle;
+  const titleValue = () => {
+    console.log("父传的", param.getTitle);
+    getTitle = param.getTitle;
+    setTitle(getTitle);
+    if (getTitle == "C1大门门岗") {
+      setNum("0812");
+    } else if (getTitle == "展厅门口") {
+      setNum("0112");
+    } else if (getTitle == "物流门入口") {
+      setNum("0916");
+    }
+    changeNum(num);
+  };
   let t;
-  const changeNum = () => {
-    let numy = localStorage.getItem("numy") || "0812";
+  const changeNum = (num) => {
+    let numy = num;
 
     t = setInterval(function () {
       numy++;
       // console.log('数字执行了',numy);
-      if (Number(numy) > 900) {
-        numy = 812;
+      if (Number(numy) > 999) {
+        numy = num;
       }
-      localStorage.setItem("numy", numy);
       setNum("0" + numy);
-    }, 2000);
+    }, 5000);
   };
 
   const showtime = () => {
@@ -80,8 +112,8 @@ function Entranceguard() {
     setTimeout(showtime, 1000);
   };
   useEffect(() => {
+    titleValue();
     showtime();
-    changeNum();
     return componentWillUnmount;
   }, [top_count]);
   function componentWillUnmount() {
@@ -91,16 +123,41 @@ function Entranceguard() {
   return (
     <div className="mjbox">
       <div className="close"></div>
-      <div className="title">{title}</div>
+      {titleShow == "C1大门门岗" ? (
+        <div className="title">{title}</div>
+      ) : titleShow == "展厅门口" ? (
+        <div className="title">{title1}</div>
+      ) : (
+        <div className="title">{title2}</div>
+      )}
+
       <div className="mcontent">
-        {menjin.map((item, index) => {
-          return (
-            <div key={index}>
-              <span className="left">{item.name} :</span>
-              <span className="right">{item.value}</span>
-            </div>
-          );
-        })}
+        {titleShow == "C1大门门岗"
+          ? menjin.map((item, index) => {
+              return (
+                <div key={index}>
+                  <span className="left">{item.name} :</span>
+                  <span className="right">{item.value}</span>
+                </div>
+              );
+            })
+          : titleShow == "展厅门口"
+          ? menjin1.map((item, index) => {
+              return (
+                <div key={index}>
+                  <span className="left">{item.name} :</span>
+                  <span className="right">{item.value}</span>
+                </div>
+              );
+            })
+          : menjin2.map((item, index) => {
+              return (
+                <div key={index}>
+                  <span className="left">{item.name} :</span>
+                  <span className="right">{item.value}</span>
+                </div>
+              );
+            })}
       </div>
       <div className="numbox">
         <span className="num_top">今日累计通行人数</span>
