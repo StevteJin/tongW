@@ -21,27 +21,27 @@ function Wj() {
   const mjData2 = [
     {
       name: "未戴安全帽",
-      value: "42",
+      value: "9",
       classCall: "call1",
     },
     {
       name: "未戴口罩",
-      value: "37",
+      value: "28",
       classCall: "call2",
     },
     {
       name: "脱岗",
-      value: "23",
+      value: "1",
       classCall: "call3",
     },
     {
       name: "睡岗",
-      value: "12",
+      value: "0",
       classCall: "call4",
     },
     {
       name: "其他",
-      value: "11",
+      value: "3",
       classCall: "call5",
     }
   ];
@@ -198,7 +198,7 @@ function Wj() {
           {/* 饼图在这里 */}
           <div id={"main"} className="tu" style={{ height: 130 }}></div>
           <div className="bread_title">
-            <div className="bread_t">147</div>
+            <div className="bread_t">41</div>
             <div className="bread_b">违纪总数</div>
           </div>
         </div>

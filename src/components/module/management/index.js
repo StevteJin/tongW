@@ -24,9 +24,9 @@ export default function Management() {
           <div className="wj">
             <Wj />
           </div>
-          <div className="wjtimes">
+          {/* <div className="wjtimes">
             <Wjtimes />
-          </div>
+          </div> */}
           <div className="zl">
             <Zl />
           </div>
