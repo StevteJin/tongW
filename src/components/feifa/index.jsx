@@ -85,7 +85,7 @@ function Feifa(param) {
       seconds +
       " "
     setTime(time);
-    setTimeout(showtime, 5000);
+    // setTimeout(showtime, 5000);
   };
   useEffect(() => {showtime();content();return componentWillUnmount;}, [top_count]);
   function componentWillUnmount() {

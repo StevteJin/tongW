@@ -109,7 +109,7 @@ function Entranceguard(param) {
     }
     var time = hours + ":" + minutes + ":" + seconds + " ";
     setTime(time);
-    setTimeout(showtime, 1000);
+    // setTimeout(showtime, 1000);
   };
   useEffect(() => {
     titleValue();

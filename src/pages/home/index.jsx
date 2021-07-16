@@ -69,6 +69,8 @@ import Zj from "../../components/zj";
 import SmallTools from "../../components/smallTools";
 
 function Home() {
+  const dateRef = useRef();
+  console.log("容器对象", dateRef.current);
   const dispatch = useDispatch();
   const active_name = useMappedState((state) => state.nav_active);
   const { pathname } = useLocation(); //存储当前路由地址`
@@ -98,7 +100,7 @@ function Home() {
     console.log("宽，高", ww, wh);
     return ww < wh ? ww : wh;
   };
-  
+
   let scale;
   const setScale = () => {
     scale = getScale();
@@ -200,6 +202,8 @@ function Home() {
       {/* 页脚 */}
       <Footer />
     </div>
+    // <div ref={dateRef}>
+    // </div>
     //   <div className="ScaleBox" id="ScaleBox">
     // </div>
   );

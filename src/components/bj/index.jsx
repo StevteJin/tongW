@@ -63,7 +63,7 @@ function Bj() {
       seconds +
       " "
     setTime(time);
-    setTimeout(showtime, 1000);
+    // setTimeout(showtime, 1000);
   };
 
   useEffect(() => {showtime()}, [top_count]);
