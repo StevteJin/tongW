@@ -23,6 +23,7 @@ export function twGetList(paramsData) {
 //金写 start
 //今日报警类型统计
 export function getStatisticByPAlarm(paramsData) {
+  console.log('报警报警')
   return request({
     url: constant.statisticByPAlarm,
     method: "get",
