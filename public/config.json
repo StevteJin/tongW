@@ -2,6 +2,7 @@
     "Url": "http://10.28.6.24:8090/ZYmap",
     "Url2": "http://10.28.6.24:8096/LXFmap",
     "alertSocket": "ws://10.28.6.21:9097/scp3dvs/ws/",
+    "twUrl":"http://10.28.6.21:9097/scp3dvs",
     "datamanel": "http://172.16.12.32:17009/jwvisual/service/api/jwvisual/v1/",
     "videoSocket": "ws://127.0.0.1:8909",
     "alarmSocket": "ws://192.168.0.245:8091",
