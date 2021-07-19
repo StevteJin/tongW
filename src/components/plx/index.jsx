@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 import { Progress } from "antd";
-
+import {
+  getStatisticByPAlarm
+} from "../../api/mainApi";
 function Plx() {
   const top_count = useMappedState((state) => state.top_navigation_count);
 
@@ -19,7 +21,8 @@ function Plx() {
     { name: "其他", value: "1", pic: "plx_l", ser: 8 },
   ];
 
-  useEffect(() => {}, [top_count]);
+
+  useEffect(() => {getStatisticByPAlarm()}, [top_count]);
 
   return (
     <div className="fen_box2">
