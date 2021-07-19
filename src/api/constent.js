@@ -1,4 +1,4 @@
-import { api1 as ApiUrl, api2 as ApiUrl2, doorInurl as doorUrl } from './address';
+import { api1 as ApiUrl, api2 as ApiUrl2, doorInurl as doorUrl, twUrlNow as twUrlNow } from './address';
 
 // 接口集合
 const constant =  {
@@ -8,6 +8,11 @@ const constant =  {
   //获取平台配置
   getConfig : `${ApiUrl}/sys/config/list`,
 
+  //金写 start 
+  //今日报警类型统计
+  statisticByPAlarm : `${twUrlNow}/api/v1/statistics/statisticByPAlarm`,
+  //金写 end
+  
   //头部模块列表
   layoutList : `${ApiUrl}/layout/config/list`,
 
@@ -102,7 +107,8 @@ const constant =  {
   SPCC_DoorList : `${doorUrl}/SPCC/DoorList`,
 
   //床位信息查询 -- 犯人列表
-  GKBedInformationRoom : `${doorUrl}/SPCC/GKBedInformationRoom`
+  GKBedInformationRoom : `${doorUrl}/SPCC/GKBedInformationRoom`,
+
 
 } 
 

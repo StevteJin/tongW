@@ -4,7 +4,11 @@ import $ from "jquery";
 
 var ApiUrl; //张源接口
 var ApiUrl2; //李晓飞接口
-var alertS; //通威socket
+
+let alertS; //通威socket，金
+let twUrl;//通威接口，金
+
+
 var videoS; //相机视频socket
 var alarmS; //报警socket
 var luWang; //路网接口
@@ -31,7 +35,10 @@ $.ajax({
 
     ApiUrl = response.Url;
     ApiUrl2 = response.Url2;
-    alertS = response.alertSocket;
+
+    alertS = response.alertSocket;//通威控屏websockt
+    twUrl = response.twUrl;//通威接口
+
     videoS = response.videoSocket;
     alarmS = response.alarmSocket;
     luWang = response.luwangIp;
@@ -42,12 +49,12 @@ $.ajax({
   },
 });
 
-//李测试接口
-// export let testLastUrl=testUrl
-
 export var api1 = ApiUrl;
 export var api2 = ApiUrl2;
-export var AlSocket = alertS; //通威
+
+export let AlSocket = alertS; //通威控屏
+export let twUrlNow = twUrl;//通威接口
+
 export var vSocekt = videoS;
 export var ASocekt = alarmS;
 export var lwIP = luWang;

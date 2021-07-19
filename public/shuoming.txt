@@ -1,0 +1,7 @@
+config.json//配置接口的文件
+src/api文件为接口调用文件夹
+request.js为axios封装文件
+步骤一：
+address.js请求config.json获取接口，然后导出
+步骤二: constent.js导入address.js,写好每个接口尾缀
+步骤三：mainApi.js导入constent.js，封装好调用接口之后的操作方法

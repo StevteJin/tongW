@@ -20,6 +20,20 @@ export function twGetList(paramsData) {
   });
 }
 
+//金写 start
+//今日报警类型统计
+export function getStatisticByPAlarm(paramsData) {
+  return request({
+    url: constant.statisticByPAlarm,
+    method: "get",
+    data: paramsData,
+  });
+}
+
+//金写 end
+
+
+
 export function getLogin(paramsData) {
   return request({
     url: constant.getLogin,

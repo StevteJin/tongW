@@ -9,7 +9,7 @@ import {
   cameraList_S,
   labelLists
 } from "../../api/mainApi";
-import urlData from "../../api/config";
+
 
 import "./style.scss";
 
