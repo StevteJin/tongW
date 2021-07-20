@@ -3,13 +3,14 @@ import * as echarts from "echarts";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 import { useLocation } from "react-router-dom";
-import { getWater24Consume, getElectric24consume, getDirtyWaterOut24consume, getalldata } from "../../api/mainApi";
+import { getWater24Consume, getElectric24consume, getDirtyWaterOut24consume } from "../../api/mainApi";
 
 
 function Tj() {
   const [water24Consume, setWater24Consume] = useState();
   const [electric24consume, setElectric24consume] = useState();
   const [dirtyWaterOut24consume, setDirtyWaterOut24consume] = useState();
+
   const [index1,setIndex1] = useState(1)
   const [index2,setIndex2] = useState(2)
   const [index3,setIndex3] = useState(3)
@@ -341,7 +342,6 @@ function Tj() {
     }).catch(err=>{
       console.log(err);
     });
-    getalldata();
   }, [index1,index2,index3]);
 
   return (
