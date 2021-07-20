@@ -3,6 +3,8 @@ import * as echarts from "echarts";
 import "./style.scss";
 import { useDispatch, useMappedState } from "redux-react-hook";
 import { useLocation } from "react-router-dom";
+import { getWater24Consume, getElectric24consume, getDirtyWaterOut24consume, getalldata } from "../../api/mainApi";
+
 
 function Tj() {
   const top_count = useMappedState((state) => state.top_navigation_count);
@@ -285,6 +287,10 @@ function Tj() {
     initChart1();
     initChart2();
     initChart3();
+    getWater24Consume();
+    getElectric24consume();
+    getDirtyWaterOut24consume();
+    getalldata();
   }, [top_count]);
 
   return (

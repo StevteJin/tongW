@@ -11,8 +11,17 @@ const constant =  {
   //金写 start 
   //今日报警类型统计
   statisticByPAlarm : `${twUrlNow}/api/v1/statistics/statisticByPAlarm`,
+  //近24小时园区用水量统计
+  water24Consume : `${twUrlNow}/api/v1/statistics/water24Consume`,
+  //近24小时园区用电量统计
+  electric24consume : `${twUrlNow}/api/v1/statistics/electric24consume`,
+  //近24小时园区午睡排放量统计
+  dirtyWaterOut24consume : `${twUrlNow}/api/v1/statistics/dirtyWaterOut24consume`,
+  //厂务管理厂务数据
+  getalldata : `${twUrlNow}/api/v1/factory/getalldata`,
+
   //金写 end
-  
+
   //头部模块列表
   layoutList : `${ApiUrl}/layout/config/list`,
 

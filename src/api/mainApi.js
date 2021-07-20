@@ -31,6 +31,46 @@ export function getStatisticByPAlarm(paramsData) {
   });
 }
 
+//近24小时园区用水量统计
+export function getWater24Consume(paramsData) {
+  console.log('用水量')
+  return request({
+    url: constant.water24Consume,
+    method: "get",
+    data: paramsData,
+  });
+}
+
+//近24小时园区用电量统计
+export function getElectric24consume(paramsData) {
+  console.log('用水量')
+  return request({
+    url: constant.electric24consume,
+    method: "get",
+    data: paramsData,
+  });
+}
+
+//近24小时园区污水排放量统计
+export function getDirtyWaterOut24consume(paramsData) {
+  console.log('用水量')
+  return request({
+    url: constant.dirtyWaterOut24consume,
+    method: "get",
+    data: paramsData,
+  });
+}
+
+//厂务管理厂务数据
+export function getalldata(paramsData) {
+  console.log('用水量')
+  return request({
+    url: constant.getalldata,
+    method: "get",
+    data: paramsData,
+  });
+}
+
 //金写 end
 
 
