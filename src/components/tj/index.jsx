@@ -8,6 +8,11 @@ import { getWater24Consume, getElectric24consume, getDirtyWaterOut24consume, get
 
 function Tj() {
   const [water24Consume, setWater24Consume] = useState();
+  const [electric24consume, setElectric24consume] = useState();
+  const [dirtyWaterOut24consume, setDirtyWaterOut24consume] = useState();
+  const [index1,setIndex1] = useState(1)
+  const [index2,setIndex2] = useState(2)
+  const [index3,setIndex3] = useState(3)
   const top_count = useMappedState((state) => state.top_navigation_count);
   const { pathname } = useLocation(); //存储当前路由地址`
   const title = "统计";
@@ -96,23 +101,24 @@ function Tj() {
   };
 
   //近24H园区用电量统计
-  let initChart2 = () => {
+  let initChart2 = (time,data) => {
     let element = document.getElementById("main2");
     let myChart = echarts.init(element);
     let option = {
       xAxis: {
         type: "category",
-        data: [
-          "00:00",
-          "03:00",
-          "06:00",
-          "09:00",
-          "12:00",
-          "15:00",
-          "18:00",
-          "21:00",
-          "24:00",
-        ],
+        // data: [
+        //   "00:00",
+        //   "03:00",
+        //   "06:00",
+        //   "09:00",
+        //   "12:00",
+        //   "15:00",
+        //   "18:00",
+        //   "21:00",
+        //   "24:00",
+        // ],
+        data:time,
         splitLine: {
           //网格线
           show: true,
@@ -156,7 +162,8 @@ function Tj() {
       },
       series: [
         {
-          data: [200, 195, 185, 180, 176, 180, 176, 200, 200],
+          // data: [200, 195, 185, 180, 176, 180, 176, 200, 200],
+          data:data,
           type: "bar",
           barWidth: 10,
           showBackground: false,
@@ -174,23 +181,24 @@ function Tj() {
   };
 
   //近24H园区污水排放量统计
-  let initChart3 = () => {
+  let initChart3 = (time,data) => {
     let element = document.getElementById("main3");
     let myChart = echarts.init(element);
     let option = {
       xAxis: {
         type: "category",
-        data: [
-          "00:00",
-          "03:00",
-          "06:00",
-          "09:00",
-          "12:00",
-          "15:00",
-          "18:00",
-          "21:00",
-          "24:00",
-        ],
+        // data: [
+        //   "00:00",
+        //   "03:00",
+        //   "06:00",
+        //   "09:00",
+        //   "12:00",
+        //   "15:00",
+        //   "18:00",
+        //   "21:00",
+        //   "24:00",
+        // ],
+        data:time,
         splitLine: {
           //网格线
           show: true,
@@ -231,7 +239,8 @@ function Tj() {
       },
       series: [
         {
-          data: [600, 678, 757, 750, 800, 754, 643, 600, 765],
+          // data: [600, 678, 757, 750, 800, 754, 643, 600, 765],
+          data:data,
           type: "line",
           smooth: true, //圆润
           symbol: "none", //不要圈
@@ -287,27 +296,53 @@ function Tj() {
   };
 
   useEffect(() => {
-    
-    initChart2();
-    initChart3();
     getWater24Consume().then((res)=>{
       if(res.code==0){
         setWater24Consume(res.data);
-        let waterTime=[];
-        let waterData=[];
+        setIndex1(2);
+        let waterTime1=[];
+        let waterData1=[];
         water24Consume.map((item,index)=>{
-          waterTime.push(item.time);
-          waterData.push(item.count);
+          waterTime1.push(item.time);
+          waterData1.push(item.count);
         })
-        initChart1(waterTime,waterData);
+        initChart1(waterTime1,waterData1);
       }
     }).catch(err=>{
       console.log(err);
     });
-    getElectric24consume();
-    getDirtyWaterOut24consume();
+    getElectric24consume().then((res)=>{
+      if(res.code==0){
+        setElectric24consume(res.data);
+        setIndex2(3);
+        let waterTime2=[];
+        let waterData2=[];
+        electric24consume.map((item,index)=>{
+          waterTime2.push(item.time);
+          waterData2.push(item.count);
+        })
+        initChart2(waterTime2,waterData2);
+      }
+    }).catch(err=>{
+      console.log(err);
+    });
+    getDirtyWaterOut24consume().then((res)=>{
+      if(res.code==0){
+        setDirtyWaterOut24consume(res.data);
+        setIndex3(4);
+        let waterTime3=[];
+        let waterData3=[];
+        dirtyWaterOut24consume.map((item,index)=>{
+          waterTime3.push(item.time);
+          waterData3.push(item.count);
+        })
+        initChart3(waterTime3,waterData3);
+      }
+    }).catch(err=>{
+      console.log(err);
+    });
     getalldata();
-  }, [top_count]);
+  }, [index1,index2,index3]);
 
   return (
     <div className="tj_box">
