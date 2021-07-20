@@ -7,11 +7,12 @@ import { getWater24Consume, getElectric24consume, getDirtyWaterOut24consume, get
 
 
 function Tj() {
+  const [water24Consume, setWater24Consume] = useState();
   const top_count = useMappedState((state) => state.top_navigation_count);
   const { pathname } = useLocation(); //存储当前路由地址`
   const title = "统计";
-  //近24小时人脸抓拍统计
-  let initChart1 = () => {
+  //近24小时园区用水量统计
+  let initChart1 = (time,data) => {
     let element = document.getElementById("main1");
     let myChart = echarts.init(element);
     let option = {
@@ -44,17 +45,18 @@ function Tj() {
             fontSize: 10,
           },
         },
-        data: [
-          "00:00",
-          "03:00",
-          "06:00",
-          "09:00",
-          "12:00",
-          "15:00",
-          "18:00",
-          "21:00",
-          "24:00",
-        ],
+        // data: [
+        //   "00:00",
+        //   "03:00",
+        //   "06:00",
+        //   "09:00",
+        //   "12:00",
+        //   "15:00",
+        //   "18:00",
+        //   "21:00",
+        //   "24:00",
+        // ],
+        data:time
       },
       yAxis: {
         type: "value",
@@ -84,7 +86,8 @@ function Tj() {
           smooth: true, //圆润
           symbol: "none", //不要圈
           stack: "总量",
-          data: [800, 830, 840, 978, 1000, 987, 876, 850, 800],
+          // data: [800, 830, 840, 978, 1000, 987, 876, 850, 800],
+          data:data,
           color: ["#216CFF"],
         }
       ],
@@ -92,7 +95,7 @@ function Tj() {
     myChart.setOption(option);
   };
 
-  //近24H园区访客统计
+  //近24H园区用电量统计
   let initChart2 = () => {
     let element = document.getElementById("main2");
     let myChart = echarts.init(element);
@@ -170,7 +173,7 @@ function Tj() {
     myChart.setOption(option);
   };
 
-  //近24H园区人流量统计
+  //近24H园区污水排放量统计
   let initChart3 = () => {
     let element = document.getElementById("main3");
     let myChart = echarts.init(element);
@@ -284,10 +287,23 @@ function Tj() {
   };
 
   useEffect(() => {
-    initChart1();
+    
     initChart2();
     initChart3();
-    getWater24Consume();
+    getWater24Consume().then((res)=>{
+      if(res.code==0){
+        setWater24Consume(res.data);
+        let waterTime=[];
+        let waterData=[];
+        water24Consume.map((item,index)=>{
+          waterTime.push(item.time);
+          waterData.push(item.count);
+        })
+        initChart1(waterTime,waterData);
+      }
+    }).catch(err=>{
+      console.log(err);
+    });
     getElectric24consume();
     getDirtyWaterOut24consume();
     getalldata();
@@ -298,11 +314,7 @@ function Tj() {
       <div className="tj_tu">
         <div className="tj_t">
           <span className="tj_close"></span>
-          <span className="tj_title">
-            {pathname == "/home/person"
-              ? "近24小时人脸抓拍统计"
-              : "近24小时园区用水量统计"}
-          </span>
+          <span className="tj_title">近24小时园区用水量统计</span>
         </div>
         <div className="tu tu1">
           <div id={"main1"} style={{ height: 200 }}></div>
@@ -311,11 +323,7 @@ function Tj() {
       <div className="tj_tu">
         <div className="tj_t">
           <span className="tj_close"></span>
-          <span className="tj_title">
-            {pathname == "/home/person"
-              ? "近24H园区访客统计"
-              : "近24H园区用电量统计"}
-          </span>
+          <span className="tj_title">近24H园区用电量统计</span>
         </div>
         <div className="tu tu2">
           <div id={"main2"} style={{ height: 200 }}></div>
@@ -324,11 +332,7 @@ function Tj() {
       <div className="tj_tu">
         <div className="tj_t">
           <span className="tj_close"></span>
-          <span className="tj_title">
-            {pathname == "/home/person"
-              ? "近24H园区人流量统计"
-              : "近24H园区污水排放量统计"}
-          </span>
+          <span className="tj_title">近24H园区污水排放量统计</span>
         </div>
         <div className="tu3">
           <div id={"main3"} style={{ height: 200 }}></div>
